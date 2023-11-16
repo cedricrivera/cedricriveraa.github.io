@@ -15,7 +15,7 @@
 <main>
     <div class="update-details">
         <div class="update-box">
-            <h1>Patient Details</h1>
+            <h1>Patient Detail</h1>
             <i class="fa-solid fa-solid fa-arrow-left" id="back"></i>
 
             <form action="" method="POST">
