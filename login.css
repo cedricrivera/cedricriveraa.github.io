@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-container{
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #EFA3C8;
+}
+
+.Login{ 
+    background-color: #EFA3C8;
+    width: 60%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: grid;
+    column-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "Logo Form";
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    height: 35rem;
+}
+
+.left-side{
+    grid-area: Logo;
+    display: grid;
+    background-color: #0081B4;
+    align-items: center;
+    justify-items: center;
+}
+
+.left-side img{
+    height: 400px;
+}
+
+.right-side {
+    grid-area: Form;
+    background-color: #0081B4;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.right-side h1{
+    color: #f2f2f2;
+    font-size: 60px;
+    letter-spacing: 5px;
+    align-self: center;
+    justify-self: center;
+    cursor: default;
+    width: 100%;
+    text-align: center;
+}
+
+.right-side h1 span{
+    color: #EFA3C8;
+}
+
+.log-form{
+    display: grid;
+    width: 100%;
+    padding: 5px;
+    gap: 10px;
+}
+
+.right-side .form{
+   padding: 10px;
+   position: relative;
+}
+
+.form i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    margin-right: 5px;
+    font-size: 18px;
+    color: #EFA3C8;
+    
+}
+
+.form #open_pass{
+    display: none;
+}
+
+#open_pass, #close_pass{
+    cursor: pointer;
+}
+
+
+
+.right-side .form ::placeholder{
+    color: #f2f2f2;
+ }
+
+ p{
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.right-side .form input{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid #FAD3E7;
+    background-color: #0081B4;
+    color: #f2f2f2;
+    font-size: 18px;
+}
+
+.right-side .form input:hover{
+    border-bottom: 2px solid #EFA3C8;
+    transition: 0.5s;
+}
+
+.right-side .form input:focus{
+    outline: none;
+    border-bottom: 2px solid #EFA3C8;
+}
+
+.right-side .Register{
+    margin-left: 12px;
+    color: #f2f2f2;
+    font-size: 12px;
+}
+
+.right-side .Register a{
+    color: #FAD3E7;
+}
+
+.right-side .Register a:hover{
+    color: #EFA3C8;
+    transition: 0.5s;
+}
+
+.log-btn{
+    display: grid;
+    width: 100%;
+    margin: 20px 0px;
+    place-items: center;
+    height: 50%;
+}
+.right-side .log-btn input[type=submit]{
+    width: 80%;
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #FAD3E7;
+    border: none;
+    transition: all ease 0.5s;
+    font-size: 18px;
+}
+
+.right-side .log-btn input[type=submit]:hover{
+    background-color: #EFA3C8;
+    transition: all ease 0.5s;
+}
+
+
+@media screen and (max-width: 768px)
+    {
+        body{
+            background-color: #EFA3C8;
+        }
+        .Login{ 
+            background-color: #EFA3C8;
+            min-height: 400px;
+            width: 450px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "center";
+        }
+        .left-side{
+            display: none;
+        }
+        .right-side{
+            grid-area: center;
+
+        }
+        .right-side h1{
+            font-size: 40px;
+        }
+}
+
+@media screen and (max-width: 470px)
+    {
+        body{
+            background-color: #EFA3C8;
+        }
+        .Login{ 
+            background-color: #EFA3C8;
+            min-height: 400px;
+            width: 80%;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+        }
+        .left-side{
+            display: none;
+        }
+        .right-side{
+            border-radius: 10px;
+            min-height: 400px;
+            margin: 20px;
+            display: grid;
+            width: 100%;
+        }
+        .right-side h1{
+            font-size: 40px;
+        }
+        .log-btn {
+            display: grid;
+            width: 100%;
+            margin: 10px 0px;
+            place-items: center;
+            margin-top: 25px;
+        }
+        
+}

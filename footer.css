@@ -1,0 +1,16 @@
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: #fff;
+    height: 5rem;
+}
+
+.footer-content {
+    display: grid;
+    font-size: 18px;
+    height: 100%;
+}
+
+.footer-content p{
+    place-self: center;    
+}

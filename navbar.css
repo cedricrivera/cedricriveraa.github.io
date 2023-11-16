@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root{
+    --text-color: #f2f2f2;
+    --main-color: #EFA3C8;
+    --light-main: #FAD3E7;
+    --secondary-color: #0081B4;
+    --light-second: #01aaed;
+    --other: #2c3e50;
+  }
+
+.navbar{
+   background-color: var(--secondary-color);
+    display: flex;
+    height: 80px;
+    justify-content: end;
+    position: sticky;
+    top: 0; /* Stick the navbar to the top of the viewport */
+    z-index: 100; /* Ensure the navbar is above other content */
+    color: #fff; /* Replace with your desired text color */
+}
+
+#logo{
+    height: 70px;
+    width: 70px;
+    margin-left: 80px;
+    align-self: center;
+    cursor: default;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+ul{
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
+    margin-right: 80px;
+    height: 100%;
+}
+
+li{
+    padding: 10px;
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+li a:hover{
+    background-color: var(--light-second);
+    border-radius: 10px;
+}
+
+#btn-log{
+    padding: 3px 20px;
+    background-color: var(--light-second);
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: var(--text-color);
+    transition: all ease 0.5s;
+    cursor: pointer;
+}
+
+#btn-log:hover{
+    background-color: var(--secondary-color);
+    transition: all ease 0.55s;
+}
