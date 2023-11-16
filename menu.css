@@ -79,6 +79,7 @@ img{
 
 #Records{
     grid-template-rows: 80px auto;
+    background-color: whitesmoke;
 }
 
 h1{
