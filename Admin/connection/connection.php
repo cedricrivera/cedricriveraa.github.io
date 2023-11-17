@@ -2,7 +2,7 @@
 
 $serverName = "DESKTOP-4CC4NNO";
 $database = "ABTC_DB";
-$uid = "DESKTOP-4CC4NNO\Christine Joy Hinaut";
+$uid = "";
 $pass = "";
 
 try {
