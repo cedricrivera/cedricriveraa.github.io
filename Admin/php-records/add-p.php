@@ -1,7 +1,8 @@
 <?php
     if(isset($_POST['save'])){
         $email = $_POST['email'];
-
+        $userid = $_POST['userid'];
+        
         $queryCheckEmail = "SELECT email FROM patient_details WHERE email = :email";
         $stmtCheckEmail = $conn->prepare($queryCheckEmail);
         $stmtCheckEmail->bindParam(':email', $email, PDO::PARAM_STR);
@@ -9,6 +10,7 @@
 
         if ($stmtCheckEmail->rowCount() == 0) {
             // Email is not taken, proceed with the update
+   
             $lname = $_POST['lname'];
             $fname = $_POST['fname'];
             $mname = $_POST['mname'];
@@ -38,8 +40,8 @@
             $doctor = $_POST['doc'];
     
             // PATIENT DETAILS INSERTION
-            $sql1 = "INSERT INTO patient_details(lname, fname, mname, address, age, cnum, Sex, Date_Added, email) 
-            VALUES('$lname','$fname', '$mname','$address',$age,$cnum,'$sex', GETDATE(), '$email');";
+            $sql1 = "INSERT INTO patient_details(lname, fname, mname, address, age, cnum, Sex, Date_Added, userID, email) 
+            VALUES('$lname','$fname', '$mname','$address',$age,$cnum,'$sex', GETDATE(),'$userid', '$email');";
             $res = $conn->prepare($sql1);
             $res->execute();
     
@@ -62,10 +64,9 @@
                 echo'something went wrong';
             }    
         } else {
-            // Email is already taken
-           echo"<script>
-                    
-                </script>";
+            // Email is already taken 
+          
+            echo $conn->$e;
         }
     }
 ?>
