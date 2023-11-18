@@ -5,17 +5,27 @@
   background: var(--light-main);
   padding: 15px;
   display: grid;
-  grid-template-rows: 50px ;
+  grid-template-rows: 100px auto;
 }
 
 .logo {
-    font-size: 25px;
-    padding: 0 15px;
-    cursor: default;
-    width: 100%;
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--other);
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+    height: 100%;
+    margin-top: 5px;
   }
+
+  .logo p{
+    font-size: 20px;
+    font-weight: 500;
+    align-self: center;
+  }
+
   .sidebar a {
     color: #11101d;
     font-weight: 600;
@@ -26,7 +36,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 25px;
   }
   .menu-content::-webkit-scrollbar {
     display: none;

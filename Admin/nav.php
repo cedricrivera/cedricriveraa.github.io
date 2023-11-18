@@ -1,7 +1,22 @@
+<?php 
+  if(!isset($_SESSION)){
+    session_start();
+  }
+
+  $name = $_SESSION['Firstname'];
+  $lname = $_SESSION['Lastname'];
+
+?>
+
 <link rel="stylesheet" href="css/navbar.css">
 
 <nav class = "sidebar">
-  <a href="#" class = "logo">Admin</a>
+  <div class="logo">
+    <h2>Welcome!</h2>
+    <p><?php echo $name." ".$lname ?></p>
+    <hr>
+  </div>
+  
     <div class="menu-content">
 
       <ul>

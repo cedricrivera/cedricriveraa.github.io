@@ -182,7 +182,7 @@
        
         <script src="js/user-admin.js"></script>
         <script>
-          const deleteButtons = document.querySelectorAll('.del');
+          const deleteButtons = document.querySelectorAll('#del');
 
             deleteButtons.forEach((btn) => {
                 btn.addEventListener('click', () => {
@@ -196,7 +196,7 @@
                         cancelButtonText: 'No',
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = `php/delete-user.php?id=${userId}`;
+                            window.location.href = `php/delete-admin.php?id=${userId}`;
                         }
                     });
                 });

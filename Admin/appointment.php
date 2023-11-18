@@ -14,7 +14,7 @@
     <main>
         <div class="appointment-box">
             <h1>Appointment</h1>
-            <hr>
+            
             <div class="table">
                 <table>
                     <?php

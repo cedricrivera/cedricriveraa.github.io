@@ -23,7 +23,7 @@
             });
                 
         </script>
-    <title>Manage Admin</title>
+    <title>Manage User</title>
 </head>
 <body>
     <?php include "nav.php"; ?>
@@ -182,7 +182,7 @@
        
         <script src="js/user-admin.js"></script>
         <script>
-          const deleteButtons = document.querySelectorAll('.del');
+          const deleteButtons = document.querySelectorAll('#del');
 
             deleteButtons.forEach((btn) => {
                 btn.addEventListener('click', () => {
