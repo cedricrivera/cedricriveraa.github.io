@@ -4,6 +4,8 @@
     }
 
     require_once 'connection/connection.php';
+
+     $userid = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -229,6 +231,9 @@
                                     <option value="doc2">Nurse 1</option>
                                     <option value="doc2">Nurse 1</option>
                                 </select>
+                                <label> Select UserID </label>
+                                <input type="text" name="userid" value="<?= $userid; ?>" >
+
                             <button type="submit" name="save" id="modal-button">Save</button>
                         </form>
                         <i class="fa-solid fa-rectangle-xmark" id="close-button"></i>

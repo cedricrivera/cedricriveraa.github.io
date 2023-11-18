@@ -71,7 +71,7 @@ include "Admin/connection/connection.php"
                     <?php 
                         $query = "SELECT patient_records.*, patient_details.email
                                   FROM patient_records
-                                  INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
+                                  LEFT JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
                                   WHERE patient_details.email = '$email'";
                         $stmt = $conn->prepare($query);
                         $stmt->execute();

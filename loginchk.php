@@ -44,9 +44,16 @@ if(isset($_POST['log'])){
     else{
       if($password === $row['password']){
         $_SESSION['AdminID'] = $row['userID'];
+<<<<<<< HEAD
         $_SESSION['Firstname'] = $row['Firstname'];
         $_SESSION['Lastname'] = $row['Lastname'];
         header('Location: Admin/index.php'); // Fix the 'Location' header
+=======
+        $userid = $row['userID'];
+        $fname = $row['Firstname'];
+        $lastname = $row['Lastname'];
+        header('Location: Admin/index.php?id='.$userid); // Fix the 'Location' header
+>>>>>>> 65cde019912a9591bc1630d140a65c934ab8d3e3
         exit(); // Make sure to exit after setting the session and redirecting
       } else {
         ?>

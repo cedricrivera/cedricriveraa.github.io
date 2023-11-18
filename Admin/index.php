@@ -2,6 +2,10 @@
     if (!isset($_SESSION)) {
         session_start();
     }
+
+    $userid = $_GET['id'];
+
+    // public static $userid = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
