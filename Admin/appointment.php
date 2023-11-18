@@ -40,7 +40,7 @@
                     <tbody>
                         <?php  
                         if($rows){ 
-                        foreach ($rows as $ow) { ?>
+                        foreach ($rows as $row) { ?>
                             <tr>
                                 <td><?php echo $row['AppointID'] ?></td>
                                 <td><?php echo $row['fname'] . " " . $row['lname'] ?></td>
