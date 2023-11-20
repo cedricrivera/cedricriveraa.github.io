@@ -40,6 +40,8 @@
   overflow: hidden;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 90px auto;
+  grid-template-areas: 'u-a t-a e-w'
+                       'age age age';
   padding: 20px;
   gap: 10px;
 }
@@ -68,4 +70,7 @@
   place-self: center;
 }
 
+#piechart1{
+  grid-area: age;
+}
 
