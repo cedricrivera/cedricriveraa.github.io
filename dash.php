@@ -2,16 +2,19 @@
 
 include 'Admin/connection/connection.php';
 
-$query = "SELECT
-    SUM(CASE WHEN age < 15 THEN 1 ELSE 0 END) AS total_age_less_than_15,
-    SUM(CASE WHEN age > 15 THEN 1 ELSE 0 END) AS total_age_greater_than_15
-    FROM
-    patient_details
-    GROUP BY age";
+// Query for ages less than 15
+$queryLessThan15 = "SELECT COUNT(*) AS total FROM patient_details WHERE age < 15";
+$stmtLessThan15 = $conn->prepare($queryLessThan15);
+$stmtLessThan15->execute();  
+$resultLessThan15 = $stmtLessThan15->fetch(PDO::FETCH_ASSOC);
+$totalAgeLessThan15 = $resultLessThan15['total'];
 
-$stmt = $conn->prepare($query);
-$stmt->execute();  
-$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Query for ages greater than 15
+$queryGreaterThan15 = "SELECT COUNT(*) AS total FROM patient_details WHERE age > 15";
+$stmtGreaterThan15 = $conn->prepare($queryGreaterThan15);
+$stmtGreaterThan15->execute();  
+$resultGreaterThan15 = $stmtGreaterThan15->fetch(PDO::FETCH_ASSOC);
+$totalAgeGreaterThan15 = $resultGreaterThan15['total'];
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +32,8 @@ $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Age Range', 'Count'],
-          <?php foreach($arr as $key=>$val) {?>
-            ['Age < 15', <?php echo $val['total_age_less_than_15']?>],
-            ['Age > 15', <?php echo $val['total_age_greater_than_15']?>],
-          <?php } ?>
+          ['Age < 15', <?php echo $totalAgeLessThan15; ?>],
+          ['Age > 15', <?php echo $totalAgeGreaterThan15; ?>],
         ]);
 
         var options = {
