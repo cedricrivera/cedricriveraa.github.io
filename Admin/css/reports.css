@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root{
+  --text-color: #f2f2f2;
+  --main-color: #EFA3C8;
+  --light-main: #FAD3E7;
+  --secondary-color: #0081B4;
+  --light-second: #01aaed;
+  --other: #2c3e50;
+  --bg-color: #e7f2fd;
+  --success: #198754;
+  --light-success: #0dd157;
+  --danger: #DC3545;
+  --light-danger:  #f94658;
+  --primary: #0275d8;
+  --light-primary: #208eef;
+}
+
+/* MAIN */
+main{
+  /* FOR SIDEBAR SHOW*/
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  z-index: 1000;
+  /* END FOR SIDEBAR SHOW*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 100;
+  background: #e7f2fd;
+}
+
+#reports{
+    display: grid;
+    grid-auto-flow: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.reports-box{
+    display: grid;
+    margin: 10px;
+    border-radius: 10px;
+    grid-template-rows: 80px auto;
+    background-color: var(--main-color);
+    gap: 10px;
+}
+
+.reports-box h1{
+    place-self: center;
+    font-size: 40px;    
+}

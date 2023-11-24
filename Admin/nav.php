@@ -37,7 +37,7 @@
         </li>
 
         <li class="item">
-          <a href="#">Reports</a>
+          <a href="reports.php">Reports</a>
         </li>
 
         <li class="item">
@@ -48,35 +48,22 @@
     <button id="logout" type="submit">Logout</button>
   </div>
 </nav>
-
-<script>
-  
-</script>
-
-<!-- <nav class="sidebar">
-  <a href="#" class="logo">Admin</a>
-        <div class="menu-content">
-          
-        </div> -->
-
-       
-
-        <script>
-          const btn = document.querySelector('#logout')
-          btn.addEventListener('click', () =>{
-            Swal.fire({
-                    title: 'Are you sure you want to logout?',
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes',
-                    cancelButtonText: 'No',
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                      window.location.href="php/logout.php";
-                    }
-                });
-          });
-        </script>
+    <script>
+      const btn = document.querySelector('#logout')
+      btn.addEventListener('click', () =>{
+        Swal.fire({
+                title: 'Are you sure you want to logout?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.href="php/logout.php";
+                }
+            });
+      });
+    </script>
 </nav>
   
   

@@ -29,4 +29,9 @@
         $res->execute();
         $appoint = $res->fetch();
 
+        $query = "SELECT COUNT(*) as total_patients FROM patient_records";
+        $res = $conn->prepare($query);
+        $res->execute();
+        $totappoint = $res->fetch();        
+
     ?>
