@@ -1,73 +1,91 @@
 <?php
+    include 'Admin/connection/connection.php';
 
-include 'Admin/connection/connection.php';
+    try {
+        // Dog exposure
+        $query1 = "SELECT COUNT(*) as total_count_Dog FROM patient_records WHERE source_expo = 'Dog'";
+        $stmt = $conn->prepare($query1);
+        $stmt->execute();
+        $stmttotalDog = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$query1 = "SELECT count(*) as total_count_Dog from patient_records where source_expo = 'Dog'";
-$stmt = $conn->prepare($query1);
-$stmt->execute();
-$stmttotalDog = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Stray dog exposure
+        $query2 = "SELECT COUNT(*) as total_count_Straydog FROM patient_records WHERE source_expo = 'Stray Dog'";
+        $stmt = $conn->prepare($query2);
+        $stmt->execute();
+        $stmttotalstrayDog = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$query2 = "SELECT count(*) as total_count_Straydog from patient_records where source_expo = 'Stray Dog'";
-$stmt = $conn->prepare($query2);
-$stmt->execute();
-$stmttotalstrayDog = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Cat exposure
+        $query3 = "SELECT COUNT(*) as total_count_Cat FROM patient_records WHERE source_expo = 'Cat'";
+        $stmt = $conn->prepare($query3);
+        $stmt->execute();
+        $stmttotalCat = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$query3 = "SELECT count(*) as total_count_Cat from patient_records where source_expo = 'Cat'";
-$stmt = $conn->prepare($query3);
-$stmt->execute();
-$stmttotalCat = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Stray cat exposure
+        $query4 = "SELECT COUNT(*) as total_count_StrayCat FROM patient_records WHERE source_expo = 'Stray Cat'";
+        $stmt = $conn->prepare($query4);
+        $stmt->execute();
+        $stmttotalstrayCat = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$query4 = "SELECT count(*) as total_count_StrayCat from patient_records where source_expo = 'Stray Cat'";
-$stmt = $conn->prepare($query4);
-$stmt->execute();
-$stmttotalstrayCat = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Stray_Dog_Exposure
+        $totalstraydog = $stmttotalstrayDog['total_count_Straydog'];
 
-// dog exposure 
-$totalDogs = $stmttotalDog['total_count_Dog'] + $stmttotalstrayDog['total_count_Straydog'];
-// cat exposre 
-$totalCats = $stmttotalCat['total_count_Cat'] + $stmttotalstrayCat['total_count_StrayCat'];
+        // Dog exposure
+        $totalDogs = $stmttotalDog['total_count_Dog'] + $stmttotalstrayDog['total_count_Straydog'];
 
-?>
+        // Stray_Cat_Exposure 
+        $totalstraycat = $stmttotalstrayCat['total_count_StrayCat'];
 
+        // Cat exposure
+        $totalCats = $stmttotalCat['total_count_Cat'] + $stmttotalstrayCat['total_count_StrayCat'];
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Patient Records Chart</title>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Source', 'Count'],
-                ['Dog', <?php echo $stmttotalDog['total_count_Dog']; ?>],
-                ['Stray Dog', <?php echo $stmttotalstrayDog['total_count_Straydog']; ?>],
-                ['Cat', <?php echo $stmttotalCat['total_count_Cat']; ?>],
-                ['Stray Cat', <?php echo $stmttotalstrayCat['total_count_StrayCat']; ?>]
-            ]);
-
-            var options = {
-                title: 'Patient Records by Source of Exposure',
-                pieHole: 0.4,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-
-            chart.draw(data, options);
-        }
-    </script>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div id="piechart2" style="width: 900px; height: 500px;"></div>
 
-        <div>
-            <p>Total Dog Exposure: <?php echo $totalDogs; ?></p>
-            <p>Total Cat Exposre: <?php echo $totalCats; ?> </p>
-        </div>
+    <div id="chartContainer" style="width: 400px; height: 400px;">
+        <canvas id="pieChart"></canvas>
+    </div>
 
+    <!-- <canvas id="pieChart" width="900" height="500"></canvas> -->
+
+    <div>
+        <p>Total Dog Exposure: <?php echo $totalDogs; ?></p>
+        <p>Total Stra Dog Exposure: <?php echo $totalstraydog; ?> </p>
+        <p>Total Cat Exposure: <?php echo $totalCats; ?> </p>
+        <p>Total Stray Cat Exposure: <?php echo $totalstraycat; ?> </p>
+
+    </div>
+
+    <script>
+        // Use Chart.js to draw the pie chart
+        var ctx = document.getElementById('pieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Dog', 'Cat'],
+                datasets: [{
+                    data: [<?php echo $totalDogs; ?>, <?php echo $totalCats; ?>],
+                    backgroundColor: ['#4F4A45', '#CE5A67'],
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Distribution of Patient Records by Source of Exposure'
+                }
+            }
+        });
+    </script>
 </body>
 </html>
