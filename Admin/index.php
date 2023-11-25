@@ -21,41 +21,29 @@
     <?php include 'chart/Agelessthan.php' ?>
     <main class="main">
         <div id="Dashboard">
+
+            <!-- TOTAL UESR ACCOUNTS -->
             <div class="user-account">
-                <i class="fa-solid fa-users"></i>
-                <?php
-                 if(!empty($user_acc)){
-                ?>
-                <h2><?php echo $user_acc['User_Counts'] ?></h2>
-                <?php }  else {
-                    0;
-                }?>
-                <p>Total User Accounts</pack>
+                <?php include 'chart/user-accounts.php' ?>
             </div>
+
+            <!-- TOTAL APPOINTMENTS -->
             <div class="appointment-records">
-                <i class="fa-solid fa-calendar-check"></i>
-                <?php
-                 if(!empty($appoint)){
-                ?>
-                <h2><?php echo $appoint['Appointment'] ?></h2>
-                <?php }  else {
-                    0;
-                }?>
-                <p>Total Appointments</p>
+                <?php include 'chart/tot-appoint.php' ?>
             </div>
+
+            <!-- TOTAL UESR PATIENTS -->
             <div class="total-patients">
-                <i class="fa-solid fa-hospital-user"></i>
-                <?php
-                 if(!empty($totappoint)){
-                ?>
-                <h2><?php echo $totappoint['total_patients'] ?></h2>
-                <?php }  else {
-                    0;
-                }?>
-                <p>Total Patients</p>
+                <?php include 'chart/tot-patients.php' ?>
             </div>
+
+            <!-- AGE GOT BITEN -->
             <div id="piechart1"></div>
-            <div id="piechart2"></div>         
+
+            <!-- MOST AGE BITEN -->
+            <div id="piechart2"></div>
+            
+            
         </div>
     </main>
 </body>
