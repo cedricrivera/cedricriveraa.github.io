@@ -59,28 +59,5 @@
         </div>
     </main>
 </body>
-<script>
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-        
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-            ['Age Range', 'Count'],
-            <?php foreach($arr as $key=>$val) {?>
-                ['Age < 15', <?php echo $val['total_age_less_than_15']?>],
-                ['Age > 15', <?php echo $val['total_age_greater_than_15']?>],
-            <?php } ?>
-            ]);
-
-            var options = {
-            title: 'Distribution of Ages',
-            pieHole: 0.4,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
-
-            chart.draw(data, options);
-        }
-</script>
 </html>
 
