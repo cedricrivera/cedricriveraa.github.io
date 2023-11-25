@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>    
     <?php include 'php/stats.php' ?>
@@ -59,5 +59,28 @@
         </div>
     </main>
 </body>
+<script>
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Age Range', 'Count'],
+            <?php foreach($arr as $key=>$val) {?>
+                ['Age < 15', <?php echo $val['total_age_less_than_15']?>],
+                ['Age > 15', <?php echo $val['total_age_greater_than_15']?>],
+            <?php } ?>
+            ]);
+
+            var options = {
+            title: 'Distribution of Ages',
+            pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+            chart.draw(data, options);
+        }
+</script>
 </html>
 
