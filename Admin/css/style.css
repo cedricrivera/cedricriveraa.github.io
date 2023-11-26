@@ -12,6 +12,9 @@
   --secondary-color: #0081B4;
   --light-second: #01aaed;
   --other: #2c3e50;
+  --background: #e7f2fd;
+  --new: #5bd0ff;
+  --newf: #ffb0d6;
 }
 
 /* MAIN */
@@ -32,30 +35,73 @@
   background: #e7f2fd;
 }
 
-#Dashboard{
+#dashboard{
   display: grid;
   height: 100vh;
   width: 100%;
-  border-bottom: 2px solid black;
-  overflow: hidden;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 90px auto;
-  grid-template-areas: 'u-a t-a t-p'
-                       'age top e-w';
-  padding: 20px;
-  gap: 10px;
+  grid-template-rows: 90px auto 1fr;
+  padding: 15px;
+  overflow: auto;
 }
+
+#column1{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.graph-box{
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.graph-box .box{
+  position: relative;
+  background-color: var(--background);
+  padding: 20px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#animal{
+  position: relative;
+  padding: 20px;
+  min-height: auto;
+  background-color: black;
+}
+
+
+
+
+
+
+
+
+
 
 .user-account,
 .appointment-records, .total-patients{
   padding: 10px;
   display: grid;
-  background-color: var(--main-color);
   grid-template-columns: 50px auto;
   grid-template-rows: 50% 50%;
   column-gap: 10px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all ease 0.5s;
+}
+
+.user-account:hover,
+.appointment-records:hover, .total-patients:hover{
+  background-color: var(--main-color);
+  transition: all ease 0.5s;
 }
 
 .user-account i, 
@@ -71,15 +117,7 @@
 .appointment-records h2, .appointment-records p,
 .total-patients p, .total-patients h2{
   place-self: center;
+  cursor: default;
 }
 
-.total-patients{
-  grid-area: t-p;
-}
-#piechart1{
-  grid-area: age;
-}
-#piechart2{
-  grid-area: top;
-}
 

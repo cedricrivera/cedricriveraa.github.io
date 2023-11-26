@@ -1,33 +1,61 @@
 <?php
-include 'connection/connection.php';
+include "connection/connection.php";
 
-$query = "SELECT COUNT(age) AS tcount, age FROM patient_details GROUP BY age";
+// Query for ages less than 15
+$queryLessThan15 = "SELECT COUNT(*) AS total FROM patient_details WHERE age < 15";
+$stmtLessThan15 = $conn->prepare($queryLessThan15);
+$stmtLessThan15->execute();  
+$resultLessThan15 = $stmtLessThan15->fetch(PDO::FETCH_ASSOC);
+$totalAgeLessThan15 = $resultLessThan15['total'];
 
-$stmt = $conn->prepare($query);
-$stmt->execute();
-$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Query for ages greater than 15
+$queryGreaterThan15 = "SELECT COUNT(*) AS total FROM patient_details WHERE age > 15";
+$stmtGreaterThan15 = $conn->prepare($queryGreaterThan15);
+$stmtGreaterThan15->execute();  
+$resultGreaterThan15 = $stmtGreaterThan15->fetch(PDO::FETCH_ASSOC);
+$totalAgeGreaterThan15 = $resultGreaterThan15['total'];
+
+// Prepare data for JavaScript
+$labels = array();
+$values = array();
+
+$labels = array('Less than 15', 'Greater than 15');
+$values = array($totalAgeLessThan15, $totalAgeGreaterThan15);
+
+// Convert PHP arrays to JavaScript arrays
+$labels_js = json_encode($labels);
+$values_js = json_encode($values);
 ?>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Age');
-            data.addColumn('number', 'tcount');
-
-            <?php foreach($arr as $val) { ?>
-                data.addRow(['Age = <?php echo $val['age']; ?>', <?php echo $val['tcount']; ?>]);
-            <?php } ?>
-
-            var options = {
-                title: 'Top Most Age Bitten'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-
-            chart.draw(data, options);
+<script>
+    // Use Chart.js to create a column chart
+    var ctx = document.getElementById('age').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: <?php echo $labels_js; ?>,
+            datasets: [{
+                label: 'Age Distribution',
+                data: <?php echo $values_js; ?>,    
+                backgroundColor: ['#5bd0ff','#ffb0d6'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'Age',
+                    font: {
+                        weight: 'bold',
+                        color: 'red',
+                        size: '20px'
+                    }
+                },
+            }
         }
-    </script>
+    });
+</script>
+
