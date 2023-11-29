@@ -49,14 +49,21 @@
                 </div>
             </div>
 
-            <div class="column1">
-                <h1></h1>
+            <div class="graph-box2">
+                <div class="box">
+                    <canvas id="exposureChart"></canvas>
+                </div>
+                <div class="box">
+                    <canvas id="dash_sex"></canvas>
+                </div>
+                
             </div>
         </div> 
     </main>
-    <?php include 'chart/Agetopbite.php' ?>
-    <?php include 'chart/Agelessthan.php' ?>
-    <?php include 'chart/Top-barangay.php' ?>
+    <?php include 'chart/dashboard_exposure.php' ?>
+    <?php include 'chart/dashboard_age.php' ?>
+    <?php include 'chart/dashboard_barangay.php' ?>
+    <?php include 'chart/dashboard_sex.php' ?>
 </body>
 
 

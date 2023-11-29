@@ -162,7 +162,13 @@
                             <input type="text" name="t-expo" id="" placeholder="Enter Type of Exposure" >
 
                             <label for="s-expo">Source of Exposure</label>
-                            <input type="text" name="s-expo" id="" placeholder="Enter Source of Exposure" >
+                            <select name="s-expo" id="">
+                                <option value="Stray Dog">Stray Dog</option>
+                                <option value="Dog">Dog</option>
+                                <option value="Stray Cat">Stray Cat</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Others">Others</option>
+                            </select>
 
                             <label for="c-expo">Category of Exposure</label>
                             <select name="c-expo" id="gender" >

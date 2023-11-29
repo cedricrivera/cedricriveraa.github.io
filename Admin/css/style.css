@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: auto;
   z-index: 100;
   background: #e7f2fd;
 }
@@ -39,7 +39,7 @@
   display: grid;
   height: 100vh;
   width: 100%;
-  grid-template-rows: 90px auto 1fr;
+  grid-template-rows: 6rem 2fr 1fr;
   padding: 15px;
   overflow: auto;
 }
@@ -47,22 +47,21 @@
 #column1{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  width: 100%;
+  gap: 20px;
+  min-width: 50%;
 }
 
 .graph-box{
-  position: relative;
   width: 100%;
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
-  min-height: 200px;
-  min-width: 200px;
+  min-width: 50%;
 }
 
 .graph-box .box{
-  position: relative;
   background-color: var(--background);
   padding: 20px;
   width: 100%;
@@ -70,12 +69,24 @@
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-#animal{
+.graph-box2{
   position: relative;
-  padding: 20px;
-  min-height: auto;
-  background-color: black;
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }
+
+.graph-box2 .box{
+  background-color: var(--background);
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+
 
 
 
@@ -91,9 +102,8 @@
   padding: 10px;
   display: grid;
   grid-template-columns: 50px auto;
-  grid-template-rows: 50% 50%;
   column-gap: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   transition: all ease 0.5s;
 }

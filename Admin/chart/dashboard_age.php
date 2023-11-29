@@ -47,10 +47,8 @@ $values_js = json_encode($values);
                 },
                 title: {
                     display: true,
-                    text: 'Age',
+                    text: 'Age Distribution',
                     font: {
-                        weight: 'bold',
-                        color: 'red',
                         size: '20px'
                     }
                 },

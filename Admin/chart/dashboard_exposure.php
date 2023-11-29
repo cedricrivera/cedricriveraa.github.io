@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Patient Records Visualization</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js library -->
-</head>
-<body>
-
-<div style="width: 50%;">
-    <canvas id="exposureChart"></canvas>
-</div>
-
 <?php
-    include 'Admin/connection/connection.php';
-
     try {
         // Fetch data for different exposures
         $queryDog = "SELECT COUNT(*) as total_count_Dog FROM patient_records WHERE source_expo = 'Dog'";
@@ -49,25 +35,34 @@
 ?>
 
 <script>
-    // Draw the pie chart using Chart.js
+    // Draw the bar chart using Chart.js
     var ctx = document.getElementById('exposureChart').getContext('2d');
-    var myPieChart = new Chart(ctx, {
-        type: 'pie',
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
         data: {
             labels: ['Dog', 'Cat', 'Stray Dog', 'Stray Cat'],
             datasets: [{
+                label: 'Exposure Count',
                 data: [totalDogs, totalCats, totalStrayDogs, totalStrayCats],
-                backgroundColor: ['#4F4A45', '#CE5A67', 'red', 'orange'],
+                backgroundColor: ['#0081B4', '#FAD3E7', '#EFA3C8', '#F4D9E7'],
+                borderColor: ['#0081B4', '#FAD3E7', '#EFA3C8', '#F4D9E7'],
+                borderWidth: 1
             }]
         },
         options: {
-            title: {
-                display: true,
-                text: 'Distribution of Patient Records by Source of Exposure'
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            indexAxis: 'y',
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Distribution of Patient Records by Source of Exposure'
+                }
             }
         }
     });
 </script>
-
-</body>
-</html>
