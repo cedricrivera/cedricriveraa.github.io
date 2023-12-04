@@ -4,7 +4,14 @@ include 'Admin/connection/connection.php';
 // Assuming you have a database connection
 
 // Fetch the count of male patients from the database
-$query = "SELECT COUNT(Sex) as maleCount FROM patient_details WHERE Sex = 'Male'";
+$query = "SELECT
+pr.place_expo,
+pd.Sex,
+(SELECT COUNT(*) FROM patient_details WHERE Sex = 'Male' And place_expo = 'Victoria') as maleCount
+FROM
+patient_details pd
+INNER JOIN
+patient_records pr ON pd.patient_detID = pr.patient_detID;";
 $result = $conn->prepare($query);
 $result->execute();
 $row = $result->fetch(PDO::FETCH_ASSOC);
@@ -222,7 +229,7 @@ if($row){
     </thead>
     <tbody>
         <tr>
-            <td>Alabang</td>
+            <td>Victoria</td>
             <td><?php echo $maleCount; ?></td>
             <td><?php echo $femaleCount; ?></td>
             <td><?php echo $less15; ?></td>
@@ -241,6 +248,292 @@ if($row){
             <td><?php echo $erig; ?></td>
             <!-- Add other cells as needed -->
         </tr>
+        <tr>
+            <td>Tunasan</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Poblacion</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>SouthVille</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Putatan Main</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Putatan Annex</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Bayanan Main</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Bayanan Annex</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Alabang</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Ayala</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Cupang</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Buli</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Sucat</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>B.Silang</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Sitio Sto.Nino</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><?php echo $maleCount; ?></td>
+            <td><?php echo $femaleCount; ?></td>
+            <td><?php echo $less15; ?></td>
+            <td><?php echo $greater15; ?></td>
+            <td><?php echo $dogc; ?></td>
+            <td><?php echo $straydog; ?></td>
+            <td><?php echo $petcat; ?></td>
+            <td><?php echo $straycat; ?></td>
+            <td> </td>
+            <td><?php echo $cat1; ?></td>
+            <td><?php echo $cat2; ?></td>
+            <td><?php echo $cat3; ?></td>
+            <td> </td>
+            <td><?php echo $tcv; ?></td>
+            <td><?php echo $hrig; ?></td>
+            <td><?php echo $erig; ?></td>
+        </tr>
+
         <!-- Add more rows as needed -->
     </tbody>
 </table>
