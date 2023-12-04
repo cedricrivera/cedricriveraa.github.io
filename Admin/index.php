@@ -2,6 +2,10 @@
     if (!isset($_SESSION)) {
         session_start();
     }
+    if(!isset($_SESSION['AdminID'])){
+        echo"<script>window.location.href='../Login.php'</script>";
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +39,11 @@
                 <div class="total-patients">
                     <?php include 'chart/tot-patients.php' ?>
                 </div>
+
+                <!-- TOTAL RECORDS -->
+                <div class="total-records">
+                    <?php include 'chart/tot-records.php' ?>
+                </div>
             </div>
 
             <div class="graph-box">
@@ -55,8 +64,7 @@
                 </div>
                 <div class="box">
                     <canvas id="dash_sex"></canvas>
-                </div>
-                
+                </div> 
             </div>
         </div> 
     </main>

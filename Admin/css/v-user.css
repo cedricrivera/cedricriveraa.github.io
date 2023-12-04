@@ -52,7 +52,6 @@ main{
     position: relative;
     display: grid;
     width: 80%;
-    height: 80%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     padding: 10px;
     border-radius: 10px;
@@ -65,6 +64,7 @@ h1{
     text-align: center;
     text-transform: uppercase;
     line-height: 70px;
+    font-size: 25px;
 }
 
 form{
@@ -85,14 +85,15 @@ div label{
 }
 
 div input,textarea,select{
-    padding: 8px;
+    padding: 0px 8px;
     border-radius: 10px;
     border: 1px solid var(--secondary-color);
     outline: none;
     transition: all ease 0.5s;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
+    height: 2.2rem;
 }
 
 div input:hover,textarea:hover,select:hover{
@@ -107,8 +108,8 @@ div input:hover,textarea:hover,select:hover{
 
 #back{
     position: absolute;
-    top: 28px;
-    left: 2%;
+    top: 32px;
+    left: 20px;
     cursor: pointer;
     transition: all ease 0.5s;
     border-radius: 10px;
@@ -116,7 +117,7 @@ div input:hover,textarea:hover,select:hover{
     border: none;
     background-color: var(--secondary-color);
     color: var(--text-color);
-    padding: 8px 25px;
+    padding: 4px 25px;
     letter-spacing: 1px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-weight: 600;
@@ -133,7 +134,7 @@ div input:hover,textarea:hover,select:hover{
 #btn-update{
     justify-self: end;
     width: 12%;
-    margin: 10px 8px 10px 0px;
+    margin: 4px 9px;
     border-radius: 10px;
     border: none;
     outline: none;
@@ -144,7 +145,8 @@ div input:hover,textarea:hover,select:hover{
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transition: all ease 0.5s;
-    padding: 5px;
+    padding: 7px 10px;
+    font-size: 10px;
 }
 
 #btn-update:hover{

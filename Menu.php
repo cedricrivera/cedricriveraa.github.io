@@ -16,6 +16,7 @@ include "Admin/connection/connection.php"
     <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Menu</title>
 </head>
 <body>
@@ -48,8 +49,10 @@ include "Admin/connection/connection.php"
 
     <div class="main-container">
         <section id="Home">
-            <img src="Image\Welcome.svg" alt="">
-                
+            <div data-aos="fade-right">
+                <img src="Image\Welcome.svg" alt="">
+            </div>
+                    
             <div class="left">
                 <h1>ANIMAL BITE CENTER</h1>
                 <p>Animal Bite Treatment Centers (ABTC)- are health facilities owned and operated by either the National or Local Government Units (LGUs), providing Post-Exposure Prophylaxis (PEP) to rabies exposures in accordance with the DOH recommended management protocol.</p>
@@ -58,8 +61,13 @@ include "Admin/connection/connection.php"
         </section>
 
         <section id="Records">
-            <h1>RECORDS</h1>
+
+            <div data-aos="fade-right">
+                <h1>RECORDS</h1>
+            </div>
+            
             <div class="table">
+            <div data-aos="zoom-in-up">
                 <table>
                     <thead>
                         <tr>
@@ -98,21 +106,25 @@ include "Admin/connection/connection.php"
                     ?>
                 </table>
             </div>
+        </div>
         </section>
 
         <section id="Appointment">
+        <div data-aos="zoom-in" class="title">
             <h1>APPOINTMENT SCHEDULE</h1>
+        </div>
             <div class="form">
+            <div data-aos="zoom-in-right">
                 <form action="appoint.php" method="POST">
 
                     <div class="input">
                         <label for="">Firstname</label>
-                        <input type="text" name="fname" id="" placeholder="Enter Firstname">
+                        <input type="text" name="fname" id="" placeholder="Enter Firstname" required>
 
                     </div>
                     <div class="input">
                         <label for="">Lastname</label>
-                        <input type="text" name="lname" id="" placeholder="Enter Lastname">
+                        <input type="text" name="lname" id="" placeholder="Enter Lastname" required>
 
                     </div>
                     <div class="input">
@@ -122,18 +134,18 @@ include "Admin/connection/connection.php"
                     </div>
                     <div class="input">
                         <label for="">Reason</label>
-                        <textarea type= "text" name="reason" id="" cols="30"  style="resize: none;"></textarea>
+                        <textarea type= "text" name="reason" id="" cols="30"  style="resize: none;" required></textarea>
 
                     </div>
                     <div class="input">
                         <label for="">Contact No. </label>
-                        <input type="number" name="cnum" id="" placeholder="Enter Contact Number">
+                        <input type="number" name="cnum" id="" placeholder="Enter Contact Number" required>
 
                     </div>
 
                     <div class="input">
                         <label for="">Select your preferred date for appointment</label>
-                        <input type="date" name="date-a" id="">
+                        <input type="date" name="date-a" id="" required>
                     </div>
 
                     <div class="btn">
@@ -141,8 +153,10 @@ include "Admin/connection/connection.php"
                     </div>
                 </form>
             </div>
+            </div>
 
             <div class="status">
+            <div data-aos="zoom-in-left">
                 <table>
                     <tr>
                         <th>Appointment ID</th>
@@ -181,6 +195,7 @@ include "Admin/connection/connection.php"
                     }
                     ?>
                 </table>
+                </div>
             </div>
         </section>
 
@@ -189,8 +204,9 @@ include "Admin/connection/connection.php"
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-
+  AOS.init();
 </script>
 <script src="UserJS/user.js"></script>
 </html>

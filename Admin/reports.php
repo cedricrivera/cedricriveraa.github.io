@@ -1,3 +1,14 @@
+<?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    if(!isset($_SESSION['AdminID'])){
+        echo"<script>
+            window.location.href='../Login.php';
+        </script>";
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

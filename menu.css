@@ -50,23 +50,23 @@ img{
     width: 100%;
     text-align: center;
     margin-bottom: 40px;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .left p{
-    margin-left: 80px;
-    font-size: 20px
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 #btn-contact{
-    margin: 40px 0px 0px 80px;
-    padding: 15px 25px;
+    margin-top: 40px;
+    padding: 8px 18px;
     border-radius: 10px;
     border: none;
     background-color: #FAD3E7;
     font-weight: 700;
     letter-spacing: 2px;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
     transition: all ease 0.5s;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -77,6 +77,8 @@ img{
     transition: all ease 0.5s;
 }
 
+/* RECORDS */
+
 #Records{
     grid-template-rows: 80px auto;
     background-color: whitesmoke;
@@ -84,14 +86,14 @@ img{
 
 h1{
     width: 100%;
-    margin-top: 20px;
     text-align: center;
-    font-size: 3rem;
-    margin-top: 80px;
+    font-size: 2rem;
+    margin: 70px 0px 15px 0px;
 }
 
+
 .table{
-    height: 72vh;
+    height: 75vh;
     width: 90%;
     place-self: center;
     padding: 20px;
@@ -110,7 +112,8 @@ th {
     background-color: var(--secondary-color);
     color: #fff; 
     font-weight: bold;
-    padding: 10px;
+    font-size: 12px;
+    padding: 8px;
     letter-spacing: 2px;
     border: 1px solid #444;
 }
@@ -118,7 +121,8 @@ th {
 td {
     text-align: center;
     font-weight: 500;
-    padding: 8px; 
+    padding: 8px;
+    font-size: 12px; 
     border: 1px solid #ccc; 
 }
 
@@ -151,10 +155,12 @@ td a:hover{
 
 }
 
-#Appointment h1{
+#Appointment .title{
     grid-area: title;
-    margin-bottom: 20px;
-    align-self: center;
+}
+
+.title h1{
+    font-size: 2rem;
 }
 
 #Appointment .form{
@@ -164,14 +170,14 @@ td a:hover{
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 10px;
+    min-width: 300px;
 }
 
 #Appointment form{
     display: grid;
     height: 50%;
     align-items: center;
-    gap: 15px;
-    margin-top: 15px;
+    gap: 10px;
 }
 
 form .input{
@@ -182,27 +188,33 @@ form .input{
 form .input label{
     align-self: end;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 12px;
 }
 
-form input,textarea{
+form input, textarea{
     width: 100%;
-    padding: 8px;
+    padding: 0px 8px;
+    height: 2rem;
     border-radius: 10px;
     outline: none;
     border: 1px solid var(--secondary-color);
     font-weight: 500;
-    font-size: 15px;
+    font-size: 12px;
+}
+
+form textarea{
+    height: auto;
+    padding-top: 3px;
 }
 
 #btn-submit{
     width: 100%;
-    padding: 10px;
+    padding: 6px;
     margin-top: 15px;
     border-radius: 10px;
     border: none;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 12px;
     letter-spacing: 2px;
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -222,7 +234,43 @@ form input,textarea{
 }
 
 .status{
-    padding: 20px;
+    padding: 0px 20px;
+    min-width: 100px;   
+}
+
+@media screen and (max-width: 768px) {
+    #Appointment{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 2fr auto;
+        grid-template-areas: 'title'
+                             'appoint'
+                             'status';
+        width: 100%;
+        height: auto;
+    }
+
+    #Appointment .title{
+        grid-area: title;
+        width: 100%;
+        text-align: center;
+    }
+
+    #Appointment .form{
+        grid-area: appoint;
+        display: grid;
+        margin-top: 2px;
+        
+        height: 100%;
+        width: 100%;
+    }
+
+    #Appointment .status{
+        grid-area: status;
+        height: auto;
+        margin-top: 20px;
+    }
+
 }
 
 

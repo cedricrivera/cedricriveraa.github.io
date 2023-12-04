@@ -1,6 +1,12 @@
 <?php
-    if(!session_id()){
+    if(!isset($_SESSION)){
         session_start();
+    }
+    if(!isset($_SESSION['AdminID'])){
+        echo"<script>
+            window.location.href='../Login.php';
+        </script>";
+        exit;
     }
 ?>
 
@@ -145,17 +151,17 @@
                                 <option value="Tunasan">Tunasa</option>
                                 <option value="Poblacion">Poblacion</option>
                                 <option value="Southville">Southville</option>
-                                <option value="Putatan_Main">Putatan Main</option>
-                                <option value="Putatan_Annex">Putatan Annex</option>
-                                <option value="Bayanan_Main">Bayanan Main</option>
-                                <option value="Bayanan_Annex">Bayanan Annex</option>
+                                <option value="Putatan Main">Putatan Main</option>
+                                <option value="Putatan Annex">Putatan Annex</option>
+                                <option value="Bayanan Main">Bayanan Main</option>
+                                <option value="Bayanan Annex">Bayanan Annex</option>
                                 <option value="Alabang">Alabang</option>
                                 <option value="Ayala">Ayala</option>
                                 <option value="Cupang">Cupang</option>
                                 <option value="Buli">Buli</option>
                                 <option value="Sucat">Sucat</option>
-                                <option value="Bagong_Silang">Bagong Silang</option>
-                                <option value="Sitio_Sto._Niño">Sitio Sto. Niño</option>
+                                <option value="Bagong Silang">Bagong Silang</option>
+                                <option value="Sitio Sto. Niño">Sitio Sto. Niño</option>
                             </select>
 
                             <label for="t-expo">Type of Exposure</label>

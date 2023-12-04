@@ -2,10 +2,15 @@
   if(!isset($_SESSION)){
     session_start();
   }
-
-  $name = $_SESSION['Firstname'];
-  $lname = $_SESSION['Lastname'];
-
+  
+  if(isset($_SESSION['AdminID'])){
+    $name = $_SESSION['Firstname'];
+    $lname = $_SESSION['Lastname'];
+  } 
+  else {
+    header("Location: Login.php");
+    exit;
+  }
 ?>
 
 <link rel="stylesheet" href="css/navbar.css">

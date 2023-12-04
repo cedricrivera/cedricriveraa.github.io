@@ -28,20 +28,24 @@ $values_js = json_encode($values);
         data: {
             labels: <?php echo $labels_js; ?>,
             datasets: [{
-                label: 'Top Barangay Animal Exposure',
+                label: 'Top 5 Barangay Animal Exposure',
                 data: <?php echo $values_js; ?>,
                 backgroundColor: '#EFA3C8'
             }]
         },
+        scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
         options: {
-            responsive: true,
             plugins: {
                 legend: {
                     position: 'top'
                 },
                 title: {
                     display: true,
-                    text: 'BARANGAY MOST BITEN',
+                    text: 'Distribution of Barangay by Place of Exposure',
                     font: {
                         size: '20px'
                     }

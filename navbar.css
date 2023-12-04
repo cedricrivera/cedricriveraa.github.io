@@ -25,58 +25,111 @@
     color: #fff; /* Replace with your desired text color */
 }
 
-#logo{
-    height: 70px;
-    width: 70px;
-    margin-left: 80px;
-    align-self: center;
-    cursor: default;
-    position: absolute;
-    top: 5px;
-    left: 0;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--other);
+    color: #fff;
+    padding: 0px 20px;
+    height: 65px;
 }
 
-ul{
-    display: grid;
-    grid-auto-flow: column;
-    align-content: center;
-    margin-right: 80px;
-    height: 100%;
+  
+.nav-links {
+    display: flex;
+    gap: 10px;
+    height: auto;
+    align-items: baseline;
 }
-
-li{
-    padding: 10px;
+  
+.nav-links li {
     list-style: none;
 }
 
-li a{
+.nav-links a {
+    font-size: 11px;
     text-decoration: none;
-    color: var(--text-color);
-    padding: 10px;
-    font-weight: 600;
+    color: #fff;
+    padding: 9px 11px;
+    background-color: var(--light-second);
+    font-weight: 500;
     letter-spacing: 2px;
+    border-radius: 10px;
+    transition: all ease 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-li a:hover{
-    background-color: var(--light-second);
-    border-radius: 10px;
+.nav-links a:hover{
+    transition: all ease 0.5s;
+    background-color: var(--secondary-color);
+}
+
+#logo{
+    height: 60px;
+    width: 60px;
+    margin: 6px 0px 0px 10px;
 }
 
 #btn-log{
-    padding: 3px 20px;
-    background-color: var(--light-second);
+    padding: 9px 16px;
+    margin-left: 20px;
     border-radius: 10px;
     border: none;
+    background-color: var(--main-color);
     font-weight: 700;
-    letter-spacing: 2px;
-    margin-left: 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    color: var(--text-color);
+    font-size: 11px;
+    letter-spacing: 1px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     transition: all ease 0.5s;
     cursor: pointer;
+
 }
 
 #btn-log:hover{
-    background-color: var(--secondary-color);
+    background-color: var(--light-main);
     transition: all ease 0.55s;
+}
+
+/* BURGER */
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+  
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        background-color: #333;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.active {
+        display: grid;
+        gap: 10px;
+        height: 20rem;
+        place-items: center;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+    #btn-log{
+        margin: 0px;
+    }
 }

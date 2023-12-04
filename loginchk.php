@@ -50,8 +50,7 @@ if(isset($_POST['log'])){
         $userid = $row['userID'];
         $fname = $row['Firstname'];
         $lastname = $row['Lastname'];
-        header('Location: Admin/index.php?id='.$userid); // Fix the 'Location' header
-        exit(); // Make sure to exit after setting the session and redirecting
+        exit();
       } else {
         ?>
         <script>

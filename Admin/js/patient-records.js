@@ -27,7 +27,6 @@ deleteButtons.forEach((btn) => {
             cancelButtonText: 'No',
         }).then((result) => {
             if (result.isConfirmed) {
-                // Perform the delete action with the retrieved deleteId
                 window.location.href = `php-records/delete-records.php?deleteid=${deleteId}`;
             }
         });
@@ -54,7 +53,6 @@ deleteUserButton.addEventListener("click", function() {
         cancelButtonText: 'No',
     }).then((result) => {
         if (result.isConfirmed) {
-            // Perform the delete user action, adjust the URL as needed
             window.location.href = `php/delete-user.php?id=<?php echo $row['userID']?>`;
         }
     });

@@ -39,66 +39,62 @@
   display: grid;
   height: 100vh;
   width: 100%;
-  grid-template-rows: 6rem 2fr 1fr;
-  padding: 15px;
+  grid-template-rows: auto 2fr 2fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'col1'
+                       'col2'
+                       'col3';
+  padding: 10px;
   overflow: auto;
 }
 
 #column1{
+  grid-area: col1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  width: 99%;
   gap: 20px;
   min-width: 50%;
 }
 
 .graph-box{
-  width: 100%;
-  margin-top: 20px;
+  grid-area: col2;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 20px;
-  min-width: 50%;
+  width: 99%;
+  margin-top: 20px;
+  gap: 15px;
+  max-width: 100%;
 }
 
 .graph-box .box{
   background-color: var(--background);
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .graph-box2{
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
+  grid-area: col3;
   display: grid;
+  width: 99%;
+  margin-top: 20px;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  gap: 15px;
+  max-width: 100%;
 }
 
 .graph-box2 .box{
   background-color: var(--background);
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .user-account,
-.appointment-records, .total-patients{
+.appointment-records, .total-patients, .total-records{
   padding: 10px;
   display: grid;
   grid-template-columns: 50px auto;
@@ -109,25 +105,34 @@
 }
 
 .user-account:hover,
-.appointment-records:hover, .total-patients:hover{
+.appointment-records:hover, .total-patients:hover, .total-records:hover{
   background-color: var(--main-color);
   transition: all ease 0.5s;
 }
 
 .user-account i, 
 .appointment-records i, 
-.total-patients i{
+.total-patients i,
+.total-records i{
   grid-row: 1 / 3;
   align-self: center;
   justify-self: center;
-  font-size: 30px;
+  font-size: 23px;
 }
 
 .user-account h2, .user-account p,
 .appointment-records h2, .appointment-records p,
-.total-patients p, .total-patients h2{
+.total-patients p, .total-patients h2,
+.total-records p, .total-records h2{
   place-self: center;
   cursor: default;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.user-account h2, .appointment-records h2, .total-patients h2, .total-records h2{
+  font-size: 20px;
+  color: var(--other);
 }
 
 

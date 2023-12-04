@@ -52,8 +52,6 @@ main{
 .box-view{
     display: grid;
     background-color: var(--dark-light-main);
-    height: auto;
-    width: 60%;
     padding: 10px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -62,8 +60,8 @@ main{
 
 #btn-back{
     position: absolute;
-    top: 30px;
-    left: 20px;
+    top: 32px;
+    left: 13px;
     cursor: pointer;
     transition: all ease 0.5s;
     border-radius: 10px;
@@ -74,6 +72,7 @@ main{
     padding: 8px 25px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-weight: 600;
+    font-size: 9px;
 }
 #btn-back:hover{
     background-color: var(--light-second);
@@ -98,14 +97,15 @@ form{
 }
 
 .input input, textarea, select{
-    padding: 5px 7px;
+    padding: 0px 8px;
     border-radius: 10px;
     outline: none;
     border: 1px solid var(--light-second);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     background-color: var(--light-main);
     color: black;
+    height: 2.2rem;
 }
 
 #not-d{
@@ -114,29 +114,35 @@ form{
 
 .input label{
     align-self: end;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 15px;
+    margin-left: 2px;
 }
 
 .input textarea{
     resize: none;
+    height: auto;
+    padding-top: 5px;
 }
 
 .btn{
     display: grid;
-    place-items: end;
-    margin-right: 10px;
+    width: 100%;
+    grid-column: span 2;
 }
 
 
 .btn #btn-save{
-    padding: 8px 15px;
-    margin-top: 15px;
+    place-self: center;
+    width: 40%;
+    padding: 6px;
+    margin: 19px 0px 5px 0px;
     border-radius: 10px;
     border: none;
     background-color: var(--secondary-color);
     color: var(--text-color);
     font-weight: 700;
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 2px;
     cursor: pointer;
     transition: all ease 0.5s;

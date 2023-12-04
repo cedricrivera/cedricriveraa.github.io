@@ -33,7 +33,7 @@
                 },
                 title: {
                 display: true,
-                text: 'Distribution of Male and Female Patients',
+                text: 'Distribution of Male and Female',
                     font: {
                         size: '20px'
                     }

@@ -42,7 +42,7 @@
         data: {
             labels: ['Dog', 'Cat', 'Stray Dog', 'Stray Cat'],
             datasets: [{
-                label: 'Exposure Count',
+                label: ['Exposure Count'],
                 data: [totalDogs, totalCats, totalStrayDogs, totalStrayCats],
                 backgroundColor: ['#0081B4', '#FAD3E7', '#EFA3C8', '#F4D9E7'],
                 borderColor: ['#0081B4', '#FAD3E7', '#EFA3C8', '#F4D9E7'],
@@ -60,8 +60,12 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Distribution of Patient Records by Source of Exposure'
+                    text: 'Distribution of Patient Records by Source of Exposure',
+                    font: {
+                        size: '20px',
+                    }
                 }
+                
             }
         }
     });

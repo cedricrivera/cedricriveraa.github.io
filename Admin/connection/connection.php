@@ -1,7 +1,7 @@
 <?php
 
-$serverName = "DESKTOP-4QIC5PT";
-$database = "ABTC_DB1";
+$serverName = "DESKTOP-1G6FINM\SQLEXPRESS";
+$database = "DB_ABTC";
 $uid = "";
 $pass = "";
 

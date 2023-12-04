@@ -41,8 +41,23 @@
                             </div>
                             <div class="form-label">
                                 <label for="p-expo">Place of Exposure</label>
-                                <input type="text" name="p-expo" id="p-expo" placeholder="Enter Place of Exposure"
-                                    value="<?php echo $row['place_expo'] ?>">
+                                <select name="p-expo" id="p-expo">
+                                    <option value="Victoria" <?php echo($row['place_expo'] == "Victoria")? 'selected' : ''; ?>>Victoria</option>
+                                    <option value="Tunasan" <?php echo($row['place_expo'] == "Tunasan")? 'selected' : ''; ?>>Tunasan</option>
+                                    <option value="Poblacion" <?php echo($row['place_expo'] == "Poblacion")? 'selected' : ''; ?>>Poblacion</option>
+                                    <option value="Southville" <?php echo($row['place_expo'] == "Southville")? 'selected' : ''; ?>>Southville</option>
+                                    <option value="Putatan Main" <?php echo($row['place_expo'] == "Putatan Main")? 'selected' : ''; ?>>Putatan Main</option>
+                                    <option value="Putatan Annex" <?php echo($row['place_expo'] == "Putatan Annex")? 'selected' : ''; ?>>Putatan Annex</option>
+                                    <option value="Bayanan Main" <?php echo($row['place_expo'] == "Bayanan Main")? 'selected' : ''; ?>>Bayanan Main</option>
+                                    <option value="Bayanan Annex" <?php echo($row['place_expo'] == "Bayanan Annex")? 'selected' : ''; ?>>Bayanan Annex</option>
+                                    <option value="Alabang" <?php echo($row['place_expo'] == "Alabang")? 'selected' : ''; ?>>Alabang</option>
+                                    <option value="Ayala" <?php echo($row['place_expo'] == "Ayala")? 'selected' : ''; ?>>Ayala</option>
+                                    <option value="Cupang" <?php echo($row['place_expo'] == "Cupang")? 'selected' : ''; ?>>Cupang</option>
+                                    <option value="Buli" <?php echo($row['place_expo'] == "Buli")? 'selected' : ''; ?>>Buli</option>
+                                    <option value="Sucat" <?php echo($row['place_expo'] == "Sucat")? 'selected' : ''; ?>>Sucat</option>
+                                    <option value="Bagong Silang" <?php echo($row['place_expo'] == "Bagong Silang")? 'selected' : ''; ?>>Bagong Silang</option>
+                                    <option value="Sitio Sto. Niño" <?php echo($row['place_expo'] == "Sitio Sto. Niño")? 'selected' : ''; ?>>Sitio Sto. Niño</option>
+                                </select>
                             </div>
 
                             <div class="form-label">
@@ -53,8 +68,12 @@
 
                             <div class="form-label">
                                 <label for="s-expo">Source of Exposure</label>
-                                <input type="text" name="s-expo" id="s-expo" placeholder="Enter Source of Exposure"
-                                    value="<?php echo $row['source_expo'] ?>">
+                                <select name="s-expo" id="">
+                                    <option value="Stray Dog" <?php echo ($row['source_expo'] == "Stray Dog")? 'selected' : ''; ?>>Stray Dog</option>
+                                    <option value="Dog" <?php echo ($row['source_expo'] == "Dog")? 'selected' : ''; ?>>Dog</option>
+                                    <option value="Stray Cat" <?php echo ($row['source_expo'] == "Stray Cat")? 'selected' : ''; ?>>Stray Cat</option>
+                                    <option value="Cat" <?php echo ($row['source_expo'] == "Cat")? 'selected' : ''; ?>>Cat</option>
+                                </select>
                             </div>
 
                             <div class="form-label">
@@ -132,7 +151,7 @@
                                 <p><span>*</span>Proceed with day 28/30 if dog is not alive after 14 days of observation</p>
                             </div>
 
-                            <div class="form-label">
+                            <div class="form-label" id="status">
                                 <label for="status-animal">Status Animal after D14 of Exposure</label>
                                 <input type="text" name="status-animal" id="status-animal"
                                     value="<?php echo $row['Status'] ?>">
@@ -143,7 +162,7 @@
                                 <textarea name="remarks" id="remarks" cols="40" rows="3"><?php echo $row['remark'] ?></textarea>
                             </div>
 
-                            <div class="form-label">
+                            <div class="form-label" id="doctor">
                                 <label for="doc">Select Doctor</label>
                                 <select name="doc" id="doc" required>
                                     <option value="doc1">Doc 1</option>

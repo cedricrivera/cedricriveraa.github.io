@@ -45,7 +45,7 @@ main{
   width: 100%;
   overflow: hidden;
   padding: 10px;
-  grid-auto-rows: 7rem auto;
+  grid-auto-rows: 5rem auto;
 }
 
 .p-1{
@@ -53,7 +53,7 @@ main{
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 10px;
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -61,12 +61,13 @@ main{
 
 .p-1 h2{
     align-self: center;
+    font-size: 18px;
 }
 
 .p-1 h3{
     justify-self: end;
     align-self: center;
-    font-size: 22px;
+    font-size: 18px;
     letter-spacing: 3px;
 }
 .row2{
@@ -86,6 +87,8 @@ main{
     width: 100%;
     text-align: center;
     border-bottom: 2px solid var(--other);
+    font-size: 27px;
+    margin-top: 10px;
 }
 
 .input-group{
@@ -100,6 +103,11 @@ main{
     display: grid;
 }
 
+#status, #doctor{
+    display: grid;
+    align-content: start;
+}
+
 .form-label label{
     font-size: 1rem;
     font-weight: 600;
@@ -107,16 +115,23 @@ main{
 }
 
 .form-label input, select, textarea{
-    padding: 10px;
-    font-size: 1rem;
+    height: 2.3rem;
+    padding: 0px 10px;
+    font-size: 13px;
     border-radius: 10px;
     outline: none;
     border: 1px solid var(--light-primary);
     font-weight: 500;
 }
 
+.form-label p{
+    font-size: 12px;
+}
+
 textarea{
     resize: none;
+    height: auto;
+    padding-top: 5px;
 }
 
 .input-group2{
@@ -134,8 +149,8 @@ h1{
 }
 
 #vs-btn{
-    padding: 5px 25px;
-    margin: 10px 0px 15px 5px;
+    padding: 0px 28px;
+    margin: 10px 10px;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -145,8 +160,17 @@ h1{
     letter-spacing: 3px;
     cursor: pointer;
     transition: all ease 0.5s;
-    font-size: 15px;
+    font-size: 12px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    height: 2rem;
+}
+
+#v-btn{
+    grid-column: span 2;
+    display: grid;
+    justify-items: end;
+    align-items: center;
+    height: 100%;
 }
 
 #vs-btn:hover{
@@ -156,16 +180,14 @@ h1{
 
 #back{
     position: absolute;
-    top: 1px;
+    top: 6px;
     left: 15px;
-    cursor: pointer;
-    transition: all ease 0.5s;
     border-radius: 10px;
     outline: none;
     border: none;
     background-color: var(--primary);
     color: var(--text-color);
-    padding: 8px 25px;
+    padding: 5px 25px;
     letter-spacing: 1px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     cursor: pointer;

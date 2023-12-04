@@ -49,17 +49,14 @@
 .manage-box{
     display: grid;
     width: 100%;
-    height: 97vh;
-    grid-auto-flow: column;
+    height: 100vh;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 80px auto 80px 1fr;
+    grid-template-rows: 70px auto 60px 1fr;
     grid-template-areas: 'p-t p-t'
-                         'b-f b-f'
-                         'srch btn'
-                         'b-t b-t';
-    padding: 0px 10px 0px 10px;
-    margin-top: 10px;
-
+        'b-f b-f'
+        'srch btn'
+        'b-t b-t';
+    padding: 10px;
 }
 
 .title{
@@ -68,34 +65,40 @@
 }
 
 .title h1{
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .box-form{
     grid-area: b-f;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     border-radius: 10px;
-    height: 16rem;
+    height: 14rem;
 }
 
 .box-form form{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 4rem);
-    height: 100%;
+    grid-template-rows: repeat(3, 53px);
     width: 100%;
     padding: 12px;
     gap: 10px;
+    height: 100%;
 }
 
 .box-form form input, select, textarea{
-    padding: 10px;
+    padding: 0px 10px;
     outline: none;
     border-radius: 10px;
     border: 1px solid var(--other);
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
+    height: 2.2rem;
+}
+
+textarea{
+    height: auto;
+    padding-top: 5px;
 }
 
 select{
@@ -114,6 +117,7 @@ select{
 .box-form form label{
     margin-left: 3px;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .pwd{
@@ -148,13 +152,12 @@ select{
 .btn{
     position: absolute;
     right: 20px;
-    bottom: 25.5rem;
+    bottom: 15.7rem;
 }
 
 #Add_User{
     background-color: var(--primary);
-    transition: all ease 0.5s;
-    padding: 10px;
+    padding: 0px 10px;
     border-radius: 10px;
     border: none;
     color: var(--text-color);
@@ -164,6 +167,8 @@ select{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     font-weight: 600;
     margin-right: 10px;
+    height: 2.3rem;
+    font-size: 12px;
 }
 
 #Add_User:hover{
@@ -172,12 +177,13 @@ select{
 }
 
 #search{
-    padding: 10px;
+    padding: 0px 10px;
     width: 15rem;
     border: none;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     outline: none;
+    height: 2rem;
 }
 
 #search:focus{
@@ -211,16 +217,17 @@ table{
 
 td, th{
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid var(--other);
-
-   
+    font-size: 14px;
+    font-weight: 500;
 }
 th{
     position: sticky;
     top: 0;
     background-color: var(--main-color);
     color: var(--other-color);
+    font-weight: 700;
 }
 
 td a{
@@ -230,6 +237,7 @@ td a{
     transition: all ease 0.5s;
     font-weight: 700;
     letter-spacing: 2px;
+    font-size: 15px;
 }
 
 td a:hover{
