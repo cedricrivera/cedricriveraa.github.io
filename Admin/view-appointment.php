@@ -48,7 +48,7 @@
                     </div>
                     <div class="input">
                         <label for="">Remarks</label>
-                        <input type="text" name="remarks" id="not-d" value="<?php echo $row['remarks'] ?>">
+                        <textarea name="remarks" id="not-d" cols="30" rows="3"><?php echo $row['remarks'] ?></textarea>
                     </div>
                     <div class="input">
                         <label for="">Status</label>

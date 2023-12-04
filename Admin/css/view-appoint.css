@@ -94,6 +94,7 @@ form{
 
 .input{
     display: grid;
+    height: fit-content;
 }
 
 .input input, textarea, select{
