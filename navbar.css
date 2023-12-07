@@ -18,12 +18,13 @@
     position: fixed;
     height: 70px;
     width: 100%;
-    background-color: var(--other);
+    background-color: rgba(0, 0, 0, 0.50);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     display: flex;
     justify-content: end;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 2% 6%;
     z-index: 1000;
 }
 
@@ -62,7 +63,7 @@
 #logo{
     height: 60px;
     width: 60px;
-    margin: 6px 0px 0px 10px;
+    margin-top: 6px;
 }
 
 #btn-log{
