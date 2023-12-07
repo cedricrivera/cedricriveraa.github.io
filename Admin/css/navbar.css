@@ -1,7 +1,7 @@
 .sidebar {
   position: fixed;
   height: 100%;
-  width: 260px;
+  width: 220px;
   background: var(--light-main);
   padding: 15px;
   display: grid;
@@ -21,9 +21,13 @@
 }
 
 .logo p{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   align-self: center;
+}
+
+.logo h2{
+  font-size: 20px;
 }
 
 .sidebar a {
@@ -44,61 +48,66 @@
   display: none;
 }
 
-  .menu-content{
+.menu-content{
     display: grid;
     height: auto;
     align-content: space-between;
-  }
-  ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 20px;
-    gap: 15px;
-  }
-  
-  .item{
-    list-style: none;
-  }
+}
 
-  .item a{
-    position: relative;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 10px;
-    transition: all ease 0.5s;
-    border: 2px solid var(--secondary-color);
-    font-size: 14px;
-    text-transform: uppercase;
-    height: 3.3rem;
-  }
-  
-  .item a:hover {
-    background-color: var(--main-color);
-    transition: all ease 0.5s;
-  }
-  
-  #logout{
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    transition: all ease 0.5s;
-    justify-self: center;
-    /* margin-bottom: 10px; */
-    width: 80%;
-    align-self: center;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
-  #logout:hover{
-    background-color: var(--light-second);
-    transition: all ease 0.5s;
-  }
+ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.sidebar .menu-content ul li a.active {
+  background-color: var(--main-color);
+}
+
+.item{
+  list-style: none;
+}
+
+.item a{
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  transition: all ease 0.5s;
+  border: 2px solid var(--secondary-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 3.3rem;
+}
+
+.item a:hover {
+  background-color: var(--main-color);
+  transition: all ease 0.5s;
+}
+
+#logout{
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: all ease 0.5s;
+  justify-self: center;
+  /* margin-bottom: 10px; */
+  width: 80%;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+#logout:hover{
+  background-color: var(--light-second);
+  transition: all ease 0.5s;
+}
