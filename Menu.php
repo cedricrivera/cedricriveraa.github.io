@@ -49,9 +49,8 @@ include "Admin/connection/connection.php"
 
     <div class="main-container">
         <section id="Home">
-            <div data-aos="fade-right">
-                <img src="Image\Welcome.svg" alt="">
-            </div>
+            <img src="Image\Welcome.svg" alt="">
+            
                     
             <div class="left">
                 <h1>ANIMAL BITE CENTER</h1>

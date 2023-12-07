@@ -1,7 +1,7 @@
 var input1 = document.querySelector('#password')
 var show = document.querySelector('#open_pass')
 var hide = document.querySelector('#close_pass')
- 
+
 
 function ShowHidepass(){
     if(input1.type === 'password'){
@@ -21,6 +21,8 @@ $(document).ready(function() {
     $("td:contains('PENDING')").css("background-color", "yellow");
     $("td:contains('DECLINED')").css("background-color", "red").css("color", "White");
 });
+
+
 
 
 

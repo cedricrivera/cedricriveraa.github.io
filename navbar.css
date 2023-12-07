@@ -15,27 +15,18 @@
   }
 
 .navbar{
-   background-color: var(--secondary-color);
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background-color: var(--other);
     display: flex;
-    height: 80px;
     justify-content: end;
-    position: sticky;
-    top: 0; /* Stick the navbar to the top of the viewport */
-    z-index: 100; /* Ensure the navbar is above other content */
-    color: #fff; /* Replace with your desired text color */
-}
-
-.navbar {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--other);
-    color: #fff;
     padding: 0px 20px;
-    height: 65px;
+    z-index: 1000;
 }
 
-  
 .nav-links {
     display: flex;
     gap: 10px;
@@ -52,7 +43,6 @@
     text-decoration: none;
     color: #fff;
     padding: 9px 11px;
-    background-color: var(--light-second);
     font-weight: 500;
     letter-spacing: 2px;
     border-radius: 10px;
@@ -61,9 +51,13 @@
 }
 
 .nav-links a:hover{
-    transition: all ease 0.5s;
     background-color: var(--secondary-color);
 }
+
+.navbar .nav-links a.active {
+    background-color: var(--secondary-color);
+}
+  
 
 #logo{
     height: 60px;
