@@ -286,7 +286,7 @@ form textarea{
     #Appointment .status{
         grid-area: status;
         height: 100%;
-        margin-top: 35px;
+        margin-top: 20px;
         width: 100%;
         overflow: auto;
         padding: 0px;

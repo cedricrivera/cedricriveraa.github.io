@@ -5,6 +5,7 @@ footer{
 }
 .main-content{
     display: flex;
+    padding: 20px;
 }
 .main-content .box{
     flex-basis: 50%;
@@ -38,7 +39,8 @@ footer{
     top: -10px;
 }
 .left .content p{
-    text-align: justify;
+    text-align: start;
+    font-size: 16px;
 }
 .left .content .social{
     display: flex;
@@ -47,96 +49,96 @@ footer{
     justify-content: center;
 }
 .left .content .social a{
+    color: white;
     padding: 8px;
 }
 .left .content .social a span{
-height: 40px;
-width: 40px;
-background: #1a1a1a;
-line-height: 40px;
-text-align: center;
-font-size: 18px;
-border-radius: 5px;
-transition: 0.3s;
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 .left .content .social a span:hover{
-background: #f12020;
+    background: #f12020;
 }
 .center .content .fas{
-font-size: 1.4375rem;
-background: #1a1a1a;
-height: 45px;
-width: 45px;
-line-height: 45px;
-text-align: center;
-border-radius: 50%;
-transition: 0.3s;
-cursor: pointer;
+    font-size: 1.2rem;
+    background: #1a1a1a;
+    color: var(--text-color);
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .center .content .fas:hover{
-background: #f12020;
+    background: #f12020;
 }
 .center .content .text{
-font-size: 1.0625rem;
-font-weight: 500;
-padding-left: 10px;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+    color: var(--text-color);
 }
 .center .content .phone{
-margin: 15px 0;
+    margin: 15px 0;
 }
 .right form .text{
-font-size: 1.0625rem;
-margin-bottom: 2px;
-color: #656565;
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
 }
 .right form .msg{
-margin-top: 10px;
+    margin-top: 10px;
 }
 .right form input, .right form textarea{
-width: 100%;
-font-size: 1.0625rem;
-background: #151515;
-padding-left: 10px;
-border: 1px solid #222222;
+    width: 100%;
+    font-size: 1rem;
+    background: var(--other);
+    padding-left: 10px;
+    border: 1px solid #222222;
+    color: var(--text-color);
+    height: 2rem;
+}
+
+.right form textarea{
+    resize: none;
+    height: auto;
+    padding-top: 5px;
 }
 .right form input:focus,
 .right form textarea:focus{
-outline-color: #3498db;
+    outline-color: #3498db;
 }
 .right form input{
-height: 35px;
+    height: 35px;
 }
 .right form .btn{
-margin-top: 10px;
+    margin-top: 15px;
 }
 .right form .btn button{
-height: 40px;
-width: 100%;
-border: none;
-outline: none;
-background: #f12020;
-font-size: 1.0625rem;
-font-weight: 500;
-cursor: pointer;
-transition: .3s;
+    height: 2.2rem;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: var(--main-color);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 .right form .btn button:hover{
-background: #000;
-}
-.bottom center{
-padding: 5px;
-font-size: 0.9375rem;
-background: #151515;
-}
-.bottom center span{
-color: #656565;
-}
-.bottom center a{
-color: #f12020;
-text-decoration: none;
-}
-.bottom center a:hover{
-text-decoration: underline;
+    background: var(--light-main);
+    transition: all ease 0.5s;
 }
 @media screen and (max-width: 900px) {
 footer{
