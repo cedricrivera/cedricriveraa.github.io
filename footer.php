@@ -19,15 +19,15 @@
           <div class="content">
             <div class="place">
               <span class="fas fa-map-marker-alt"></span>
-              <span class="text">Birendranagar, Surkhet</span>
+              <span class="text">Liwasan ng Bayani, Brgy Alabang, Muntinlupa City</span>
             </div>
             <div class="phone">
               <span class="fas fa-phone-alt"></span>
-              <span class="text">+089-765432100</span>
+              <span class="text">+63-9554764782</span>
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
-              <span class="text">abc@example.com</span>
+              <span class="text">abc_alabang@gmail.com</span>
             </div>
           </div>
         </div>

@@ -20,7 +20,8 @@ footer{
 .box .content{
     margin: 20px 0 0 0;
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 .box .content:before{
     position: absolute;
@@ -77,11 +78,20 @@ footer{
     transition: 0.3s;
     cursor: pointer;
 }
+.center .place, 
+.center .phone, 
+.center .email{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    justify-content: start;
+}
 .center .content .fas:hover{
     background: #f12020;
 }
 .center .content .text{
-    font-size: 1.0625rem;
+    font-size: 1rem;
     font-weight: 500;
     padding-left: 10px;
     color: var(--text-color);
