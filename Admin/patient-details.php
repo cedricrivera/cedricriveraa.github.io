@@ -148,8 +148,8 @@
                             <br>
                                 <label for="washing-bite">Washing of Bite Wound</label>
                                 <select name="washing-bite" id="gender" required>
-                                    <option value="I">Yes</option>
-                                    <option value="II">No</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                 </select>
                                 
                                 <label for="d-rig">Date RIG Given</label>

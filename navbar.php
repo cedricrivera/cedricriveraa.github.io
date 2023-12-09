@@ -1,6 +1,7 @@
-<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="./user-css/navbar.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <nav class="navbar">
+
     <div class="logo">
       <img src="Image/Logo2.png" alt="" srcset="" id="logo">
     </div>

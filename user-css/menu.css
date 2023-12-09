@@ -16,6 +16,10 @@ html{
     --secondary-color: #0081B4;
     --light-second: #01aaed;
     --other: #2c3e50;
+    --success: #198754;
+    --light-success: #0dd157;
+    --danger: #DC3545;
+    --light-danger:  #f94658;
   }
 
 .main-container{
@@ -39,7 +43,7 @@ section{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'left right';
     padding: 20px;
-    background-image: linear-gradient(rgba(7,9,30,0.7),rgba(7,9,30,0.7)),url(Image/Animal-Bites.webp);
+    background-image: linear-gradient(rgba(7,9,30,0.7),rgba(7,9,30,0.7)),url(../Image/Animal-Bites.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -83,11 +87,12 @@ img{
 
 #Records{
     grid-template-rows: 40px auto;
-    background-image: linear-gradient(rgba(7,9,30,0.7),rgba(7,9,30,0.7)),url(Image/Records.jpg);
+    background-image: linear-gradient(rgba(7,9,30,0.7),rgba(7,9,30,0.7)),url(../Image/Records.jpg);
     padding-top: 100px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 h1{
@@ -129,7 +134,7 @@ td {
     padding: 8px;
     font-size: 12px; 
     border: 1px solid #ccc;
-    color: var(--text-color);
+    background-color: #f2f2f2;
 }
 
 tr:nth-child(even) {
@@ -149,6 +154,16 @@ td a:hover{
     transition: all ease 0.5s;
 }
 
+#show-modal{
+    font-size: 15px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    color: var(--light-second);
+}
+#show-modal:hover{
+    scale: 1.2;
+    transition: all ease 0.5s;
+}
 /* APPOINTMENT */
 #Appointment{
     grid-template-columns: 1fr 2fr;
@@ -157,7 +172,7 @@ td a:hover{
         'form status';
     width: 100%;
     padding: 85px 10px 26px 10px;
-    background-image: linear-gradient(rgba(7,9,30,0.7),rgba(7,9,30,0.7)),url(Image/Appointment.jpg);
+    background-image: linear-gradient(rgba(7,9,30,0.7),rgba(7,9,30,0.7)),url(../Image/Appointment.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -308,4 +323,101 @@ form textarea{
         grid-area: bot;
     }
 
+}
+
+/* SHOW MODAL */
+.modal{
+    padding: 1em;
+    max-width: 50%;
+
+    & > *{
+        margin: 0 0 0.2rem 0;
+    }
+}
+
+.modal{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 32rem;
+    border-radius: 20px;
+    border: 0;
+    background-color: #eef9ff;
+    overflow: auto;
+}
+
+.modal-content{
+    display: grid;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.modal-content h2{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--other);
+    font-size: 20px;
+}
+
+#close-button{
+    transition: all ease 0.5s;
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    font-size: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.modal-content form{
+    display: grid;
+    gap: 2px;
+    padding: 10px;
+}
+
+.modal-content form label{
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-content form input, select, textarea{
+    padding: 0px 8px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #11101d;
+    font-size: 13px;
+    font-weight: 500;
+    height: 2.5rem;
+}
+
+.modal-content form input:focus, select:focus, textarea:focus{
+    border: 1px solid var(--secondary-color);
+}
+
+.modal-content form input:hover, select:hover, textarea:hover{
+    border: 1px solid var(--secondary-color);
+
+}
+
+span{
+    color: var(--danger);
+}
+
+#modal-button{
+    transition: all ease 0.5s;
+    width: 40%;
+    justify-self: center;
+    margin-top: 20px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+#modal-button:hover{
+    background-color: var(--light-second);
 }

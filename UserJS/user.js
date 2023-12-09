@@ -1,7 +1,6 @@
-var input1 = document.querySelector('#password')
-var show = document.querySelector('#open_pass')
-var hide = document.querySelector('#close_pass')
-
+var input1 = document.querySelector('#password');
+var show = document.querySelector('#open_pass');
+var hide = document.querySelector('#close_pass');
 
 function ShowHidepass(){
     if(input1.type === 'password'){
@@ -21,6 +20,29 @@ $(document).ready(function() {
     $("td:contains('PENDING')").css("background-color", "yellow");
     $("td:contains('DECLINED')").css("background-color", "red").css("color", "White");
 });
+
+const records = document.querySelector('#show-modal');
+
+records.addEventListener('click', () => {
+    window.location.href = `user-records.php?pid=`;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var viewButtons = document.querySelectorAll('#show-modal');
+    viewButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var patientID = button.getAttribute('data-patientID');
+            if (patientID) {
+                window.location.href="user-records.php?pid=" + patientID;
+            }
+        });
+    });
+});
+
+
+
+
+
 
 
 

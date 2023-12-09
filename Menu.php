@@ -3,7 +3,7 @@
         session_start();
     }
 $email = $_SESSION['Email'];
-include "Admin/connection/connection.php"
+include "Admin/connection/connection.php";
 
 ?>
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ include "Admin/connection/connection.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="user-css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -65,46 +65,50 @@ include "Admin/connection/connection.php"
             </div>
             
             <div class="table">
-            <div data-aos="zoom-in-up">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Remarks</th>
-                            <th>Date Consulted</th>
-                        </tr>
-                    </thead>
-                    <?php 
-                        $query = "SELECT patient_records.*, patient_details.email
-                                  FROM patient_records
-                                  LEFT JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-                                  WHERE patient_details.email = '$email'";
-                        $stmt = $conn->prepare($query);
-                        $stmt->execute();
+                <div data-aos="zoom-in-up">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Remarks</th>
+                                <th>Date Consulted</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <?php 
+                            $query = "SELECT patient_records.*, patient_details.email
+                                    FROM patient_records
+                                    LEFT JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
+                                    WHERE patient_details.email = '$email'";
+                            $stmt = $conn->prepare($query);
+                            $stmt->execute();
 
-                            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+                                $result = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-                            if ($result) {
-                                foreach ($result as $row) {
-                            ?>
+                                if ($result) {
+                                    foreach ($result as $row) {
+                                    ?>
+                                        <tr>
+                                            <td><?= $row->patientID; ?></td>
+                                            <td><?= $row->remark; ?></td>
+                                            <td><?= $row->Date_Added; ?></td>
+                                            <td>
+                                                <i class="fa-solid fa-eye" id="show-modal" data-patientID="<?= $row->patientID; ?>"></i>
+                                            </td>
+                                        </tr>
+                                <?php
+                                        }
+                                } else {
+                                ?>
                                     <tr>
-                                        <td><?= $row->patientID; ?></td>
-                                        <td><?= $row->remark; ?></td>
-                                        <td><?= $row->Date_Added; ?></td>
+                                        <td colspan="3"> No Records </td>
                                     </tr>
-                            <?php
-                                    }
-                            } else {
-                            ?>
-                                <tr>
-                                    <td colspan="3"> No Records </td>
-                                </tr>
-                            <?php
-                            }
-                    ?>
-                </table>
+                                <?php
+                                }
+                        ?>
+                    </table>
+                </div>
             </div>
-        </div>
         </section>
 
         <section id="Appointment">
