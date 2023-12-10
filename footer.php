@@ -7,10 +7,10 @@
           <div class="content">
             <p>CodinNepal is a YouTube channel where you can learn web designing, web development, ui/ux designing, html css tutorial, hover animation and effects, javascript and jquery tutorial and related so on.</p>
             <div class="social">
-              <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+              <a href="https://www.facebook.com/profile.php?id=100084709159245"><span class="fab fa-facebook-f"></span></a>
               <a href="#"><span class="fab fa-twitter"></span></a>
-              <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
-              <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+              <a href="#"><span class="fab fa-instagram"></span></a>
+              <a href="#"><span class="fab fa-youtube"></span></a>
             </div>
           </div>
         </div>

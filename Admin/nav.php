@@ -42,7 +42,7 @@
         </li>
 
         <li class="item">
-          <a href="reports.php">Reports</a>
+          <a href="function.php">Reports</a>
         </li>
 
         <li class="item">

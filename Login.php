@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="./user-css/login.css">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
@@ -32,8 +32,6 @@
                                     <i id="open_pass" class="fa-solid fa-eye"></i>
                                     <i id="close_pass" class="fa-solid fa-eye-slash"></i>
                                 </span>
-                                
-
                             </div>
                             <div class="Register">
                                 <p>You don't have an account? <a href="Register.php">Register Here</a></p>
@@ -53,9 +51,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         <script src='UserJS/user.js'></script>
-
         <?php include 'loginchk.php'; ?>
-       
     </body>
 </html>
 

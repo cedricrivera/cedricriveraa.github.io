@@ -64,7 +64,7 @@ footer{
     transition: 0.3s;
 }
 .left .content .social a span:hover{
-    background: #f12020;
+    background: var(--other);
 }
 .center .content .fas{
     font-size: 1.2rem;
@@ -88,7 +88,7 @@ footer{
     justify-content: start;
 }
 .center .content .fas:hover{
-    background: #f12020;
+    background: var(--other);
 }
 .center .content .text{
     font-size: 1rem;
