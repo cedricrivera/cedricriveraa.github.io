@@ -109,9 +109,6 @@
                     <h2>Add Patient Record</h2>
                         <form action="" method="post">
 
-                            <label for="PatientID">Patient ID no.</label>
-                            <input type="text" name="" id="" disabled>
-
                             <label for="name">Lastname</label>
                             <input type="text" name="lname" id="" placeholder="Enter your Lastname" required>
 

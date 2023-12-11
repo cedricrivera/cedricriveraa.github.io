@@ -77,7 +77,7 @@
                                                 <td><?php echo $row['remark'] ?></td>
                                                 <td><?php echo $row['Date_Added'] ?></td>
                                                 <td>
-                                                    <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-del" data-patientdetid="<?php echo $row['patient_detID'] ?>"></i>
+                                                    <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-del" data-patientrecordID="<?php echo $row['patientID'] ?>" data-patientdetID="<?php echo $row['patient_detID'] ?>"></i>
                                                 </td>
                                             </tr>
                                             <?php
@@ -110,17 +110,17 @@
                                 <option value="Tunasan">Tunasa</option>
                                 <option value="Poblacion">Poblacion</option>
                                 <option value="Southville">Southville</option>
-                                <option value="Putatan_Main">Putatan Main</option>
-                                <option value="Putatan_Annex">Putatan Annex</option>
-                                <option value="Bayanan_Main">Bayanan Main</option>
-                                <option value="Bayanan_Annex">Bayanan Annex</option>
+                                <option value="Putatan Main">Putatan Main</option>
+                                <option value="Putatan Annex">Putatan Annex</option>
+                                <option value="Bayanan Main">Bayanan Main</option>
+                                <option value="Bayanan Annex">Bayanan Annex</option>
                                 <option value="Alabang">Alabang</option>
                                 <option value="Ayala">Ayala</option>
                                 <option value="Cupang">Cupang</option>
                                 <option value="Buli">Buli</option>
                                 <option value="Sucat">Sucat</option>
-                                <option value="Bagong_Silang">Bagong Silang</option>
-                                <option value="Sitio_Sto._Niño">Sitio Sto. Niño</option>
+                                <option value="Bagong Silang">Bagong Silang</option>
+                                <option value="Sitio Sto. Niño">Sitio Sto. Niño</option>
                             </select>
 
                             <label for="t-expo">Type of Exposure</label>
@@ -228,9 +228,9 @@
                     cancelButtonText: 'No',
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        const vacID = btn.getAttribute('data-vacid');
-                        const patient_detID = btn.getAttribute('data-patientdetid');
-                        window.location.href = `php-records/del-records.php?deletepid=${patient_detID}`;
+                        const patientrecordID = btn.getAttribute('data-patientrecordID');
+                        const patientdetID = btn.getAttribute('data-patientdetID');
+                        window.location.href = `php-records/del-records.php?deletepid=${patientrecordID}&patientdetID=${patientdetID}`;
                     }
                 });
                
