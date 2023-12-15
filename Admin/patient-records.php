@@ -19,19 +19,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#search").on("keyup", function(){
-                    var value =$(this).val().toLowerCase();
-                    $("#mytable tr").filter(function(){
-                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
+    <script>
+        $(document).ready(function(){
+            $("#search").on("keyup", function(){
+                var value = $(this).val().toLowerCase();
+                $("#mytable tr").filter(function(){
+                    $(this).toggle($(this).find('td:nth-child(2)').text().toLowerCase().indexOf(value) > -1)
                 });
             });
-        </script>
+        });
+    </script>
+   
     <title>Patient Records</title>
 </head>
 <body>
+
 
     <?php include "nav.php";?>
 
@@ -118,8 +120,9 @@
                             <label for="name">Middle Name</label>
                             <input type="text" name="mname" id="" placeholder="Enter your Middle Name" required>
                             
-                            <label for="name">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                            <label>Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" onInput="checkEmail()" required>
+                            <span id="check_email"></span>
 
                             <label for="name">Address</label>
                             <input type="text" name="address" id="" placeholder="Enter your Address" required>
@@ -236,7 +239,7 @@
                                     <option value="doc2">Nurse 1</option>
                                     <option value="doc2">Nurse 1</option>
                                 </select>
-                            <button type="submit" name="save" id="modal-button">Save</button>
+                            <input type="submit" name="save" id="modal-button" value="Save">
                         </form>
                         <i class="fa-solid fa-rectangle-xmark" id="close-button"></i>
                     </div>
@@ -244,8 +247,23 @@
             </div>
         </div>
     </main>
-    <script src="js/patient-records.js"></script>
     <?php include 'php-records/add-p.php'?>
     <?php include 'php/message.php' ?>
+    <script src="js/patient-records.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function checkEmail() {
+            jQuery.ajax({
+            url: "checkEmail.php",
+            data:'email='+$("#email").val(),
+            type: "POST",
+            success:function(data){
+                $("#check_email").html(data);
+            },
+            error:function (){}
+            });
+        }
+    </script>
+    
 </body>
 </html>

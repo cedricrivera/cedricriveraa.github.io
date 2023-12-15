@@ -110,6 +110,12 @@
     transition: all ease 0.5s;
 }
 
+#modal-button:disabled{
+    pointer-events: none;
+    background-color: var(--danger);
+    opacity: 0.5;
+}
+
 .btn button:hover{
     background-color: var(--light-second);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -119,7 +125,7 @@
     grid-area: t;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     padding: 10px;
-    height: 29rem;
+    max-height: 28rem;
     border-radius: 10px;
 }
 
@@ -254,9 +260,16 @@ th{
 
 }
 
+#check_email{
+    font-size: 12px;
+    margin: -5px 0 4px 8px;
+    font-weight: 600;
+}
+
 span{
     color: var(--danger);
 }
+
 
 #modal-button{
     transition: all ease 0.5s;
