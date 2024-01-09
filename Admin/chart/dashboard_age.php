@@ -56,4 +56,3 @@ $values_js = json_encode($values);
         }
     });
 </script>
-

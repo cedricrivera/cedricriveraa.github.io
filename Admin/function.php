@@ -67,6 +67,7 @@ $downloadLink = 'exported_data.xlsx';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="css/reports.css">
     <title>Reports</title>
 </head>
@@ -74,44 +75,215 @@ $downloadLink = 'exported_data.xlsx';
 <?php include 'nav.php' ?>
 <main>
     <div class="box-reports">
-        <div class="dlbtn">
-            <h1>Reports</h1>
-            <a href="<?php echo $downloadLink; ?>" download="exported_data.xlsx">Download Excel</a>
+        <h1>Reports</h1>
+        <div class="col2">
+            <div class="dropdown">
+                <form method="post" action="">
+                    <label for="month">Choose Month:</label>
+                    <select name="month" id="month">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August </option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <button id="btnmonth" type="submit" name="selectmonth">Submit</button>
+                </form>
+            </div>
+    
+            <div class="dlbtn">
+                <a href="<?php echo $downloadLink; ?>" download="exported_data.xlsx">Download Excel</a>
+            </div>
         </div>
+        
 
         <div class="table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Province/Area</th>
-                        <th>Male</th>
-                        <th>Female</th>
-                        <th> < 15 </th>
-                        <th> > 15 </th>
-                        <th>Pet Dog</th>
-                        <th>Stray Dog</th>
-                        <th>Pet Cat</th>
-                        <th>Stray Cat</th>
-                        <th>Others</th>
-                        <th>Cat I</th>
-                        <th>Cat II </th>
-                        <th>Cat III</th>
-                        <th>N/C</th>
-                        <th>TCV</th>
-                        <th>HRIG</th>
-                        <th>ERIG</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($data as $row): ?>
-                        <tr>
-                            <?php foreach ($row as $cell): ?>
-                                <td><?php echo $cell; ?></td>
-                            <?php endforeach; ?>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+
+            <?php
+                if (isset($_POST['selectmonth'])) {
+                    // Get the selected month from the form
+                    $selectedMonth = $_POST['month'];
+
+                    // Set the start and end dates based on the selected month
+                    switch ($selectedMonth) {
+                        case "January":
+                            $startDate = "2024-01-01";
+                            $endDate = "2024-01-31";
+                            break;
+                        case "February":
+                            $startDate = "2024-02-01";
+                            $endDate = "2024-02-28";
+                            break;
+                        case "March":
+                            $startDate = "2024-03-01";
+                            $endDate = "2024-03-31";
+                            break;
+                        case "April":
+                            $startDate = "2024-04-01";
+                            $endDate = "2024-04-28";
+                            break;
+                        case "May":
+                            $startDate = "2024-05-01";
+                            $endDate = "2024-05-31";
+                            break;
+                        case "June":
+                            $startDate = "2024-06-01";
+                            $endDate = "2024-06-28";  
+                            break;
+                        case "July":
+                            $startDate = "2024-07-01";
+                            $endDate = "2024-07-31";
+                            break;
+                        case "August":
+                            $startDate = "2024-08-01";
+                            $endDate = "2024-08-28";   
+                            break;       
+                        case "September":
+                            $startDate = "2024-09-01";
+                            $endDate = "2024-09-30";  
+                            break;
+                        case "October":
+                            $startDate = "2024-10-01";
+                            $endDate = "2024-10-31";  
+                            break;
+                        case "November":
+                            $startDate = "2024-11-01";
+                            $endDate = "2024-11-30"; 
+                            break;
+                        case "December":
+                            $startDate = "2024-12-01";
+                            $endDate = "2024-12-31";  
+                            break;
+
+                        default:
+                            echo "<p>Please select a valid month.</p>";
+                            exit;
+                    }
+
+                    include 'connection/connection.php';
+
+                    try {
+                        // SQL query to fetch data
+                        $sql = "
+                            SELECT Sex, Age, source_expo, cat_expo, post_expo, place_expo
+                            FROM patient_records
+                            INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
+                            WHERE CAST(date_expo AS DATE) BETWEEN '$startDate' AND '$endDate';
+                        ";
+
+                        // Initialize $result
+                        $result = $conn->query($sql);
+
+                        // Initialize provinceTotals array
+                        $provinceTotals = [
+                            'male' => 0,
+                            'female' => 0,
+                            'age < 15' => 0,
+                            'age > 15' => 0,
+                            'Dog' => 0,
+                            'Stray Dog' => 0,
+                            'Cat' => 0,
+                            'Stray Cat' => 0,
+                            'Others' => 0,
+                            'Cat I' => 0,
+                            'Cat II' => 0,
+                            'Cat III' => 0,
+                            'N/C' => 0,
+                            'TCV' => 0,
+                            'HRIG' => 0,
+                            'ERIG' => 0,
+                        ];
+
+                        // Fetch and display the results in separate male and female tables
+                        echo "<table>";
+                        echo "<tr>
+                                <th>Province/Area</th>
+                                <th>Sex</th>
+                                <th>Age < 15</th>
+                                <th>Age > 15</th>
+                                <th>Dog</th>
+                                <th>Stray Dog</th>
+                                <th>Cat</th>
+                                <th>Stray Cat</th>
+                                <th>Others</th>
+                                <th>Cat I</th>
+                                <th>Cat II</th>
+                                <th>Cat III</th>
+                                <th>N/C</th>
+                                <th>TCV</th>
+                                <th>HRIG</th>
+                                <th>ERIG</th>
+                            </tr>";
+
+                        // Loop through the results
+                        if ($result !== false && $result->rowCount() < 0) {
+                            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>";
+                                echo "<td>{$row['place_expo']}</td>";
+                                echo "<td>{$row['Sex']}</td>";
+                                echo "<td>" . ($row['Age'] < 15 ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['Age'] > 15 ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['source_expo'] === 'Dog' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['source_expo'] === 'Stray Dog' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['source_expo'] === 'Cat' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['source_expo'] === 'Stray Cat' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['source_expo'] === 'Others' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['cat_expo'] === 'I' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['cat_expo'] === 'II' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['cat_expo'] === 'III' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['cat_expo'] === 'N/C' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['post_expo'] === 'TCV' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['post_expo'] === 'HRIG' ? 1 : 0) . "</td>";
+                                echo "<td>" . ($row['post_expo'] === 'ERIG' ? 1 : 0) . "</td>";
+                                echo "</tr>";
+
+                                // Update province totals
+                                $provinceTotals['male'] += ($row['Sex'] === 'Male' ? 1 : 0);
+                                $provinceTotals['female'] += ($row['Sex'] === 'Female' ? 1 : 0);
+                                $provinceTotals['age < 15'] += ($row['Age'] < 15 ? 1 : 0);
+                                $provinceTotals['age > 15'] += ($row['Age'] > 15 ? 1 : 0);
+                                $provinceTotals['Dog'] += ($row['source_expo'] === 'Dog' ? 1 : 0);
+                                $provinceTotals['Stray Dog'] += ($row['source_expo'] === 'Stray Dog' ? 1 : 0);
+                                $provinceTotals['Cat'] += ($row['source_expo'] === 'Cat' ? 1 : 0);
+                                $provinceTotals['Stray Cat'] += ($row['source_expo'] === 'Stray Cat' ? 1 : 0);
+                                $provinceTotals['Others'] += ($row['source_expo'] === 'Others' ? 1 : 0);
+                                $provinceTotals['Cat I'] += ($row['cat_expo'] === 'I' ? 1 : 0);
+                                $provinceTotals['Cat II'] += ($row['cat_expo'] === 'II' ? 1 : 0);
+                                $provinceTotals['Cat III'] += ($row['cat_expo'] === 'III' ? 1 : 0);
+                                $provinceTotals['N/C'] += ($row['cat_expo'] === 'N/C' ? 1 : 0);
+                                $provinceTotals['TCV'] += ($row['post_expo'] === 'TCV' ? 1 : 0);
+                                $provinceTotals['HRIG'] += ($row['post_expo'] === 'HRIG' ? 1 : 0);
+                                $provinceTotals['ERIG'] += ($row['post_expo'] === 'ERIG' ? 1 : 0);
+                            }
+
+                            // Display the province totals for male and female counts
+                            echo "</table>";
+                        } else {
+                            echo "<script>
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'warning',
+                                        title: 'No records found for the selected month.',
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                </script>";
+                        }
+
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+
+                    $conn = null;
+                }
+                ?>
         </div>
 
     </div>
