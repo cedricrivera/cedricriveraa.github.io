@@ -10,8 +10,6 @@
         <li><a href="Menu.php#Home">Home</a></li>
         <li><a href="Menu.php#Records">Records</a></li>
         <li><a href="Menu.php#Appointment">Appointment</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="contact.php">Contact</a></li>
         <div class="logout">
           <button type="button" id="btn-log">Logout</button>
         </div>
