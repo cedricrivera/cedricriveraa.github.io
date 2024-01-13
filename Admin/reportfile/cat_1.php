@@ -64,23 +64,23 @@ $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($row){
-    $cat2tunsan = $row['total'];
+    $cat2tunasan = $row['total'];
 }else{
-    $cat2tunsan = 0;
+    $cat2tunasan = 0;
 }
 
 // Cat 3 Tunasan
 $q2cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Tunsan'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Tunasan'";
 
 $stmt = $conn->prepare($q2cat3);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($row){
-    $cat3tunsan = $row['total'];
+    $cat3tunasan = $row['total'];
 }else{
-    $cat3tunsan = 0;
+    $cat3tunasan = 0;
 }
 
 // Cat 1 Poblacion 
@@ -169,7 +169,7 @@ if($row){
 
 // Cat 1 Putatan_Main
 $query5 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Putatan_Main'";
+FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Putatan Main'";
 
 $stmt = $conn->prepare($query5);
 $stmt->execute();
@@ -183,7 +183,7 @@ if($row){
 
 // Cat 2 Putatan_Main
 $q5 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Putatan_Main'";
+FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Putatan Main'";
 
 $stmt = $conn->prepare($q5);
 $stmt->execute();
@@ -197,7 +197,7 @@ if($row){
 
 // Cat 3 Putatan_Main
 $q5cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Putatan_Main'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Putatan Main'";
 
 $stmt = $conn->prepare($q5cat3);
 $stmt->execute();
@@ -211,7 +211,7 @@ if($row){
 
 // Cat 1 Putatan_Annex
 $query6 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Putatan_Annex'";
+FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Putatan Annex'";
 
 $stmt = $conn->prepare($query6);
 $stmt->execute();
@@ -225,7 +225,7 @@ if($row){
 
 // Cat 2 Putatan_Annex
 $q6 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Putatan_Annex'";
+FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Putatan Annex'";
 
 $stmt = $conn->prepare($q6);
 $stmt->execute();
@@ -239,7 +239,7 @@ if($row){
 
 // Cat 3 Putatan_Annex
 $q6cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Putatan_Annex'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Putatan Annex'";
 
 $stmt = $conn->prepare($q6cat3);
 $stmt->execute();
@@ -253,7 +253,7 @@ if($row){
 
 // Cat 1 Bayanan_Main 
 $query7 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Bayanan_Main'";
+FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Bayanan Main'";
 
 $stmt = $conn->prepare($query7);
 $stmt->execute();
@@ -267,7 +267,7 @@ if($row){
 
 // Cat 2 Bayanan_Main
 $q7 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Bayanan_Main'";
+FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Bayanan Main'";
 
 $stmt = $conn->prepare($q7);
 $stmt->execute();
@@ -281,7 +281,7 @@ if($row){
 
 // Cat 3 Bayanan_Main
 $q7cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Bayanan_Main'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Bayanan Main'";
 
 $stmt = $conn->prepare($q7cat3);
 $stmt->execute();
@@ -295,7 +295,7 @@ if($row){
 
 // Cat 1 Bayanan_Annex
 $query8 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Bayanan_Annex'";
+FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Bayanan Annex'";
 
 $stmt = $conn->prepare($query8);
 $stmt->execute();
@@ -309,7 +309,7 @@ if($row){
 
 // Cat 2 Bayanan_Annex
 $q8 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Bayanan_Annex'";
+FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Bayanan Annex'";
 
 $stmt = $conn->prepare($q8);
 $stmt->execute();
@@ -323,7 +323,7 @@ if($row){
 
 // Cat 3 Bayanan_Annex
 $q8cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Bayanan_Annex'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Bayanan Annex'";
 
 $stmt = $conn->prepare($q8cat3);
 $stmt->execute();
@@ -535,7 +535,7 @@ if($row){
 $q13cat3 = "SELECT COUNT(patient_records.cat_expo) as total
 FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Sucat'";
 
-$stmt = $conn->prepare($q13);
+$stmt = $conn->prepare($q13cat3);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -547,7 +547,7 @@ if($row){
 
 // Cat 1 Bagong_Silang
 $query14 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Bagong_Silang'";
+FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Bagong Silang'";
 
 $stmt = $conn->prepare($query14);
 $stmt->execute();
@@ -561,7 +561,7 @@ if($row){
 
 // Cat 2 Bagong_Silang
 $q14 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Bagong_Silang'";
+FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Bagong Silang'";
 
 $stmt = $conn->prepare($q14);
 $stmt->execute();
@@ -575,7 +575,7 @@ if($row){
 
 // Cat 3 Bagong_Silang
 $q14cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Bagong_Silang'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Bagong Silang'";
 
 $stmt = $conn->prepare($q14cat3);
 $stmt->execute();
@@ -589,7 +589,7 @@ if($row){
 
 // Cat 1 Sitio_Sto._Niño
 $query15 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Sitio_Sto._Niño'";
+FROM patient_records WHERE cat_expo = 'I' AND patient_records.place_expo = 'Sitio Sto. Niño'";
 
 $stmt = $conn->prepare($query15);
 $stmt->execute();
@@ -603,7 +603,7 @@ if($row){
 
 // Cat 2 Sitio_Sto._Niño
 $q15 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Sitio_Sto._Niño'";
+FROM patient_records WHERE cat_expo = 'II' AND patient_records.place_expo = 'Sitio Sto. Niño'";
 
 $stmt = $conn->prepare($q15);
 $stmt->execute();
@@ -617,7 +617,7 @@ if($row){
 
 // Cat 3 Sitio_Sto._Niño
 $q15cat3 = "SELECT COUNT(patient_records.cat_expo) as total
-FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Sitio_Sto._Niño'";
+FROM patient_records WHERE cat_expo = 'III' AND patient_records.place_expo = 'Sitio Sto. Niño'";
 
 $stmt = $conn->prepare($q15cat3);
 $stmt->execute();

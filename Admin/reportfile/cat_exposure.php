@@ -57,7 +57,7 @@ if($row){
 
 // Cat Expo Putatan_Main 
 $q5 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Putatan_Main';";
+FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Putatan Main';";
 
 $stmt = $conn->prepare($q5);
 $stmt->execute();
@@ -71,7 +71,7 @@ if($row){
 
 // Cat Expo Putatan_Annex
 $q6 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Putatan_Annex';";
+FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Putatan Annex';";
 
 $stmt = $conn->prepare($q6);
 $stmt->execute();
@@ -85,7 +85,7 @@ if($row){
 
 // Cat Expo Bayanan_Main 
 $q7 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat 
-FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Bayanan_Main';";
+FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Bayanan Main';";
 
 $stmt = $conn->prepare($q7);
 $stmt->execute();
@@ -99,7 +99,7 @@ if($row){
 
 // Cat Expo Bayanan_Annex
 $q8 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat 
-FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Bayanan_Annex';";
+FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Bayanan Annex';";
 
 $stmt = $conn->prepare($q8);
 $stmt->execute();
@@ -183,21 +183,21 @@ if($row){
 
 // Cat Expo Bagong_Silang
 $q14 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat 
-FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Bagong_Silang';";
+FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Bagong Silang';";
 
 $stmt = $conn->prepare($q14);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($row){
-    $Bagong_Silang = $row['total_count_Cat'];
+    $Bagong_Silang22 = $row['total_count_Cat'];
 }else{
-    $Bagong_Silang = 0;
+    $Bagong_Silang22 = 0;
 }
 
 // Cat Expo Sitio_Sto._Niño
 $q15 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat 
-FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Sitio_Sto._Niño';";
+FROM patient_records WHERE source_expo = 'Cat' AND patient_records.place_expo = 'Sitio Sto. Niño';";
 
 $stmt = $conn->prepare($q15);
 $stmt->execute();
@@ -267,7 +267,7 @@ if($row){
 
 // Stray Cat Putatan_Main 
 $query5 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Putatan_Main';";
+FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Putatan Main';";
 
 $stmt = $conn->prepare($query5);
 $stmt->execute();
@@ -281,7 +281,7 @@ if($row){
 
 // Stray Cat Putatan_Annex
 $query6 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Putatan_Annex';";
+FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Putatan Annex';";
 
 $stmt = $conn->prepare($query6);
 $stmt->execute();
@@ -295,7 +295,7 @@ if($row){
 
 // Stray Cat Bayanan_Main
 $query7 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Bayanan_Main';";
+FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Bayanan Main';";
 
 $stmt = $conn->prepare($query7);
 $stmt->execute();
@@ -309,7 +309,7 @@ if($row){
 
 // Stray Cat Bayanan_Annex 
 $query8 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat 
-FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Bayanan_Annex';";
+FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Bayanan Annex';";
 
 $stmt = $conn->prepare($query8);
 $stmt->execute();
@@ -393,21 +393,21 @@ if($row){
 
 // Stray Cat  Bagong_Silang
 $query14 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Bagong_Silang';"; 
+FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Bagong Silang';"; 
 
 $stmt = $conn->prepare($query14);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($row){
-    $strayBagong_Silang = $row['total_count_Cat'];
+    $strayBagong_Silang22 = $row['total_count_Cat'];
 }else{
-    $strayBagong_Silang = 0;
+    $strayBagong_Silang22 = 0;
 }
 
 // Stray Cat Sitio Sto.Nino
 $query15 = "SELECT COUNT(patient_records.source_expo) as total_count_Cat
-FROM patient_records WHERE source_expo = 'Stray Dog' AND patient_records.place_expo = 'Sitio_Sto._Niño';"; 
+FROM patient_records WHERE source_expo = 'Stray Cat' AND patient_records.place_expo = 'Sitio Sto. Niño';"; 
 
 $stmt = $conn->prepare($query15);
 $stmt->execute();

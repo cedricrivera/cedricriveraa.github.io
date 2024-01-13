@@ -128,22 +128,22 @@ if($row){
 $q5 = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Putatan_Main';";
+WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Putatan Main';";
 
 $stmt = $conn->prepare($q5);
 $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Putatan_Main = $row ['AgeCount'];
+    $Putatan_Main22 = $row ['AgeCount'];
 }else{
-    $Putatan_Main = 0;
+    $Putatan_Main22 = 0;
 }
 
 $queryputatan = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Putatan_Main';";
+WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Putatan Main';";
 
 $stmt = $conn->prepare($queryputatan);
 $stmt->execute();
@@ -159,22 +159,22 @@ if($row){
 $q6 = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Putatan_Annex';";
+WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Putatan Annex';";
 
 $stmt = $conn->prepare($q6);
 $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Putatan_Annex = $row ['AgeCount'];
+    $Putatan_Annex22 = $row ['AgeCount'];
 }else{
-    $Putatan_Annex = 0;
+    $Putatan_Annex22 = 0;
 }
 
 $queryputatan_annex = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Putatan_Annex';";
+WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Putatan Annex';";
 
 $stmt = $conn->prepare($queryputatan_annex);
 $stmt->execute();
@@ -191,22 +191,22 @@ if($row){
 $q7 = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Bayanan_Main';";
+WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Bayanan Main';";
 
 $stmt = $conn->prepare($q7);
 $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Bayanan_Main = $row ['AgeCount'];
+    $Bayanan_Main22 = $row ['AgeCount'];
 }else{
-    $Bayanan_Main = 0;
+    $Bayanan_Main22 = 0;
 }
 
 $querybayanan = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Bayanan_Main';";
+WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Bayanan Main';";
 
 $stmt = $conn->prepare($querybayanan);
 $stmt->execute();
@@ -222,22 +222,22 @@ if($row){
 $q8 = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Bayanan_Annex';";
+WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Bayanan Annex';";
 
 $stmt = $conn->prepare($q8);
 $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Bayanan_Annex = $row ['AgeCount'];
+    $Bayanan_Annex22 = $row ['AgeCount'];
 }else{
-    $Bayanan_Annex = 0;
+    $Bayanan_Annex22 = 0;
 }
 
 $querybayanan_annex = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Bayanan_Annex';";
+WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Bayanan Annex';";
 
 $stmt = $conn->prepare($querybayanan_annex);
 $stmt->execute();
@@ -260,9 +260,9 @@ $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Alabang = $row ['AgeCount'];
+    $Alabang22 = $row ['AgeCount'];
 }else{
-    $Alabang = 0;
+    $Alabang22 = 0;
 }
 
 $queryalabang = "SELECT COUNT(patient_details.Age) as AgeCount
@@ -275,9 +275,9 @@ $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $greaterAlabang = $row ['AgeCount'];
+    $greaterAlabang1 = $row ['AgeCount'];
 }else{
-    $greaterAlabang = 0;
+    $greaterAlabang1 = 0;
 }
 
 // Ayala < 15 and > 15
@@ -385,9 +385,9 @@ $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Sucat = $row ['AgeCount'];
+    $Sucat22 = $row ['AgeCount'];
 }else{
-    $Sucat = 0;
+    $Sucat22 = 0;
 }
 
 $querysucat = "SELECT COUNT(patient_details.Age) as AgeCount
@@ -409,7 +409,7 @@ if($row){
 $q14 = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Bagong_Silang';";
+WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Bagong Silang';";
 
 $stmt = $conn->prepare($q14);
 $stmt->execute();
@@ -424,7 +424,7 @@ if($row){
 $querybagong = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Bagong_Silang';";
+WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Bagong Silang';";
 
 $stmt = $conn->prepare($querybagong);
 $stmt->execute();
@@ -440,22 +440,22 @@ if($row){
 $q15 = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Sitio_Sto._Niño';";
+WHERE patient_details.Age < 15  AND patient_records.place_expo = 'Sitio Sto. Niño';";
 
 $stmt = $conn->prepare($q15);
 $stmt->execute();
 $row = $stmt->fetch(PDO:: FETCH_ASSOC);
 
 if($row){
-    $Sitio = $row ['AgeCount'];
+    $Sitio22 = $row ['AgeCount'];
 }else{
-    $Sitio = 0;
+    $Sitio22 = 0;
 }
 
 $querysto = "SELECT COUNT(patient_details.Age) as AgeCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Sitio_Sto._Niño';";
+WHERE patient_details.Age > 15  AND patient_records.place_expo = 'Sitio Sto. Niño';";
 
 $stmt = $conn->prepare($querysto);
 $stmt->execute();

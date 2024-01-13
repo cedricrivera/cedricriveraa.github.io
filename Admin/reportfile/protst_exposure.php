@@ -169,7 +169,7 @@ if($row){
 
 // TCV Putatan_Main 
 $tPutatan_Main = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Putatan_Main'";
+FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Putatan Main'";
 
 $stmt = $conn->prepare($tPutatan_Main);
 $stmt->execute();
@@ -183,7 +183,7 @@ if($row){
 
 // HRIG Putatan_Main
 $hPutatan_Main = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Putatan_Main'";
+FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Putatan Main'";
 
 $stmt = $conn->prepare($hPutatan_Main);
 $stmt->execute();
@@ -197,7 +197,7 @@ if($row){
 
 // ERIG Putatan_Main
 $ePutatan_Main = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Putatan_Main'";
+FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Putatan Main'";
 
 $stmt = $conn->prepare($ePutatan_Main);
 $stmt->execute();
@@ -211,7 +211,7 @@ if($row){
 
 // TCV Putatan_Annex
 $tPutatan_Annex = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Putatan_Annex'";
+FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Putatan Annex'";
 
 $stmt = $conn->prepare($tPutatan_Annex);
 $stmt->execute();
@@ -225,7 +225,7 @@ if($row){
 
 // HRIG Putatan_Annex
 $hPutatan_Annex = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Putatan_Annex'";
+FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Putatan Annex'";
 
 $stmt = $conn->prepare($hPutatan_Annex);
 $stmt->execute();
@@ -239,7 +239,7 @@ if($row){
 
 // ERIG Putatan_Annex
 $ePutatan_Annex = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Putatan_Annex'";
+FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Putatan Annex'";
 
 $stmt = $conn->prepare($ePutatan_Annex);
 $stmt->execute();
@@ -253,7 +253,7 @@ if($row){
 
 // TCV Bayanan_Main 
 $tBayanan_Main = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Bayanan_Main'";
+FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Bayanan Main'";
 
 $stmt = $conn->prepare($tBayanan_Main);
 $stmt->execute();
@@ -267,7 +267,7 @@ if($row){
 
 // HRIG Bayanan_Main
 $hBayanan_Main = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Bayanan_Main'";
+FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Bayanan Main'";
 
 $stmt = $conn->prepare($hBayanan_Main);
 $stmt->execute();
@@ -281,7 +281,7 @@ if($row){
 
 // ERIG Bayanan_Main 
 $eBayanan_Main = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Bayanan_Main'";
+FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Bayanan Main'";
 
 $stmt = $conn->prepare($eBayanan_Main);
 $stmt->execute();
@@ -295,7 +295,7 @@ if($row){
 
 // TCV Bayanan_Annex 
 $tBayanan_Annex = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Bayanan_Annex'";
+FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Bayanan Annex'";
 
 $stmt = $conn->prepare($tBayanan_Annex);
 $stmt->execute();
@@ -309,7 +309,7 @@ if($row){
 
 // HRIG Bayanan_Annex
 $hBayanan_Annex = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Bayanan_Annex'";
+FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Bayanan Annex'";
 
 $stmt = $conn->prepare($hBayanan_Annex);
 $stmt->execute();
@@ -323,7 +323,7 @@ if($row){
 
 // ERIG Bayanan_Annex
 $eBayanan_Annex = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Bayanan_Annex'";
+FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Bayanan Annex'";
 
 $stmt = $conn->prepare($eBayanan_Annex);
 $stmt->execute();
@@ -547,7 +547,7 @@ if($row){
 
 // TCV Bagong_Silang
 $tBagong_Silang = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Bagong_Silang'";
+FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Bagong Silang'";
 
 $stmt = $conn->prepare($tBagong_Silang);
 $stmt->execute();
@@ -561,7 +561,7 @@ if($row){
 
 // HRIG Bagong_Silang 
 $hBagong_Silang = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Bagong_Silang'";
+FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Bagong Silang'";
 
 $stmt = $conn->prepare($hBagong_Silang);
 $stmt->execute();
@@ -575,7 +575,7 @@ if($row){
 
 // ERIG Bagong_Silang
 $eBagong_Silang =  "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Bagong_Silang'";
+FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Bagong Silang'";
 
 $stmt = $conn->prepare($eBagong_Silang);
 $stmt->execute();
@@ -589,7 +589,7 @@ if($row){
 
 // TCV Sitio_Sto._Niño
 $tSitio = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Sitio_Sto._Niño'"; 
+FROM patient_records WHERE post_expo = 'TCV' AND patient_records.place_expo = 'Sitio Sto. Niño'"; 
 
 $stmt = $conn->prepare($tSitio);
 $stmt->execute();
@@ -603,7 +603,7 @@ if($row){
 
 // HRIG Sitio_Sto._Niño
 $hsitio = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Sitio_Sto._Niño'"; 
+FROM patient_records WHERE post_expo = 'HRIG' AND patient_records.place_expo = 'Sitio Sto. Niño'"; 
 
 $stmt = $conn->prepare($hsitio);
 $stmt->execute();
@@ -617,7 +617,7 @@ if($row){
 
 // ERIG Sitio_Sto._Niño
 $esitio = "SELECT COUNT(patient_records.post_expo) as total
-FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Sitio_Sto._Niño'"; 
+FROM patient_records WHERE post_expo = 'ERIG' AND patient_records.place_expo = 'Sitio Sto. Niño'"; 
 
 $stmt = $conn->prepare($esitio);
 $stmt->execute();

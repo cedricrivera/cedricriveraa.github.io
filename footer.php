@@ -5,7 +5,7 @@
         <div class="left box">
           <h2>About us</h2>
           <div class="content">
-            <p>CodinNepal is a YouTube channel where you can learn web designing, web development, ui/ux designing, html css tutorial, hover animation and effects, javascript and jquery tutorial and related so on.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque rerum excepturi totam voluptate doloribus quibusdam optio itaque, possimus consequuntur aut ex ipsum magnam saepe! Similique.</p>
             <div class="social">
               <a href="https://www.facebook.com/profile.php?id=100084709159245"><span class="fab fa-facebook-f"></span></a>
               <a href="#"><span class="fab fa-twitter"></span></a>

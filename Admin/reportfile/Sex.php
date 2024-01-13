@@ -88,7 +88,7 @@ SUM(CASE WHEN patient_details.Sex = 'Male' THEN 1 ELSE 0 END) as maleCount,
 SUM(CASE WHEN patient_details.Sex = 'Female' THEN 1 ELSE 0 END) as femaleCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_records.place_expo = 'Putatan_Main';";
+WHERE patient_records.place_expo = 'Putatan Main';";
 
 $result = $conn->prepare($query5);
 $result->execute();
@@ -108,7 +108,7 @@ SUM(CASE WHEN patient_details.Sex = 'Male' THEN 1 ELSE 0 END) as maleCount,
 SUM(CASE WHEN patient_details.Sex = 'Female' THEN 1 ELSE 0 END) as femaleCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_records.place_expo = 'Putatan_Annex';";
+WHERE patient_records.place_expo = 'Putatan Annex';";
 
 $result = $conn->prepare($query6);
 $result->execute();
@@ -128,18 +128,18 @@ SUM(CASE WHEN patient_details.Sex = 'Male' THEN 1 ELSE 0 END) as maleCount,
 SUM(CASE WHEN patient_details.Sex = 'Female' THEN 1 ELSE 0 END) as femaleCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_records.place_expo = 'Bayanan_Main';";
+WHERE patient_records.place_expo = 'Bayanan Main';";
 
 $result = $conn->prepare($query7);
 $result->execute();
 $row = $result->fetch(PDO::FETCH_ASSOC);
 
 if ($row) {
-    $mb = $row['maleCount'];
-    $fb = $row['femaleCount'];
+    $mba = $row['maleCount'];
+    $fba = $row['femaleCount'];
 } else {
-    $mb = 0;
-    $fb = 0;
+    $mba = 0;
+    $fba = 0;   
 }
 
 // Bayanan_Annex
@@ -148,7 +148,7 @@ SUM(CASE WHEN patient_details.Sex = 'Male' THEN 1 ELSE 0 END) as maleCount,
 SUM(CASE WHEN patient_details.Sex = 'Female' THEN 1 ELSE 0 END) as femaleCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_records.place_expo = 'Bayanan_Annex';";
+WHERE patient_records.place_expo = 'Bayanan Annex';";
 
 $result = $conn->prepare($query8);
 $result->execute();
@@ -268,7 +268,7 @@ SUM(CASE WHEN patient_details.Sex = 'Male' THEN 1 ELSE 0 END) as maleCount,
 SUM(CASE WHEN patient_details.Sex = 'Female' THEN 1 ELSE 0 END) as femaleCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_records.place_expo = 'Bagong_Silang';";
+WHERE patient_records.place_expo = 'Bagong Silang';";
 
 $result = $conn->prepare($query14);
 $result->execute();
@@ -288,7 +288,7 @@ SUM(CASE WHEN patient_details.Sex = 'Male' THEN 1 ELSE 0 END) as maleCount,
 SUM(CASE WHEN patient_details.Sex = 'Female' THEN 1 ELSE 0 END) as femaleCount
 FROM patient_records
 INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-WHERE patient_records.place_expo = 'Sitio_Sto._Niño';";
+WHERE patient_records.place_expo = 'Sitio Sto. Niño';";
 
 $result = $conn->prepare($query15);
 $result->execute();
