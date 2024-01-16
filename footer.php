@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" href="./user-css/footer.css">
-<footer>
+<?php include 'email.php' ?>
+<footer id="footer">
       <div class="main-content">
-        <div class="left box">
+        <div class="about box">
           <h2>About us</h2>
           <div class="content">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque rerum excepturi totam voluptate doloribus quibusdam optio itaque, possimus consequuntur aut ex ipsum magnam saepe! Similique.</p>
@@ -34,18 +35,27 @@
         <div class="right box">
           <h2>Contact us</h2>
           <div class="content">
-            <form action="#">
+            <form action="" method="post">
+
+              <div class="name">
+                <div class="text">Name <span id="important">*</span></div>
+                <input type="text" name="name" required>
+              </div>
+
               <div class="email">
-                <div class="text">Email *</div>
-                <input type="email" required>
+                <div class="text">Email <span id="important">*</span></div>
+                <input type="email" name="email" required>
               </div>
+
               <div class="msg">
-                <div class="text">Message *</div>
-                <textarea rows="2" cols="25" required></textarea>
+                <div class="text">Message <span id="important">*</span></div>
+                <textarea rows="2" cols="25" name="message" required></textarea>
               </div>
+
               <div class="btn">
-                <button type="submit">Send</button>
+                <button type="submit" name="send">Send</button>
               </div>
+
             </form>
           </div>
         </div>

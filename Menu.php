@@ -50,20 +50,20 @@ include "Admin/connection/connection.php";
     <div class="main-container">
         <section id="Home">
             <img src="Image/Welcome.png" alt="">
-            
-                    
             <div class="left">
                 <h1>ANIMAL BITE CENTER</h1>
                 <p>Animal Bite Treatment Centers (ABTC)- are health facilities owned and operated by either the National or Local Government Units (LGUs), providing Post-Exposure Prophylaxis (PEP) to rabies exposures in accordance with the DOH recommended management protocol.</p>
+                <li><a href="Menu.php#footer">Contact Us</a></li>
             </div>
         </section>
 
         <section id="Appointment">
-        <div data-aos="zoom-in" class="title">
-            <h1>APPOINTMENT SCHEDULE</h1>
-        </div>
+            <div data-aos="zoom-in" class="title">
+                <h1>APPOINTMENT SCHEDULE</h1>
+            </div>
+            
             <div class="form">
-            <div data-aos="zoom-in-right">
+                <div data-aos="zoom-in-right">
                 <form action="appoint.php" method="POST">
 
                     <div class="input">

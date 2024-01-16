@@ -61,6 +61,7 @@ img{
 .left{
     align-self: center;
     display: grid;
+    grid-template-rows: 1fr auto 1fr;
 }
 
 .left h1{
@@ -79,8 +80,26 @@ img{
     color: #fff;
 }
 
-#btn-contact:hover{
-    background-color: var(--main-color);
+.left li{
+    list-style: none;
+    align-self: center;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.left li a{
+    color: #f2f2f2;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: all ease 0.5s;
+}
+
+.left li a:hover{
+    background-color: var(--light-second);
     transition: all ease 0.5s;
 }
 /* RECORDS */
@@ -160,10 +179,12 @@ td a:hover{
     transition: all ease 0.5s;
     color: var(--light-second);
 }
+
 #show-modal:hover{
     scale: 1.2;
     transition: all ease 0.5s;
 }
+
 /* APPOINTMENT */
 #Appointment{
     grid-template-columns: 1fr 2fr;
@@ -176,7 +197,6 @@ td a:hover{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
 }
 
 #Appointment .title{
@@ -322,102 +342,8 @@ form textarea{
         height: 80%;
         grid-area: bot;
     }
-
-}
-
-/* SHOW MODAL */
-.modal{
-    padding: 1em;
-    max-width: 50%;
-
-    & > *{
-        margin: 0 0 0.2rem 0;
+    .left li{
+        place-self: center;
+        padding: 10px 0;
     }
-}
-
-.modal{
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 32rem;
-    border-radius: 20px;
-    border: 0;
-    background-color: #eef9ff;
-    overflow: auto;
-}
-
-.modal-content{
-    display: grid;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-}
-
-.modal-content h2{
-    padding: 10px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--other);
-    font-size: 20px;
-}
-
-#close-button{
-    transition: all ease 0.5s;
-    position: fixed;
-    top: 25px;
-    right: 15px;
-    font-size: 25px;
-    margin-right: 5px;
-    cursor: pointer;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.modal-content form{
-    display: grid;
-    gap: 2px;
-    padding: 10px;
-}
-
-.modal-content form label{
-    margin-top: 2px;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.modal-content form input, select, textarea{
-    padding: 0px 8px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid #11101d;
-    font-size: 13px;
-    font-weight: 500;
-    height: 2.5rem;
-}
-
-.modal-content form input:focus, select:focus, textarea:focus{
-    border: 1px solid var(--secondary-color);
-}
-
-.modal-content form input:hover, select:hover, textarea:hover{
-    border: 1px solid var(--secondary-color);
-
-}
-
-span{
-    color: var(--danger);
-}
-
-#modal-button{
-    transition: all ease 0.5s;
-    width: 40%;
-    justify-self: center;
-    margin-top: 20px;
-    letter-spacing: 3px;
-    font-weight: 700;
-}
-
-#modal-button:hover{
-    background-color: var(--light-second);
 }
