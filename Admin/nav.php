@@ -15,6 +15,14 @@
 
 <link rel="stylesheet" href="css/navbar.css">
 
+<?php include 'connection/connection.php'; ?>
+<?php 
+  $qr = "select COUNT(*) as AppointNumber from Appointment";
+  $query = $conn->prepare($qr);
+  $query->execute();
+  $row = $query->fetch();
+?>
+
 <nav class = "sidebar">
   <div class="logo">
     <h2>Welcome!</h2>
@@ -47,6 +55,7 @@
 
         <li class="item">
           <a href="appointment.php">Appointment</a>
+          <p id="num"><?php echo $row['AppointNumber'] ?></p>
         </li>
       </ul>
 
