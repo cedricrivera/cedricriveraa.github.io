@@ -17,7 +17,7 @@
 
 <?php include 'connection/connection.php'; ?>
 <?php 
-  $qr = "select COUNT(*) as AppointNumber from Appointment";
+  $qr = "select COUNT(*) as AppointNumber from Appointment WHERE status = 'PENDING'";
   $query = $conn->prepare($qr);
   $query->execute();
   $row = $query->fetch();

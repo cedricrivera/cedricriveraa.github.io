@@ -92,9 +92,6 @@ footer{
 .center .content .fas{
     color: var(--main-color);
 }
-.center .content .fas:hover{
-    background: var(--other);
-}
 .center .content .text{
     font-size: 1rem;
     font-weight: 500;
