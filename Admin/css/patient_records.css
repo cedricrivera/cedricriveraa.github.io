@@ -312,6 +312,8 @@ p{
 
 textarea{
     resize: none;
+    padding-top: 5px;
+    height: 3rem;
 }
 
 .border-red {

@@ -184,7 +184,11 @@
                             </select>
 
                             <label for="post-expo">Post Exposure Prophylaxis</label>
-                            <input type="text" name="post-expo" id="" placeholder="Enter Post Exposure Prophylaxis">
+                            <select name="post-expo" id="">
+                                <option value="TCV">TCV</option>
+                                <option value="RIG">RIG</option>
+                                <option value="HRIG">HRIG</option>
+                            </select>
 
                             <br>
                                 <label for="washing-bite">Washing of Bite Wound</label>
@@ -228,7 +232,7 @@
                             <input type="text" name="status-animal" id="" placeholder="Entet Status of Animal">
 
                             <label for="remarks">Remarks</label>
-                            <textarea name="remarks" id="" cols="40" rows="3"></textarea>
+                            <textarea name="remarks" id="" cols="40" rows="2"></textarea>
 
                             <label for="doc">Select Doctor</label>
                                 <select name="doc" id="doc" required>

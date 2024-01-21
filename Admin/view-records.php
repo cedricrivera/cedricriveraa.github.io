@@ -79,23 +79,26 @@
                             <div class="form-label">
                                 <label for="c-expo">Category of Exposure</label>
                                 <select name="c-expo" id="c-expo" required>
-                                    <option value="I">I</option>
-                                    <option value="II">II</option>
-                                    <option value="III">III</option>
+                                    <option value="I" <?php echo($row['cat_expo'] == "I")? 'selected' : '' ?>>I</option>
+                                    <option value="II" <?php echo ($row['cat_expo'] == "II")? 'selected' : '' ?>>II</option>
+                                    <option value="III" <?php echo($row['cat_expo'] == "III")? 'selected' : '' ?>>III</option>
                                 </select>
                             </div>
 
                             <div class="form-label">
                                 <label for="post-expo">Post Exposure Prophylaxis</label>
-                                <input type="text" name="post-expo" id="post-expo" placeholder="Enter Post Exposure Prophylaxis"
-                                    value="<?php echo $row['post_expo'] ?>">
+                                <select name="post-expo" id="">
+                                    <option value="TCV" <?php echo($row['post_expo'] == "TCV")? 'selected' : '' ?>>TCV</option>
+                                    <option value="HRIG" <?php echo($row['post_expo'] == "HRIG")? 'selected' : '' ?>>HRIG</option>
+                                    <option value="ERIG" <?php echo($row['post_expo'] == "ERIG")? 'selected' : '' ?>>ERIG</option>
+                                </select>
                             </div>
 
                             <div class="form-label">
                                 <label for="washing-bite">Washing of Bite Wound</label>
                                 <select name="washing-bite" id="washing-bite" required>
-                                    <option value="I">Yes</option>
-                                    <option value="II">No</option>
+                                    <option value="Yes" <?php echo($row['washing_bite'] == "Yes")? 'selected' : '' ?>>Yes</option>
+                                    <option value="No" <?php echo($row['washing_bite'] == "No")? 'selected' : '' ?>>No</option>
                                 </select>
                             </div>
 

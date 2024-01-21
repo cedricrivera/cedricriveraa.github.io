@@ -25,7 +25,7 @@
             $doctor = $_POST['doc'];
 
             $sql = "UPDATE patient_records
-            SET date_expo = '$date_expo', place_expo = '$p_expo', type_expo = '$t_expo', source_expo = '$s_expo', cat_expo = '$cat_expo', post_expo = '$p_expo', washing_bite = '$wash', date_rig = '$RIG', 
+            SET date_expo = '$date_expo', place_expo = '$p_expo', type_expo = '$t_expo', source_expo = '$s_expo', cat_expo = '$cat_expo', post_expo = '$post_expo', washing_bite = '$wash', date_rig = '$RIG', 
             gen_name = '$gen_name', brand_name = '$brand_name', route = '$route', day3 = '$d3', day7 = '$d7', day14_IM = '$d14', day28_30 = '$d28_30', Status = '$status', remark = '$remarks', doctor = '$doctor'
             WHERE patientID = $recordid";
             $res = $conn->prepare($sql);

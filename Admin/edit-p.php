@@ -21,19 +21,19 @@
             <form action="" method="POST">
                 <div class="input">
                     <label for="lname">Lastname</label>
-                    <input type="text" name="lname" id="" value=<?php echo $row['lname'] ?>>
+                    <input type="text" name="lname" id="" value="<?php echo $row['lname'] ?>">
                 </div>
                 <div class="input">
                     <label for="fname">Firstname</label>
-                    <input type="text" name="fname" id="" value=<?php echo $row['fname'] ?>>
+                    <input type="text" name="fname" id="" value="<?php echo ($row['fname'])?>">
                 </div>
                 <div class="input">
                     <label for="mname">Middlename</label>
-                    <input type="text" name="mname" id="" value=<?php echo $row['mname'] ?>>
+                    <input type="text" name="mname" id="" value="<?php echo $row['mname'] ?>">
                 </div>
                 <div class="input">
                     <label>Email</label>
-                    <input type="email" name="email" id="" value=<?php echo $row['email'] ?>>
+                    <input type="email" name="email" id="" value="<?php echo $row['email'] ?>">
                 </div>
                 <div class="input">
                     <label for="address">Address</label>

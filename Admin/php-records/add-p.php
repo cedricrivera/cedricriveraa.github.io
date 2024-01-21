@@ -30,8 +30,8 @@
         $doctor = $_POST['doc'];
 
         // PATIENT DETAILS INSERTION
-        $sql1 = "INSERT INTO patient_details(lname, fname, mname, address, age, cnum, Sex, Date_Added, userID, email) 
-        VALUES('$lname','$fname', '$mname','$address',$age,$cnum,'$sex', GETDATE(),'$userid', '$email');";
+        $sql1 = "INSERT INTO patient_details(lname, fname, mname, address, age, cnum, Sex, Date_Added, email) 
+        VALUES('$lname','$fname', '$mname','$address',$age,$cnum,'$sex', GETDATE(), '$email');";
         $res = $conn->prepare($sql1);
         $res->execute();
 

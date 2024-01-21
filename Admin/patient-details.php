@@ -143,8 +143,12 @@
                             </select>
 
                             <label for="post-expo">Post Exposure Prophylaxis</label>
-                            <input type="text" name="post-expo" id="" placeholder="Enter Post Exposure Prophylaxis">
-
+                            <select name="post-expo" id="">
+                                <option value="TCV">TCV</option>
+                                <option value="RIG">RIG</option>
+                                <option value="HRIG">HRIG</option>
+                            </select>
+                            
                             <br>
                                 <label for="washing-bite">Washing of Bite Wound</label>
                                 <select name="washing-bite" id="gender" required>
