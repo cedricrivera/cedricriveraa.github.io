@@ -127,8 +127,8 @@
                             <div class="form-label">
                                 <label for="route">Route</label>
                                 <select name="route" id="route" required>
-                                    <option value="id">ID</option>
-                                    <option value="im">IM</option>
+                                    <option value="ID" <?php echo($row["route"] == 'ID')? 'selected' : '' ?>>ID</option>
+                                    <option value="IM" <?php echo($row["route"] == 'IM')? 'selected' : '' ?>>IM</option>
                                 </select>
                             </div>
 
