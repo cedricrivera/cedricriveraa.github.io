@@ -36,15 +36,16 @@
                     </div>
                     <div class="input">
                         <label>Reason</label>
-                        <textarea name="" id="" cols="30" rows="2" disabled><?php echo $row['reason'] ?></textarea>
+                        <input type="text" name="" id="" value="<?php echo $row['reason'] ?>" disabled>
                     </div>
                     <div class="input">
                     <label>Email</label>
                         <input type="email" name="email" value="<?php echo $row['email']?>" disabled>
                     </div>
+                    
                     <div class="input">
-                        <label for="">Apoointment Date</label>
-                        <input type="date" value="<?php echo $row['appointdate'] ?>"disabled>
+                        <label for="">Set Apointment Date</label>
+                        <input type="date" id="not-d" name="appointdate" value="<?php echo $row['appointdate'] ?>">
                     </div>
                     <div class="input">
                         <label for="">Remarks</label>

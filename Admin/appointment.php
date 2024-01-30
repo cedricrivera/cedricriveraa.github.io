@@ -42,7 +42,8 @@
                             <th>Full name</th>
                             <th>Reason</th>
                             <th>Email</th>
-                            <th>Date</th>
+                            <th>Symptoms</th>
+                            <th>Accident Date</th>
                             <th>Remarks</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -57,7 +58,8 @@
                                 <td><?php echo $row['fname'] . " " . $row['lname'] ?></td>
                                 <td><?php echo $row['reason'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
-                                <td><?php echo $row['appointdate'] ?></td>
+                                <td><?php echo $row['Symptoms'] ?></td>
+                                <td><?php echo $row['Accident_date'] ?></td>
                                 <td><?php echo $row['remarks'] ?></td>
                                 <td><?php echo $row['status'] ?></td>
                                 <td>

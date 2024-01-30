@@ -117,9 +117,11 @@ include "Admin/connection/connection.php";
                     <tr>
                         <th>Appointment ID</th>
                         <th>Reason</th>
-                        <th>Date Appointment</th>
                         <th>Contact No.</th>
+                        <th>Symptoms</th>
+                        <th>Accident Date</th>
                         <th>Remarks</th>
+                        <th>Date Appointment</th>
                         <th>Status</th>
                     </tr>
                     <?php
@@ -135,9 +137,11 @@ include "Admin/connection/connection.php";
                             <tr>
                                 <td><?= $row->AppointID; ?></td>
                                 <td><?= $row->reason; ?></td>
-                                <td><?= $row->appointdate; ?></td>
                                 <td><?= $row->cnum; ?></td>
+                                <td><?= $row->Symptoms; ?></td>
+                                <td><?= $row->Accident_date; ?></td>
                                 <td><?= $row->remarks; ?></td>
+                                <td><?= $row->appointdate; ?></td>
                                 <td><?= $row->status; ?></td>
                             </tr>
                             <?php
@@ -145,7 +149,7 @@ include "Admin/connection/connection.php";
                     } else {
                         ?>
                         <tr>
-                            <td colspan="6">No Records</td>
+                            <td colspan="8">No Records</td>
                         </tr>
                         <?php
                     }

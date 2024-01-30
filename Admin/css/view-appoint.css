@@ -56,6 +56,8 @@ main{
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     position: relative;
+    width: 88%;
+    height: 88%;
 }
 
 #btn-back{
