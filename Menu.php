@@ -74,27 +74,34 @@ include "Admin/connection/connection.php";
                     <div class="input">
                         <label for="">Lastname</label>
                         <input type="text" name="lname" id="" placeholder="Enter Lastname" required>
-
                     </div>
+
                     <div class="input">
                         <label for="">Middlename</label>
                         <input type="text" name="mname" id="" placeholder="Enter Middlename">
-
                     </div>
-                    <div class="input">
-                        <label for="">Reason</label>
-                        <textarea type= "text" name="reason" id="" cols="30"  style="resize: none;" required></textarea>
 
-                    </div>
                     <div class="input">
                         <label for="">Contact No. </label>
                         <input type="number" name="cnum" id="" placeholder="Enter Contact Number" required>
-
                     </div>
 
                     <div class="input">
-                        <label for="">Select your preferred date for appointment</label>
-                        <input type="date" name="date-a" id="" required>
+                        <label for="">Reason</label>
+                        <select name="reason" id="">
+                            <option value="Bite">Bite</option>
+                            <option value="Scratch">Scratch</option>
+                        </select>
+                    </div>
+
+                    <div class="input">
+                        <label>Accident Date</label>
+                        <input type="date" name="accident-d" id="">
+                    </div>
+
+                    <div class="input">
+                        <label>Symptoms</label>
+                        <textarea name="symptoms" id="" cols="50" rows="3"></textarea>
                     </div>
 
                     <div class="btn">
