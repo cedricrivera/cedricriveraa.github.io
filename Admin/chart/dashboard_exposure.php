@@ -40,7 +40,7 @@
     var myBarChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Dog', 'Cat', 'Stray Dog', 'Stray Cat'],
+            labels: ['Pet Dog', 'Pet Cat', 'Stray Dog', 'Stray Cat'],
             datasets: [{
                 label: ['Exposure Count'],
                 data: [totalDogs, totalCats, totalStrayDogs, totalStrayCats],
