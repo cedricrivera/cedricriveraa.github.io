@@ -39,7 +39,7 @@
             <div id="Manage-Users">
                 <div class="manage-box">
                     <div class="title">
-                        <h1>Manage User</h1>
+                        <h1>Manage Patients</h1>
                     </div>
                     <!-- FORM -->
                     <div class="box-form">

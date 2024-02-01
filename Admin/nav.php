@@ -38,11 +38,16 @@
         </li>
 
         <li class="item">
+          <a href="appointment.php">Appointment</a>
+          <p id="num"><?php echo $row['AppointNumber'] ?></p>
+        </li>
+
+        <li class="item">
           <a href="patient-records.php">Patient Records</a>
         </li>
 
         <li class="item">
-          <a href="manage-user.php">Manage User</a>
+          <a href="manage-user.php">Manage Patients</a>
         </li>
 
         <li class="item">
@@ -53,10 +58,6 @@
           <a href="function.php">Reports</a>
         </li>
 
-        <li class="item">
-          <a href="appointment.php">Appointment</a>
-          <p id="num"><?php echo $row['AppointNumber'] ?></p>
-        </li>
       </ul>
 
     <button id="logout" type="submit">Logout</button>
