@@ -39,7 +39,9 @@
 
         <li class="item">
           <a href="appointment.php">Appointment</a>
-          <p id="num"><?php echo $row['AppointNumber'] ?></p>
+          <?php if($row['AppointNumber'] > 0) :?>
+            <p id="num"><?php echo $row['AppointNumber'] ?></p>
+          <?php endif; ?>
         </li>
 
         <li class="item">
@@ -57,16 +59,6 @@
         <li class="item">
           <a href="function.php">Reports</a>
         </li>
-
-<<<<<<< HEAD
-        <li class="item">
-          <a href="appointment.php">Appointment</a>
-          <?php if($row['AppointNumber'] > 0) :?>
-            <p id="num"><?php echo $row['AppointNumber'] ?></p>
-          <?php endif; ?>
-        </li>
-=======
->>>>>>> 9cbd2fa756d4fbf638295389be622c2030afcfa2
       </ul>
 
     <button id="logout" type="submit">Logout</button>
