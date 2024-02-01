@@ -55,7 +55,9 @@
 
         <li class="item">
           <a href="appointment.php">Appointment</a>
-          <p id="num"><?php echo $row['AppointNumber'] ?></p>
+          <?php if($row['AppointNumber'] > 0) :?>
+            <p id="num"><?php echo $row['AppointNumber'] ?></p>
+          <?php endif; ?>
         </li>
       </ul>
 
