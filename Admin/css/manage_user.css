@@ -20,6 +20,26 @@
   --light-primary: #208eef;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
 /* MAIN */
 .main{
   /* FOR SIDEBAR SHOW*/
@@ -152,7 +172,7 @@ select{
 .btn{
     position: absolute;
     right: 20px;
-    bottom: 15.7rem;
+    bottom: 15rem;
 }
 
 #Add_User{
@@ -197,16 +217,15 @@ select{
 .box-table{
     grid-area: b-t;
     padding: 10px;
-    height: auto;
+    height: 13.4rem;
     border-radius: 10px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 #scroll{
-    max-height: 14rem;
+    max-height: 12.5rem;
     width: 100%;
-    overflow:auto;
-    
+    overflow: auto;
 }
 
 table{
@@ -272,4 +291,17 @@ tr{
 
 span{
     color: var(--danger);
+}
+
+.email{
+    position: relative;
+}
+
+#check_email{
+    position: absolute;
+    left: -2px;
+    margin-left: 7px;
+    bottom: -24px;
+    font-size: 12px;
+    font-weight: 700;
 }

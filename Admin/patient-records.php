@@ -165,30 +165,31 @@
                             </select>
 
                             <label for="t-expo">Type of Exposure</label>
-                            <input type="text" name="t-expo" id="" placeholder="Enter Type of Exposure" >
+                            <select name="t-expo" id="">
+                                <option value="BITE">BITE</option>
+                                <option value="NON-BITE">NON-BITE</option>
+                            </select>
 
                             <label for="s-expo">Source of Exposure</label>
                             <select name="s-expo" id="">
                                 <option value="Stray Dog">Stray Dog</option>
-                                <option value="Dog">Dog</option>
+                                <option value="Pet Dog">Pet Dog</option>
                                 <option value="Stray Cat">Stray Cat</option>
-                                <option value="Cat">Cat</option>
+                                <option value="Pet Cat">Pet Cat</option>
                                 <option value="Others">Others</option>
                             </select>
 
                             <label for="c-expo">Category of Exposure</label>
-                            <select name="c-expo" id="gender" >
-                                <option value="I">I</option>
-                                <option value="II">II</option>
-                                <option value="III">III</option>
-                            </select>
+                                <select name="c-expo" id="expo" onchange="slc1('expo', 'post_expo')">
+                                    <option value="">--SELECT CATEGORY--</option>
+                                    <option value="II">II</option>
+                                    <option value="III">III</option>
+                                </select>
 
                             <label for="post-expo">Post Exposure Prophylaxis</label>
-                            <select name="post-expo" id="">
-                                <option value="TCV">TCV</option>
-                                <option value="RIG">RIG</option>
-                                <option value="HRIG">HRIG</option>
-                            </select>
+                                <select name="post-expo" id="post_expo">
+                                    <option value="">--SELECT CATEGORY FIRST--</option>
+                                </select>
 
                             <br>
                                 <label for="washing-bite">Washing of Bite Wound</label>
@@ -214,6 +215,9 @@
                                     <option value="IM">IM</option>
                                 </select>
                             
+                            <label for="d-0">Day 0</label>
+                            <input type="date" name="d-0" id="">
+
                             <label for="d-3">Day 3</label>
                             <input type="date" name="d-3" id="">
 
@@ -223,26 +227,27 @@
                             <label for="d-14">Day 14 (IM)</label>
                             <input type="date" name="d-14" id="">
 
-                            <label for="d-28"><span>*</span>Day 28/30<span>*</span></label>
-                            <input type="date" name="d-28" id="">
+                            <label for="d-28">Day 28/30</label>
+                            <input type="text" name="d-28" id="" placeholder="YYYY-MM-DD">
 
-                            <p><span>*</span>Proceed with day 28/30 if dog is not alive after 14 days of observation</p>
+                            <small style="font-weight: 700; font-size: 10px; margin-left: 5px">Notice: Proceed with day 28/30 if dog is not alive after 14 days of observation</small>
                             <br>
                             <label for="staus-animal">Status Animal after D14 of Exposure</label>
-                            <input type="text" name="status-animal" id="" placeholder="Entet Status of Animal">
+                            <select name="status-animal" id="">
+                                <option value="">--Choose--</option>
+                                <option value="Alive">Alive</option>
+                                <option value="Dead">Dead</option>
+                            </select>
 
                             <label for="remarks">Remarks</label>
                             <textarea name="remarks" id="" cols="40" rows="2"></textarea>
 
                             <label for="doc">Select Doctor</label>
-                                <select name="doc" id="doc" required>
-                                    <option value="doc1">Doc 1</option>
-                                    <option value="doc2">Doc 2</option>
-                                    <option value="doc2">Nurse 1</option>
-                                    <option value="doc2">Nurse 1</option>
-                                    <option value="doc2">Nurse 1</option>
-                                    <option value="doc2">Nurse 1</option>
-                                </select>
+                            <select name="doc" id="doc" required>
+                                <option value="Eleanor Gumiran-Dacir, MD - Medical Officer III ">Eleanor Gumiran-Dacir, MD - Medical Officer III</option>
+                                <option value="Cherry H. Navidad, MD - Medical Officer V">Cherry H. Navidad, MD - Medical Officer V</option>
+                            </select>
+                        
                             <input type="submit" name="save" id="modal-button" value="Save">
                         </form>
                         <i class="fa-solid fa-rectangle-xmark" id="close-button"></i>
@@ -266,8 +271,28 @@
             },
             error:function (){}
             });
-        }
-    </script>
-    
+        };
+
+        function slc1(){
+            var expo = document.querySelector('#expo');
+            var post_expo = document.querySelector('#post_expo');
+
+            post_expo.innerHTML = ""
+
+            if(expo.value == "II"){
+                var optionArray = ['TCV ONLY'];
+            }
+            else if(expo.value = "III"){
+                var optionArray = ['TCV + RIG', 'TCV + HRIG'];
+            }
+
+            for (var i = 0; i < optionArray.length; i++) {
+                var newoption = document.createElement("option");
+                newoption.value = optionArray[i];
+                newoption.text = optionArray[i];
+                post_expo.add(newoption);
+            };
+        };
+    </script>    
 </body>
 </html>

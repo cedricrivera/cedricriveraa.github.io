@@ -82,9 +82,10 @@
                                 <textarea name="address" id="address" cols="30" rows="2" required></textarea>
                             </div>
 
-                            <div>
+                            <div class="email">
                                 <label for="email">Email:</label>
-                                <input type="email" name="email" id="email" placeholder="Enter email" required>
+                                <input type="email" name="email" id="email" placeholder="Enter email" onInput="checkEmail()" required>
+                                <span id="check_email"></span>
                             </div>
                            
                             <div class="pwd">
@@ -208,6 +209,21 @@
                 });
             });
       </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+        <script>
+            function checkEmail() {
+                jQuery.ajax({
+                url: "checkEmail-user.php",
+                data:'email='+$("#email").val(),
+                type: "POST",
+                success:function(data){
+                    $("#check_email").html(data);
+                },
+                error:function (){}
+                });
+            };
+        </script>
         <?php include 'php/add-user.php'?>
         <?php include 'php/message.php' ?>
 </body>

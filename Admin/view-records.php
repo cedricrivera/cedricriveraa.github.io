@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/view-records.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    <title>Document</title>
+    <title>Patient View Records</title>
 </head>
 <body>
     <?php include 'connection/connection.php'?>
@@ -70,27 +70,26 @@
                                 <label for="s-expo">Source of Exposure</label>
                                 <select name="s-expo" id="">
                                     <option value="Stray Dog" <?php echo ($row['source_expo'] == "Stray Dog")? 'selected' : ''; ?>>Stray Dog</option>
-                                    <option value="Dog" <?php echo ($row['source_expo'] == "Dog")? 'selected' : ''; ?>>Dog</option>
+                                    <option value="Pet Dog" <?php echo ($row['source_expo'] == "Pet Dog")? 'selected' : ''; ?>>Dog</option>
                                     <option value="Stray Cat" <?php echo ($row['source_expo'] == "Stray Cat")? 'selected' : ''; ?>>Stray Cat</option>
-                                    <option value="Cat" <?php echo ($row['source_expo'] == "Cat")? 'selected' : ''; ?>>Cat</option>
+                                    <option value="Pet Cat" <?php echo ($row['source_expo'] == "Pet Cat")? 'selected' : ''; ?>>Cat</option>
                                 </select>
                             </div>
 
                             <div class="form-label">
                                 <label for="c-expo">Category of Exposure</label>
-                                <select name="c-expo" id="c-expo" required>
-                                    <option value="I" <?php echo($row['cat_expo'] == "I")? 'selected' : '' ?>>I</option>
-                                    <option value="II" <?php echo ($row['cat_expo'] == "II")? 'selected' : '' ?>>II</option>
-                                    <option value="III" <?php echo($row['cat_expo'] == "III")? 'selected' : '' ?>>III</option>
+                                <select name="c-expo" id="c-expo" required onchange="slc1()">
+                                    <option value="II" <?php echo ($row['cat_expo'] == "II") ? 'selected' : ''; ?>>II</option>
+                                    <option value="III" <?php echo ($row['cat_expo'] == "III") ? 'selected' : ''; ?>>III</option>
                                 </select>
                             </div>
 
                             <div class="form-label">
                                 <label for="post-expo">Post Exposure Prophylaxis</label>
-                                <select name="post-expo" id="">
-                                    <option value="TCV" <?php echo($row['post_expo'] == "TCV")? 'selected' : '' ?>>TCV</option>
-                                    <option value="HRIG" <?php echo($row['post_expo'] == "HRIG")? 'selected' : '' ?>>HRIG</option>
-                                    <option value="ERIG" <?php echo($row['post_expo'] == "ERIG")? 'selected' : '' ?>>ERIG</option>
+                                <select name="post-expo" id="post_expo">
+                                    <option value="TCV ONLY" <?php echo ($row['post_expo']=="TCV ONLY")? 'selected' : '' ?>>TCV ONLY</option>
+                                    <option value="TCV + RIG" <?php echo ($row['post_expo']=="TCV + RIG")? 'selected' : '' ?>>TCV + RIG</option>
+                                    <option value="TCV + HRIG" <?php echo ($row['post_expo']=="TCV + HRIG")? 'selected' : '' ?>>TCV + HRIG</option>
                                 </select>
                             </div>
 
@@ -133,6 +132,11 @@
                             </div>
 
                             <div class="form-label">
+                                <label for="d-0">Day 0</label>
+                                <input type="date" name="d-0" id="d-0" value="<?php echo $row['day0'] ?>">
+                            </div>
+
+                            <div class="form-label">
                                 <label for="d-3">Day 3</label>
                                 <input type="date" name="d-3" id="d-3" value="<?php echo $row['day3'] ?>">
                             </div>
@@ -149,34 +153,33 @@
 
                             <div class="form-label">
                                 <label for="d-28_30"><span>*</span>Day 28/30<span>*</span></label>
-                                <input type="date" name="d-28_30" id="d-28_30"
+                                <input type="text" name="d-28_30" id="d-28_30" placeholder="YYYY-MM-DD"
                                     value="<?php echo $row['day28_30'] ?>">
-                                <p><span>*</span>Proceed with day 28/30 if dog is not alive after 14 days of observation</p>
+                                <small>Proceed with day 28/30 if dog is not alive after 14 days of observation</small>
                             </div>
 
                             <div class="form-label" id="status">
-                                <label for="status-animal">Status Animal after D14 of Exposure</label>
-                                <input type="text" name="status-animal" id="status-animal"
-                                    value="<?php echo $row['Status'] ?>">
-                            </div>
-
-                            <div class="form-label" id="remarks">
-                                <label for="remarks">Remarks</label>
-                                <textarea name="remarks" id="remarks" cols="40" rows="3"><?php echo $row['remark'] ?></textarea>
+                                <label for="staus-animal">Status Animal after D14 of Exposure</label>
+                                <select name="status-animal" id="">
+                                    <option value="Alive" <?php echo($row['Status'] == 'Alive')? 'selected' : '' ?>>Alive</option>
+                                    <option value="Dead" <?php echo($row['Status'] == 'Dead')? 'selected' : '' ?>>Dead</option>
+                                </select>
                             </div>
 
                             <div class="form-label" id="doctor">
                                 <label for="doc">Select Doctor</label>
                                 <select name="doc" id="doc" required>
-                                    <option value="doc1">Doc 1</option>
-                                    <option value="doc2">Doc 2</option>
-                                    <option value="doc3">Nurse 2</option>
-                                    <option value="doc4">Nurse 3</option>
-                                    <option value="doc5">Nurse 4</option>
-                                    <option value="doc6">Nurse 5</option>
+                                    <option value="Eleanor Gumiran-Dacir, MD - Medical Officer III" <?php echo($row['Doctor'] == 'Eleanor Gumiran-Dacir, MD - Medical Officer III')? 'selected' : ''; ?>>Eleanor Gumiran-Dacir, MD - Medical Officer III</option>
+                                    <option value="Cherry H. Navidad, MD - Medical Officer V" <?php echo($row['Doctor'] == 'Cherry H. Navidad, MD - Medical Officer V')? 'selected' : ''; ?>>Cherry H. Navidad, MD - Medical Officer V</option>
                                 </select>
-                                
                             </div> 
+
+                            <div class="form-label" id="remarks" style="grid-column: span 2">
+                                <label for="remarks">Remarks</label>
+                                <textarea name="remarks" id="remarks" cols="40" rows="3"><?php echo $row['remark'] ?></textarea>
+                            </div>
+
+                            
                                
                                 <div id="v-btn">
                                     <button type="submit" name="update-btn" id="vs-btn">Save</button>
@@ -195,6 +198,40 @@
                 const patientID = <?php echo json_encode($row['patient_detID']); ?>; // Make sure $row['patient_detID'] is defined in your PHP context.
                 window.location.href = `./patient-details.php?patientid=${patientID}`;
             });
+    </script>
+
+    <script>
+        
+        function slc1() {
+            var expo = document.querySelector('#c-expo');
+            var post_expo = document.querySelector('#post_expo');
+
+            post_expo.options.length = 0;
+
+            if (expo.value == "II") {
+                var optionArray = ['TCV ONLY'];
+            } else if (expo.value == "III") {
+                var optionArray = ['TCV + RIG', 'TCV + HRIG'];
+            }
+
+            for (var i = 0; i < optionArray.length; i++) {
+                var newoption = document.createElement("option");
+                newoption.value = optionArray[i];
+                newoption.text = optionArray[i];
+
+                // Set selected attribute based on PHP value
+                if ('<?php echo $row['post_expo']; ?>' === optionArray[i]) {
+                    newoption.selected = true;
+                }
+
+                post_expo.add(newoption);
+            }
+    
+
+            // Call the function initially to populate options based on the default selection
+            slc1();
+        }
+        
     </script>
 
   

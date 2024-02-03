@@ -16,9 +16,11 @@ if(isset($_POST['submit']))
     $email = $_SESSION['Email'];
     $symptoms = $_POST['symptoms'];
     $accidentdate = $_POST['accident-d'];
+    $animal = $_POST['animal'];
+    $other = $_POST['other_animal'];
 
-    $query_run = $conn->prepare("INSERT INTO Appointment (fname, lname, mname, reason, Status, cnum, email, symptoms, Accident_date) VALUES (?,?,?,?,?,?,?,?,?)");
-    $query_run->execute([$fname, $lname, $mname, $reasons, $status, $cnum, $email, $symptoms, $accidentdate]);
+    $query_run = $conn->prepare("INSERT INTO Appointment (fname, lname, mname, reason, Status, cnum, email, symptoms, Accident_date, Animal, Other_Animal) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+    $query_run->execute([$fname, $lname, $mname, $reasons, $status, $cnum, $email, $symptoms, $accidentdate, $animal, $other]);
     
     if($query_run)
     {

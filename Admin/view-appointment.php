@@ -56,7 +56,7 @@
                         <select name="status" id="not-d">
                             <option value="PENDING" <?php echo ($row['status'] == "PENDING")? 'selected' : ''; ?>>PENDING</option>
                             <option value="APPROVE" <?php echo ($row['status'] == "APPROVE")? 'selected' : ''; ?>>APPROVE</option>
-                            <option value="DECLINED" <?php echo ($row['status'] == "DECLINED")? 'selected' : ''; ?>>DECLINED</option>
+                            <option value="FOR REFERRAL" <?php echo ($row['status'] == "FOR REFERRAL")? 'selected' : ''; ?>>FOR REFERRAL</option>
                         </select>
                     </div>
                     <div class="btn">

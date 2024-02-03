@@ -151,7 +151,20 @@ SELECT patient_details.fname, patient_details.lname, patient_details.patient_det
         INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
         WHERE patient_records.patient_detID = 2000003
 
-"SELECT patient_details.fname, patient_details.lname, patient_details.patient_detID, patient_records.*
+SELECT patient_details.fname, patient_details.lname, patient_details.patient_detID, patient_records.*
         FROM patient_records 
         INNER JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
         WHERE patient_records.patient_detID = 2000003;
+
+Select * from Appointment
+
+Alter table Appointment
+Add Symptoms varchar(100),
+Accident_date date	
+
+Alter table Appointment
+drop Column Symptoms, Accident_date;
+
+Delete from Appointment where AppointID = 1032
+
+

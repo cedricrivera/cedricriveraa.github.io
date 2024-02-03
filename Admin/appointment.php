@@ -43,7 +43,7 @@
                             <th>Reason</th>
                             <th>Email</th>
                             <th>Symptoms</th>
-                            <th>Accident Date</th>
+                            <th>Date of Exposure</th>
                             <th>Remarks</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -122,7 +122,7 @@
         $(document).ready(function() {
             $("td:contains('APPROVE')").css("background-color", "#0dd157").css("color", "Black");
             $("td:contains('PENDING')").css("background-color", "yellow")
-            $("td:contains('DECLINED')").css("background-color", "red").css("color", "White");
+            $("td:contains('FOR REFERRAL')").css("background-color", "#FFA447").css("color", "Black");
         });
         </script>
 </body>

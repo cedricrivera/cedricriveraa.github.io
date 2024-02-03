@@ -60,6 +60,9 @@ include "Admin/connection/connection.php";
         <section id="Appointment">
             <div data-aos="zoom-in" class="title">
                 <h1>APPOINTMENT SCHEDULE</h1>
+                <div class="time">
+                    <p>Time: <span>1:00pm - 3:00pm ONLY</span></p>
+                </div>
             </div>
             
             <div class="form">
@@ -87,15 +90,32 @@ include "Admin/connection/connection.php";
                     </div>
 
                     <div class="input">
+                        <label for="">Animal</label>
+                        <select name="animal" id="animal" onchange="other()">
+                            <option value="Pet Dog">Pet Dog</option>
+                            <option value="Pet Cat">Pet Cat</option>
+                            <option value="Stray Dog">Stray Dog</option>
+                            <option value="Stray Car">Stray Car</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="input disable" id="others" style="display:none;">
+                        <label for="others">Others</label>
+                        <input type="text" name="other_animal" id="otherInput" placeholder="Enter the Animal">
+                    </div>
+
+                    <div class="input">
                         <label for="">Reason</label>
                         <select name="reason" id="">
-                            <option value="Bite">Bite</option>
+                            <option value="Animal Bite">Animal Bite</option>
+                            <option value="Leak">Leak</option>
                             <option value="Scratch">Scratch</option>
                         </select>
                     </div>
 
                     <div class="input">
-                        <label>Accident Date</label>
+                        <label>Date of Incident</label>
                         <input type="date" name="accident-d" id="">
                     </div>
 
@@ -119,7 +139,7 @@ include "Admin/connection/connection.php";
                         <th>Reason</th>
                         <th>Contact No.</th>
                         <th>Symptoms</th>
-                        <th>Accident Date</th>
+                        <th>Incident Date</th>
                         <th>Remarks</th>
                         <th>Date Appointment</th>
                         <th>Status</th>
@@ -220,4 +240,16 @@ include "Admin/connection/connection.php";
   AOS.init();
 </script>
 <script src="UserJS/user.js"></script>
+<script>
+    function other() {
+        var animal = document.querySelector('#animal');
+        var inputother = document.querySelector('#others');
+
+        if (animal.value === "Others") {
+            inputother.style.display = "block";
+        } else {
+            inputother.style.display = "none";
+        }
+    }
+</script>
 </html>
