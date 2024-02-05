@@ -23,10 +23,11 @@
         $remarks = $_POST['remarks'];
         $doctor = $_POST['doc'];
         $d0 = $_POST['d-0'];
+        $status_rec = $_POST['status_rec'];
 
         // ADD RECORDS
-        $sql3 = "INSERT INTO patient_records(date_expo, place_expo, type_expo, source_expo, cat_expo, post_expo, washing_bite, date_rig, gen_name, brand_name, route, day3, day7, day14_IM, day28_30, Status, remark, doctor, patient_detID, Date_added, day0) 
-        VALUES('$date_expo','$p_expo', '$t_expo','$s_expo','$cat_expo','$post_expo','$wash','$RIG','$gen_name','$brand_name', '$route','$d3','$d7','$d14','$d28_30','$status','$remarks', '$doctor', $patientID, GETDATE(), '$d0');";
+        $sql3 = "INSERT INTO patient_records(date_expo, place_expo, type_expo, source_expo, cat_expo, post_expo, washing_bite, date_rig, gen_name, brand_name, route, day3, day7, day14_IM, day28_30, Status, remark, doctor, patient_detID, Date_added, day0, status_record) 
+        VALUES('$date_expo','$p_expo', '$t_expo','$s_expo','$cat_expo','$post_expo','$wash','$RIG','$gen_name','$brand_name', '$route','$d3','$d7','$d14','$d28_30','$status','$remarks', '$doctor', $patientID, GETDATE(), '$d0', '$status_rec');";
         $res = $conn->prepare($sql3);
         $res->execute();
 

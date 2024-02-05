@@ -55,6 +55,7 @@
                                 <th>Category of Exposure</th>
                                 <th>Remarks</th>
                                 <th>Date Consulted</th>
+                                <th>Status</th>
                                 <th>Action</th>
 
                                 <?php
@@ -76,6 +77,7 @@
                                                 <td><?php echo $row['cat_expo'] ?></td>
                                                 <td><?php echo $row['remark'] ?></td>
                                                 <td><?php echo $row['Date_Added'] ?></td>
+                                                <td><?php echo $row['status_record'] ?></td>
                                                 <td>
                                                     <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-del" data-patientrecordID="<?php echo $row['patientID'] ?>" data-patientdetID="<?php echo $row['patient_detID'] ?>"></i>
                                                 </td>
@@ -101,6 +103,7 @@
                 <div class="n-modal-content">
                     <h2>Add New Record</h2>
                     <form action="" method="POST" autocomplete="off">
+
                         <label for="e-date">Date of Exposure</label>
                             <input type="date" name="e-date" id="date">
 

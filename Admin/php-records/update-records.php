@@ -24,11 +24,12 @@
             $remarks = $_POST['remarks'];
             $doctor = $_POST['doc'];
             $d0 = $_POST['d-0'];
+            $status_rec = $_POST['status_rec'];
 
             $sql = "UPDATE patient_records
             SET date_expo = '$date_expo', place_expo = '$p_expo', type_expo = '$t_expo', source_expo = '$s_expo', cat_expo = '$cat_expo', post_expo = '$post_expo', washing_bite = '$wash', date_rig = '$RIG', 
-            gen_name = '$gen_name', brand_name = '$brand_name', route = '$route', day3 = '$d3', day7 = '$d7', day14_IM = '$d14', day28_30 = '$d28_30', Status = '$status', remark = '$remarks', doctor = '$doctor', day0 = '$d0'
-            WHERE patientID = $recordid";
+            gen_name = '$gen_name', brand_name = '$brand_name', route = '$route', day3 = '$d3', day7 = '$d7', day14_IM = '$d14', day28_30 = '$d28_30', Status = '$status', remark = '$remarks', doctor = '$doctor', day0 = '$d0',
+            status_record = '$status_rec' WHERE patientID = $recordid";
             $res = $conn->prepare($sql);
             $res->execute();
 

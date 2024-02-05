@@ -31,6 +31,14 @@
                     <div class="history-exposure">
                         <i class="fa-solid fa-arrow-left" id="back"></i>
 
+                        <div class="status_rec">
+                            <label>Status</label>
+                            <select name="status_rec" id="">
+                                <option value="INCOMPLETE" <?php echo($row['status_record'] == 'INCOMPLETE')? 'selected' : ''; ?>>INCOMPLETE</option>
+                                <option value="COMPLETED" <?php echo($row['status_record'] == 'COMPLETED')? 'selected' : ''; ?>>COMPLETED</option>
+                            </select>
+                        </div>
+
                         <h1>HISTORY EXPOSURE</h1>
                         <br>
 
