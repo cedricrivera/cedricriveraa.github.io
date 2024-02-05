@@ -241,7 +241,7 @@ td a:hover{
 
 #Appointment .form{
     grid-area: form;
-    height: 28rem;
+    height: 24rem;
     display: grid;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -252,11 +252,10 @@ td a:hover{
 
 #Appointment form{
     display: grid;
-    height: 27rem;
+    height: 22rem;
     align-items: center;
-    gap: 10px;
-    overflow-y: auto;
     padding-right: 6px;
+    align-items: start;
 }
 
 form .input{
@@ -280,6 +279,14 @@ form input, textarea, select{
     border: 1px solid var(--secondary-color);
     font-weight: 500;
     font-size: 12px;
+}
+
+form .input #fname,
+form .input #lname,
+form .input #cnum,
+form .input #mname{
+    color: white;
+    letter-spacing: 2px;
 }
 
 form textarea{

@@ -3,8 +3,11 @@
         session_start();
     }
 $email = $_SESSION['Email'];
+$firstname = $_SESSION['Firstname'];
+$lastname = $_SESSION['Lname'];
+$middlename = $_SESSION['Mname'];
+$cnum = $_SESSION['Cnum'];
 include "Admin/connection/connection.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,26 +71,6 @@ include "Admin/connection/connection.php";
             <div class="form">
                 <div data-aos="zoom-in-right">
                 <form action="appoint.php" method="POST">
-
-                    <div class="input">
-                        <label for="">Firstname</label>
-                        <input type="text" name="fname" id="" placeholder="Enter Firstname" required>
-
-                    </div>
-                    <div class="input">
-                        <label for="">Lastname</label>
-                        <input type="text" name="lname" id="" placeholder="Enter Lastname" required>
-                    </div>
-
-                    <div class="input">
-                        <label for="">Middlename</label>
-                        <input type="text" name="mname" id="" placeholder="Enter Middlename">
-                    </div>
-
-                    <div class="input">
-                        <label for="">Contact No. </label>
-                        <input type="number" name="cnum" id="" placeholder="Enter Contact Number" required>
-                    </div>
 
                     <div class="input">
                         <label for="">Animal</label>

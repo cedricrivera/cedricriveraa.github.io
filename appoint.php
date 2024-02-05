@@ -7,12 +7,12 @@ include('Admin/connection/connection.php');
 
 if(isset($_POST['submit']))
 {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $mname = $_POST['mname'];
+    $fname = $_SESSION['Firstname'];
+    $lname = $_SESSION['Lname'];
+    $mname = $_SESSION['Mname'];
+    $cnum = $_SESSION['Cnum'];
     $reasons = $_POST['reason'];
     $status = "PENDING";
-    $cnum = $_POST['cnum'];
     $email = $_SESSION['Email'];
     $symptoms = $_POST['symptoms'];
     $accidentdate = $_POST['accident-d'];

@@ -54,7 +54,7 @@
                         if($rows){ 
                         foreach ($rows as $row) { ?>
                             <tr>
-                                <td><?php echo $row['AppointID'] ?></td>
+                                <td><a href="appoint-records.php?appointid=<?php echo $row['AppointID']?>"><?php echo $row['AppointID'] ?></a></td>
                                 <td><?php echo $row['fname'] . " " . $row['lname'] ?></td>
                                 <td><?php echo $row['reason'] ?></td>
                                 <td><?php echo $row['email'] ?></td>

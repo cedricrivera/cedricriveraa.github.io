@@ -22,6 +22,10 @@ if(isset($_POST['log'])){
       if($password === $row['password']){
         $_SESSION['UserID'] = $row['userID'];
         $_SESSION['Email'] = $row['email'];
+        $_SESSION['Firstname'] = $row['Firstname'];
+        $_SESSION['Lname'] = $row['Lastname'];
+        $_SESSION['Mname'] = $row['Middle_Name'];
+        $_SESSION['Cnum'] = $row['Contact_Number'];
         header('Location: Menu.php'); // Fix the 'Location' header
         exit(); // Make sure to exit after setting the session and redirecting
       } else {
