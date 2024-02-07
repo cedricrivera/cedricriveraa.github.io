@@ -2,11 +2,6 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-$email = $_SESSION['Email'];
-$firstname = $_SESSION['Firstname'];
-$lastname = $_SESSION['Lname'];
-$middlename = $_SESSION['Mname'];
-$cnum = $_SESSION['Cnum'];
 include "Admin/connection/connection.php";
 ?>
 <!DOCTYPE html>
@@ -128,7 +123,10 @@ include "Admin/connection/connection.php";
                         <th>Status</th>
                     </tr>
                     <?php
-                    $query = "SELECT * FROM Appointment WHERE email = '$email'";
+                    $query = "select Appointment.*, user_accounts.*
+                    from Appointment
+                    INNER JOIN user_accounts ON user_accounts.userID = Appointment.userID;
+                    WHER user_accounts.userID = '$pid'";
                             $stmt = $conn->prepare($query);
                             $stmt->execute();
                     
