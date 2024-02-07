@@ -37,7 +37,7 @@
 
                 <div>
                     <label for="age">Age</label>
-                    <input type="text" id="age" name="age" >
+                    <input type="text" id="age" name="age" readonly >
                 </div>
                
 
