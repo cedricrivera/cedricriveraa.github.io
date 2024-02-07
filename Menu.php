@@ -124,9 +124,9 @@ include "Admin/connection/connection.php";
                     </tr>
                     <?php
                     $query = "select Appointment.*, user_accounts.*
-                    from Appointment
-                    INNER JOIN user_accounts ON user_accounts.userID = Appointment.userID
-                    WHERE user_accounts.userID = '$pid'";
+                                from Appointment
+                                INNER JOIN user_accounts ON user_accounts.userID = Appointment.userID
+                                WHERE user_accounts.userID = '$pid'";
                             $stmt = $conn->prepare($query);
                             $stmt->execute();
                     

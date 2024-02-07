@@ -95,6 +95,7 @@ main{
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border-radius: 20px;
   padding: 5px 10px 0px;
+  background-color: #f2f2f2;
 }
 
 .fillup h1{
@@ -113,14 +114,58 @@ main{
     display: grid;
 }
 
-.fillup form .form-label input{
+.fillup form .form-label input, .fillup form .form-label select, .form-label textarea{
   padding: 5px 10px;
   border-radius: 20px;
   border: 1px solid var(--light-second);
   font-size: 15px;
 }
 
+.form-label textarea{
+  padding-top: 5px;
+  border-radius: 10px;
+  resize: none;
+}
+
 .title{
   padding-top: 10px;
   grid-column: span 2;
+  text-transform: uppercase;
+}
+
+#animal{
+  align-items: start;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+#option{
+  width: 100%;
+}
+#doctor{
+    display: flex;
+    flex-direction: column;
+}
+
+#btn{
+  grid-column: span 2;
+  height: 2rem;
+  width: 30%;
+  justify-self: center;
+  margin: 30px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary);
+  color: var(--text-color);
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all ease 0.5s
+}
+
+#btn:hover{
+  background-color: var(--light-primary);
+  transition: all ease 0.5s;
 }
