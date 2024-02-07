@@ -115,7 +115,7 @@ include "Admin/connection/connection.php";
                     <tr>
                         <th>Appointment ID</th>
                         <th>Reason</th>
-                        <th>Contact No.</th>
+
                         <th>Symptoms</th>
                         <th>Incident Date</th>
                         <th>Remarks</th>
@@ -125,8 +125,8 @@ include "Admin/connection/connection.php";
                     <?php
                     $query = "select Appointment.*, user_accounts.*
                     from Appointment
-                    INNER JOIN user_accounts ON user_accounts.userID = Appointment.userID;
-                    WHER user_accounts.userID = '$pid'";
+                    INNER JOIN user_accounts ON user_accounts.userID = Appointment.userID
+                    WHERE user_accounts.userID = '$pid'";
                             $stmt = $conn->prepare($query);
                             $stmt->execute();
                     
@@ -138,7 +138,6 @@ include "Admin/connection/connection.php";
                             <tr>
                                 <td><?= $row->AppointID; ?></td>
                                 <td><?= $row->reason; ?></td>
-                                <td><?= $row->cnum; ?></td>
                                 <td><?= $row->Symptoms; ?></td>
                                 <td><?= $row->Accident_date; ?></td>
                                 <td><?= $row->remarks; ?></td>
@@ -176,10 +175,11 @@ include "Admin/connection/connection.php";
                             </tr>
                         </thead>
                         <?php 
-                            $query = "SELECT patient_records.*, patient_details.email
+                            $query = 
+                                    "SELECT patient_records.* , Appointment.userID
                                     FROM patient_records
-                                    LEFT JOIN patient_details ON patient_records.patient_detID = patient_details.patient_detID
-                                    WHERE patient_details.email = '$email'";
+                                    INNER JOIN Appointment ON patient_records.AppointID = Appointment.AppointID
+                                    WHERE Appointment.userID = '$pid'";
                             $stmt = $conn->prepare($query);
                             $stmt->execute();
 

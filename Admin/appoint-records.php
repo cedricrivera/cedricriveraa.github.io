@@ -23,7 +23,10 @@
                     include 'connection/connection.php';
                     $appointID = $_GET['appointid'];
 
-                    $sql = "SELECT * FROM Appointment WHERE AppointID = '$appointID'";
+                    $sql = "SELECT Appointment.* , user_accounts.*
+                    FROM Appointment 
+                    INNER JOIN user_accounts ON Appointment.userID = user_accounts.userID
+                    WHERE AppointID = '$appointID'";
                     $result = $conn->prepare($sql);
                     $result->execute();
 
@@ -32,9 +35,9 @@
             ?>
             <div class="top">
                 <h2>Patient Name:</h2>
-                <h3>sample</h3>
+                <h3><?php echo $row['Firstname'] . ' ' . $row['Lastname'] ?></h3>
                 <h2>Appointment ID No:</h2>
-                <h3>202020</h3>
+                <h3><?php echo $row['AppointID'] ?></h3>
             </div>
             <div class="fillup">
                 <h1>Add Records</h1>
@@ -42,46 +45,54 @@
                 <form action="">
                     <div class="form-label">
                         <label>Firstname</label>
-                        <input type="text" name="fname" id="" value="<?php echo $row['fname'] ?> " disabled>
+                        <input type="text" name="fname" id="" value="<?php echo $row['Firstname'] ?>" readonly>
                     </div>
                     
                     <div class="form-label">
                         <label>Lastname</label>
-                        <input type="text" name="lname" id="" value="<?php echo $row['lname'] ?>" disabled>
+                        <input type="text" name="lname" id="" value="<?php echo $row['Lastname'] ?>" readonly>
                     </div>
 
                     <div class="form-label">
                         <label>Middle Name</label>
-                        <input type="text" name="mname" id="" value="<?php echo $row['mname'] ?>" disabled>
+                        <input type="text" name="mname" id="" value="<?php echo $row['Middle_Name'] ?>" readonly>
                     </div>
 
                     <div class="form-label">
                         <label>Contact Number</label>
-                        <input type="number" name="cnum" id="" value="<?php echo $row['cnum'] ?>" disabled>
+                        <input type="number" name="cnum" id="" value="<?php echo $row['Contact_Number'] ?>" readonly>
                     </div>
                    
                     <div class="form-label">
                         <label>Address</label>
-                        <input type="text" name="address" id="" value="<?php echo $row['mname'] ?>" disabled>
+                        <input type="text" name="address" id="" value="<?php echo $row['Address'] ?>" readonly>
                     </div>
                     
                     <div class="form-label">
                         <label>Age</label>
-                        <input type="text" name="age" id="" value="">
+                        <input type="text" name="age" id="" value="<?php echo $row['Age'] ?>" readonly>
                     </div>
                     
                     <div class="form-label">
                         <label>Sex</label>
-                        <input type="text" name="sex" id="" value="">
+                        <input type="text" name="sex" id="" value="<?php echo $row['Gender'] ?>" readonly>
                     </div>
                     
                     <div class="form-label">
                         <label>Email</label>
-                        <input type="email" name="email" id="" value="">
+                        <input type="email" name="email" id="" value="<?php echo $row['email'] ?>" readonly>
                     </div>
+
+                    <div class="title" style="grid-column: span 2">
+                        <h1>HISTORY EXPOSURE</h1>
+                        <hr>
+                    </div>
+
                     
 
-                    <input type="button" value="Submit">
+                    
+
+                 
                 </form>
             </div>
         </div>

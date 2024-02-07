@@ -31,9 +31,15 @@
                 </div>
 
                 <div>
-                    <label for="age">Age</label>
-                    <input type="number" name="age" id="" required>
+                    <label for="">Birthday</label>
+                    <input type="date" name="" id="birthday" onchange="calculateAge()">
                 </div>
+
+                <div>
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" >
+                </div>
+               
 
                 <div>
                     <label for="gender">Gender</label>
@@ -43,14 +49,14 @@
                     </select>
                 </div>
 
-                <div>
+                <div style="display: grid; grid-column: span 2;">
                     <label for="cnum">Contact Number</label>
                     <input type="number" name="cnum" id="" required> 
                 </div>
 
                 <div id="address">
                     <label for="address">Address</label>
-                    <textarea name="address" id="" cols="30" rows="2" required></textarea>
+                    <textarea name="address" id="" cols="30" rows="3" required></textarea>
                 </div>
 
                 <div id="email">
@@ -73,7 +79,21 @@
             </form>
         </div>
     </div>
-    
+    <script>
+        function calculateAge() {
+            var birthdayInput = document.getElementById('birthday').value;
+            var birthday = new Date(birthdayInput);
+            var today = new Date();
+
+            var age = today.getFullYear() - birthday.getFullYear();
+            var monthDiff = today.getMonth() - birthday.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthday.getDate())) {
+                age--;
+            }
+
+            document.getElementById('age').value = age;
+        }
+    </script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src='UserJS/user.js'></script>

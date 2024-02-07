@@ -34,9 +34,8 @@
             $res->execute();
 
             if(!$res){
-                die($conn->error);
+                die($conn->$error);
             }
-    
             else{
                 header("Location: ../patient-details.php?patientid=$patientid&update=Update Succefully");
             }

@@ -118,6 +118,10 @@ form{
     height: fit-content;
 }
 
+#remarks{
+  grid-column: span 2;
+}
+
 .input input, textarea, select{
     padding: 0px 8px;
     border-radius: 10px;

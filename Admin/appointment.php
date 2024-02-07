@@ -29,7 +29,9 @@
             <div class="table">
                 <table>
                     <?php
-                        $sql = "select * from Appointment";
+                        $sql = "select Appointment.*, user_accounts.*
+                        from Appointment
+                        INNER JOIN user_accounts ON Appointment.userID = user_accounts.userID";
                         include 'connection/connection.php';
                         $res = $conn->prepare($sql);
                         $res->execute();
@@ -55,7 +57,7 @@
                         foreach ($rows as $row) { ?>
                             <tr>
                                 <td><a href="appoint-records.php?appointid=<?php echo $row['AppointID']?>"><?php echo $row['AppointID'] ?></a></td>
-                                <td><?php echo $row['fname'] . " " . $row['lname'] ?></td>
+                                <td><?php echo $row['Firstname'] . " " . $row['Lastname'] ?></td>
                                 <td><?php echo $row['reason'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['Symptoms'] ?></td>

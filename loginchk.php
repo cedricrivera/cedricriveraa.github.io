@@ -51,9 +51,6 @@ if(isset($_POST['log'])){
         $_SESSION['Firstname'] = $row['Firstname'];
         $_SESSION['Lastname'] = $row['Lastname'];
         header('Location: Admin/index.php'); // Fix the 'Location' header
-        $userid = $row['userID'];
-        $fname = $row['Firstname'];
-        $lastname = $row['Lastname'];
         exit();
       } else {
         ?>

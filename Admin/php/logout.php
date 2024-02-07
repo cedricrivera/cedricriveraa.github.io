@@ -8,6 +8,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the login page or any other desired destination
-header("Location: /ABTC/login.php");
+header("Location: /ABTC-FINAL/login.php");
 exit;
 ?>

@@ -89,9 +89,12 @@ main{
 }
 
 .fillup{
-    padding-top: 20px;
-    height: 100%;
-    padding: 10px;
+  margin-top: 20px;
+  height: auto;
+  overflow-y: auto;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 20px;
+  padding: 5px 10px 0px;
 }
 
 .fillup h1{
@@ -108,4 +111,16 @@ main{
 
 .fillup form .form-label{
     display: grid;
+}
+
+.fillup form .form-label input{
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--light-second);
+  font-size: 15px;
+}
+
+.title{
+  padding-top: 10px;
+  grid-column: span 2;
 }

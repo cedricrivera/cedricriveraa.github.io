@@ -24,15 +24,15 @@
                 <form action="patient-appointment/update-appoint.php?appid=<?php echo $row['AppointID'] ?>" method="post">
                     <div class="input">
                         <label>Firstname</label>
-                        <input type="text" name="fname" value="<?php echo $row['fname']?>" disabled>
+                        <input type="text" name="fname" value="<?php echo $row['Firstname']?>" disabled>
                     </div>
                     <div class="input">
                     <label>Middlename</label>
-                        <input type="text" name="mname" value="<?php echo $row['mname']?>" disabled>
+                        <input type="text" name="mname" value="<?php echo $row['Middle_Name']?>" disabled>
                     </div>
                     <div class="input">
                     <label>Lastname</label>
-                        <input type="text" name="lname" value="<?php echo $row['lname']?>" disabled>
+                        <input type="text" name="lname" value="<?php echo $row['Lastname']?>" disabled>
                     </div>
                     <div class="input">
                         <label>Reason</label>
@@ -42,15 +42,29 @@
                     <label>Email</label>
                         <input type="email" name="email" value="<?php echo $row['email']?>" disabled>
                     </div>
+
+                    <div class="input">
+                        <label for="">Address</label>
+                        <input type="text" id="" name="Address" value="<?php echo $row['Address'] ?>">
+                    </div>
+
+                    <div class="input">
+                        <label for="">Contact Number</label>
+                        <input type="text" id="" name="Address" value="<?php echo $row['Contact_Number'] ?>">
+                    </div>
+
+                    <div class="input">
+                        <label for="">Incident Date</label>
+                        <input type="date" id="" name="Address" value="<?php echo $row['Accident_date'] ?>">
+                    </div>
+
+                    
                     
                     <div class="input">
                         <label for="">Set Apointment Date</label>
                         <input type="date" id="not-d" name="appointdate" value="<?php echo $row['appointdate'] ?>">
                     </div>
-                    <div class="input">
-                        <label for="">Remarks</label>
-                        <textarea name="remarks" id="not-d" cols="30" rows="3"><?php echo $row['remarks'] ?></textarea>
-                    </div>
+
                     <div class="input">
                         <label for="">Status</label>
                         <select name="status" id="not-d">
@@ -59,6 +73,12 @@
                             <option value="FOR REFERRAL" <?php echo ($row['status'] == "FOR REFERRAL")? 'selected' : ''; ?>>FOR REFERRAL</option>
                         </select>
                     </div>
+
+                    <div class="input" id="remarks">
+                        <label for="">Remarks</label>
+                        <textarea name="remarks" id="not-d" cols="30" rows="3"><?php echo $row['remarks'] ?></textarea>
+                    </div>
+                    
                     <div class="btn">
                         <button type="submit" id="btn-save">Save</button>
                     </div>
