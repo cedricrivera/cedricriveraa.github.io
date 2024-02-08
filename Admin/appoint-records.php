@@ -184,7 +184,7 @@
                  
                     <div class="form-label">
                         <label for="route">Route</label>
-                            <select name="route" id="route"  >
+                            <select name="route" id="route"  required>
                                 <option value="ID">ID</option>
                                 <option value="IM">IM</option>
                             </select>
@@ -192,22 +192,22 @@
 
                     <div class="form-label">
                         <label for="d-3">Day 0</label>
-                        <input type="date" name="d-0" id="" >
+                        <input type="date" name="d-0" id="" required>
                     </div>
 
                     <div class="form-label">
                         <label for="d-3">Day 3</label>
-                        <input type="date" name="d-3" id="" >
+                        <input type="date" name="d-3" id="" required>
                     </div>
                    
                     <div class="form-label">
                         <label for="d-7">Day 7</label>
-                        <input type="date" name="d-7" id="" >
+                        <input type="date" name="d-7" id="" required>
                     </div>
 
                     <div class="form-label">
                         <label for="d-14">Day 14 (IM)</label>
-                        <input type="date" name="d-14" id="">
+                        <input type="date" name="d-14" id="" required>
                     </div>
 
                     <div class="form-label">
