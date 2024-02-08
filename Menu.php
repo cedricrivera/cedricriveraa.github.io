@@ -69,7 +69,8 @@ include "Admin/connection/connection.php";
 
                     <div class="input">
                         <label for="">Animal</label>
-                        <select name="animal" id="animal" onchange="other()">
+                        <select name="animal" id="animal" onchange="other()" required>
+                            <option value="">--SELECT Animal Bit FIRST--</option>
                             <option value="Pet Dog">Pet Dog</option>
                             <option value="Pet Cat">Pet Cat</option>
                             <option value="Stray Dog">Stray Dog</option>
@@ -85,7 +86,8 @@ include "Admin/connection/connection.php";
 
                     <div class="input">
                         <label for="">Reason</label>
-                        <select name="reason" id="">
+                        <select name="reason" id="" required>
+                            <option value="">--SELECT REASON FIRST--</option>
                             <option value="Animal Bite">Animal Bite</option>
                             <option value="Leak">Leak</option>
                             <option value="Scratch">Scratch</option>
@@ -94,7 +96,7 @@ include "Admin/connection/connection.php";
 
                     <div class="input">
                         <label>Date of Incident</label>
-                        <input type="date" name="accident-d" id="">
+                        <input type="date" name="accident-d" id="" required>
                     </div>
 
                     <div class="input">
