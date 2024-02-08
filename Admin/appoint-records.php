@@ -45,7 +45,7 @@
                 </div>
                 
                 <hr>
-                <form action="appoint-records/add-records.php" method="post">
+                <form action="appoint-records/add-records.php?appointid=<?php echo $appointID ?>" method="post">
                     <div class="form-label">
                         <label>Firstname</label>
                         <input type="text" name="fname" id="" value="<?php echo $row['Firstname'] ?>" readonly>
@@ -187,15 +187,20 @@
                                 <option value="IM">IM</option>
                             </select>
                     </div>
-                   
+
                     <div class="form-label">
-                        <label for="d-7">Day 7</label>
-                        <input type="date" name="d-7" id="" required>
+                        <label for="d-3">Day 0</label>
+                        <input type="date" name="d-0" id="" required>
                     </div>
 
                     <div class="form-label">
                         <label for="d-3">Day 3</label>
                         <input type="date" name="d-3" id="" required>
+                    </div>
+                   
+                    <div class="form-label">
+                        <label for="d-7">Day 7</label>
+                        <input type="date" name="d-7" id="" required>
                     </div>
 
                     <div class="form-label">
@@ -237,5 +242,28 @@
             </div>
         </div>
     </main>
+    <?php include 'php/message.php' ?>
+    <script>
+        function slc1(){
+            var expo = document.querySelector('#expo');
+            var post_expo = document.querySelector('#post_expo');
+
+            post_expo.innerHTML = ""
+
+            if(expo.value == "II"){
+                var optionArray = ['TCV ONLY'];
+            }
+            else if(expo.value = "III"){
+                var optionArray = ['TCV + RIG', 'TCV + HRIG'];
+            }
+
+            for (var i = 0; i < optionArray.length; i++) {
+                var newoption = document.createElement("option");
+                newoption.value = optionArray[i];
+                newoption.text = optionArray[i];
+                post_expo.add(newoption);
+            };
+        };
+    </script>
 </body>
 </html>

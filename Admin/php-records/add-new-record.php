@@ -1,7 +1,7 @@
 <?php 
     if(isset($_POST['AddnewRecord'])){
 
-        $patientID = $_GET['patientid'];
+        $patientID = $_GET['appointid'];
 
         $date_expo = $_POST['e-date'];
         $p_expo = $_POST['p-expo'];

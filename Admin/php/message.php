@@ -66,7 +66,7 @@
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: '',
+                title: 'Inserted Successfully',
                 showConfirmButton: false,
                 timer: 2000
             });

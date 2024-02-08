@@ -70,7 +70,7 @@
                                 </td>
                             </tr>
                         <?php } } else { ?>
-                            <tr><td colspan="7">No Records</td></tr>
+                            <tr><td colspan="9">No Records</td></tr>
                         <?php } ?>
                     </tbody>
                 </table>

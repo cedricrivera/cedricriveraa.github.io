@@ -58,7 +58,7 @@
                     <div id="scroll">
                         <table>
                             <tr>
-                                <th>Patient ID No.</th>
+                                <th></th>
                                 <th>Lastname</th>
                                 <th>Firstname</th>
                                 <th>Email</th>
@@ -71,7 +71,17 @@
                             
                             <?php 
                             include 'connection/connection.php';
-                            $sql = "select * from patient_details";
+                            $sql = "SELECT 
+                                        patient_records.*, 
+                                        patient_details.*, 
+                                        Appointment.*
+                                    FROM 
+                                        patient_records
+                                    INNER JOIN 
+                                        Appointment ON patient_records.AppointID = Appointment.AppointID
+                                    INNER JOIN 
+                                        patient_details ON patient_details.patient_detID = patient_records.patient_detID;
+                                    ";
                             $res = $conn->prepare($sql);
                             $res->execute();
                             $rows = $res->fetchAll();
@@ -83,7 +93,7 @@
                             ?>
                             <tbody id="mytable">
                                 <tr>
-                                    <td id="link-table"><a href="patient-details.php?patientid=<?php echo $row['patient_detID']?>"><?php echo $row['patient_detID']?></a></td>
+                                    <!-- <td id="link-table"><a href="patient-details.php?patientid=<?php echo $row['patient_detID']?>"><?php echo $row['patient_detID']?></a></td> -->
                                     <td><?php echo $row['lname']?></td>
                                     <td><?php echo $row['fname']?></td>
                                     <td><?php echo $row['email']?></td>
