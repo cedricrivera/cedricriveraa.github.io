@@ -1,6 +1,7 @@
 <?php 
     if(!isset($_SESSION))
     session_start();
+    include 'appoint-records/add-records.php'
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +94,7 @@
 
                     <div class="form-label">
                         <label for="e-date">Date of Exposure</label>
-                        <input type="date" name="e-date" id="" value="" required>
+                        <input type="date" name="e-date" id="" value="" required >
                     </div>
                     
                     <div class="form-label">
@@ -149,6 +150,7 @@
                         <label for="post-expo">Post Exposure Prophylaxis</label>
                             <select name="post-expo" id="post_expo" required>
                                 <option value="">--SELECT CATEGORY FIRST--</option>
+                                <option value="III">III</option>
                             </select>
                     </div>
                     
@@ -182,7 +184,7 @@
                  
                     <div class="form-label">
                         <label for="route">Route</label>
-                            <select name="route" id="route"  required>
+                            <select name="route" id="route"  >
                                 <option value="ID">ID</option>
                                 <option value="IM">IM</option>
                             </select>
@@ -190,17 +192,17 @@
 
                     <div class="form-label">
                         <label for="d-3">Day 0</label>
-                        <input type="date" name="d-0" id="" required>
+                        <input type="date" name="d-0" id="" >
                     </div>
 
                     <div class="form-label">
                         <label for="d-3">Day 3</label>
-                        <input type="date" name="d-3" id="" required>
+                        <input type="date" name="d-3" id="" >
                     </div>
                    
                     <div class="form-label">
                         <label for="d-7">Day 7</label>
-                        <input type="date" name="d-7" id="" required>
+                        <input type="date" name="d-7" id="" >
                     </div>
 
                     <div class="form-label">
