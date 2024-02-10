@@ -54,67 +54,7 @@
                     <button type="button" id="open-button"><i class="fa-solid fa-user-plus"></i> Add Patient</button>
                 </div>
 
-                <div class="t-patient">
-                    <div id="scroll">
-                        <table>
-                            <tr>
-                                <th></th>
-                                <th>Lastname</th>
-                                <th>Firstname</th>
-                                <th>Email</th>
-                                <th>Gender</th>
-                                <th>Age</th>
-                                <th>Contact No.</th>
-                                <th>Date Added</th>
-                                <th>Action</th>
-                            </tr>
-                            
-                            <?php 
-                            include 'connection/connection.php';
-                            $sql = "SELECT 
-                                        patient_records.*, 
-                                        patient_details.*, 
-                                        Appointment.*
-                                    FROM 
-                                        patient_records
-                                    INNER JOIN 
-                                        Appointment ON patient_records.AppointID = Appointment.AppointID
-                                    INNER JOIN 
-                                        patient_details ON patient_details.patient_detID = patient_records.patient_detID;
-                                    ";
-                            $res = $conn->prepare($sql);
-                            $res->execute();
-                            $rows = $res->fetchAll();
-
-                            if(!empty($rows)){ 
-                                $count = 0;
-                                foreach($rows as $row){
-                                    $count++;
-                            ?>
-                            <tbody id="mytable">
-                                <tr>
-                                    <!-- <td id="link-table"><a href="patient-details.php?patientid=<?php echo $row['patient_detID']?>"><?php echo $row['patient_detID']?></a></td> -->
-                                    <td><?php echo $row['lname']?></td>
-                                    <td><?php echo $row['fname']?></td>
-                                    <td><?php echo $row['email']?></td>
-                                    <td><?php echo $row['Sex']?></td>
-                                    <td><?php echo $row['age']?></td>
-                                    <td><?php echo $row['cnum']?></td>
-                                    <td><?php echo $row['Date_Added']?></td>
-                                    <td>
-                                        <i class="fa-solid fa-pen-to-square" style="color: #26ab66;" id="btn-edit"></i>
-                                        <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-delete" data-deleteid="<?php echo $row['patient_detID'] ?>"></i>
-                                    </td>
-                                </tr>
-                                    
-                                <?php } } else{ ?>    
-                                    <td>0 Results</td>
-                                <?php 
-                                } ?>
-                            </tbody>
-                        </table>
-                    </div> 
-                </div>
+                <?php include 'php-records/showrecords.php' ?>
 
                 <dialog class="modal" id="modal">
                     <div class="modal-content">

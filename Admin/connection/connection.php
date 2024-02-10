@@ -1,7 +1,7 @@
 <?php
 
-$serverName = "NAVAREZ\SQLEXPRESS";
-$database = "Backupp";
+$serverName = "DESKTOP-1G6FINM\SQLEXPRESS";
+$database = "DB_ABTC";
 $uid = "";
 $pass = "";
 

@@ -24,38 +24,38 @@
                 <form action="patient-appointment/update-appoint.php?appid=<?php echo $row['AppointID'] ?>" method="post">
                     <div class="input">
                         <label>Firstname</label>
-                        <input type="text" name="fname" value="<?php echo $row['Firstname']?>" disabled>
+                        <input type="text" name="fname" value="<?php echo $row['Firstname']?>" readonly>
                     </div>
                     <div class="input">
                     <label>Middlename</label>
-                        <input type="text" name="mname" value="<?php echo $row['Middle_Name']?>" disabled>
+                        <input type="text" name="mname" value="<?php echo $row['Middle_Name']?>" readonly>
                     </div>
                     <div class="input">
                     <label>Lastname</label>
-                        <input type="text" name="lname" value="<?php echo $row['Lastname']?>" disabled>
+                        <input type="text" name="lname" value="<?php echo $row['Lastname']?>" readonly>
                     </div>
                     <div class="input">
                         <label>Reason</label>
-                        <input type="text" name="" id="" value="<?php echo $row['reason'] ?>" disabled>
+                        <input type="text" name="" id="" value="<?php echo $row['reason'] ?>" readonly>
                     </div>
                     <div class="input">
                     <label>Email</label>
-                        <input type="email" name="email" value="<?php echo $row['email']?>" disabled>
+                        <input type="email" name="email" value="<?php echo $row['email']?>" readonly>
                     </div>
 
                     <div class="input">
                         <label for="">Address</label>
-                        <input type="text" id="" name="Address" value="<?php echo $row['Address'] ?>">
+                        <input type="text" id="" name="Address" value="<?php echo $row['Address'] ?>" readonly>
                     </div>
 
                     <div class="input">
                         <label for="">Contact Number</label>
-                        <input type="text" id="" name="Address" value="<?php echo $row['Contact_Number'] ?>">
+                        <input type="text" id="" name="Address" value="<?php echo $row['Contact_Number'] ?>" readonly>
                     </div>
 
                     <div class="input">
                         <label for="">Incident Date</label>
-                        <input type="date" id="" name="Address" value="<?php echo $row['Accident_date'] ?>">
+                        <input type="date" id="" name="Address" value="<?php echo $row['Accident_date'] ?>" readonly>
                     </div>
 
                     

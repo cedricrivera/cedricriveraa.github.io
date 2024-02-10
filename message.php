@@ -19,7 +19,7 @@
             <script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Succesfuly Inserted',
+                    title: 'Succesfully Inserted',
                     showConfirmButton: false,
                     timer: 2000
                 })
@@ -34,7 +34,7 @@
             <script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Succesfuly Inserted',
+                    title: 'Succesfully Inserted',
                     showConfirmButton: false,
                     timer: 2000
                 });

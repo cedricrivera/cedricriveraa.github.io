@@ -25,6 +25,8 @@
     <main>
         <div class="appointment-box">
             <h1>Appointment</h1>
+
+            <input type="text" name="search" id="search" placeholder="Search ID:">
             
             <div class="table">
                 <table>
@@ -56,15 +58,16 @@
                         if($rows){ 
                         foreach ($rows as $row) { ?>
                             <tr>
-                                <td><a href="appoint-records.php?appointid=<?php echo $row['AppointID']?>"><?php echo $row['AppointID'] ?></a></td>
+                                <td style="color: #0081B4; font-weight: 700; letter-spacing: 1px"><?php echo $row['AppointID'] ?></td>
                                 <td><?php echo $row['Firstname'] . " " . $row['Lastname'] ?></td>
                                 <td><?php echo $row['reason'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['Symptoms'] ?></td>
                                 <td><?php echo $row['Accident_date'] ?></td>
                                 <td><?php echo $row['remarks'] ?></td>
-                                <td><?php echo $row['status'] ?></td>
+                                <td id="status"><?php echo $row['status'] ?></td>
                                 <td>
+                                    <i class="fa-solid fa-user-plus" id="btn-add" data-appointid="<?php echo $row['AppointID'] ?>"></i>
                                     <i class="fa-solid fa-pen-to-square" style="color: #26ab66;" id="btn-view" data-appointid="<?php echo $row['AppointID'] ?>"></i>
                                     <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-delete" data-appointid="<?php echo $row['AppointID'] ?>"></i>
                                 </td>
@@ -118,6 +121,45 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var addrec = document.querySelectorAll('#btn-add');
+            addrec.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var appointID = button.getAttribute('data-appointid');
+                    if (appointID) {
+                        
+                    Swal.fire({
+                        title: 'Are you sure you want to add this Record?',
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes',
+                        cancelButtonText: 'No',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "patient-appointment/addrecord-appoint.php?addid=" + appointID;
+                        }
+                    });   
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var statuses = document.querySelectorAll("#status");
+            var addRecords = document.querySelectorAll("#btn-add");
+
+            statuses.forEach(function(status, index) {
+                if (status.textContent.trim() === "APPROVE") {
+                    addRecords[index].style.display = "inline-block";
+                }
+            });
+        });
+    </script>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>

@@ -62,7 +62,7 @@ main{
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  grid-template-rows: 70px auto;
+  grid-template-rows: 60px 22px auto;
   gap: 15px;
 }
 
@@ -73,13 +73,14 @@ main{
 }
 
 .table{
-  height: 83vh;
+  height: 78vh;
   width: 95%;
   padding: 10px;
   justify-self: center;
   border-radius: 10px;
   overflow-x: auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-top: 5px;
 }
 
 table{
@@ -112,21 +113,38 @@ td{
   font-size: 14px;
 }
 
-#btn-view, #btn-delete{
+#btn-view, #btn-delete, #btn-add{
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
   transition: all ease 0.5s;
 }
 
 #btn-delete{
-  margin-left: 8px;
+  margin-left: 5px;
 }
 
-#btn-view:hover, #btn-delete:hover{
+#btn-add{
+  margin-right: 5px;
+  color: var(--primary);
+  display: none;
+}
+
+#btn-view:hover, #btn-delete:hover, #btn-add:hover{
   scale: 1.2;
   transition: all ease 0.5s;
 }
 
+#search{
+  align-items: start;
+  justify-self: start;
+  margin-left: 25px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  height: 2rem;
+  padding: 10px;
+  width: 15rem;
+  outline: none;
+}
 
 
 

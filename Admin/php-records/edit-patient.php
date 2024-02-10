@@ -3,7 +3,7 @@ if (isset($_GET['updateid'])) {
     include 'connection/connection.php';
     $id = $_GET['updateid'];
 
-    $query = "SELECT * FROM patient_details WHERE patient_detID = $id";
+    $query = "SELECT FROM patient_details WHERE patient_detID = $id";
     $res = $conn->prepare($query);
     $res->execute();
     $row = $res->fetch();

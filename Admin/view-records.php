@@ -17,13 +17,30 @@
         if($row) {
     ?>
         <div id="view-records">
-            <div class="p-1">
-                <h2>Patient Name:</h2>
-                <h3><?php echo $row['fname'] . " " . $row['lname'] ?></h3>
+            <?php 
+                if(isset($_GET['appointID'])){
+                    ?>
+                        <div class="p-1">
+                            <h2>Patient Name:</h2>
+                            <h3><?php echo $_SESSION['Fname'] . " " . $_SESSION['Lname'] ?></h3>
 
-                <h2>Patient ID No:</h2>
-                <h3><?php echo $row['patient_detID'] ?></h3>
-            </div>
+                            <h2>Patient ID No:</h2>
+                            <h3><?php echo $row['AppointID'] ?></h3>
+                        </div>
+                    <?php
+                } else{
+                    ?>
+                        <div class="p-1">
+                            <h2>Patient Name:</h2>
+                            <h3><?php echo $row['fname'] . " " . $row['lname'] ?></h3>
+
+                            <h2>Patient ID No:</h2>
+                            <h3><?php echo $row['patient_detID'] ?></h3>
+                        </div>
+                    <?php
+                }
+            ?>
+           
 
             <div class="row2">
             <div class="p-3">
@@ -200,13 +217,28 @@
             </div>
         </div>
 </main>
-    <script>
-         const backButton = document.querySelector('#back')
-            backButton.addEventListener('click', () => {
-                const patientID = <?php echo json_encode($row['patient_detID']); ?>; // Make sure $row['patient_detID'] is defined in your PHP context.
-                window.location.href = `./patient-details.php?patientid=${patientID}`;
-            });
-    </script>
+<script>
+    <?php
+    // Assuming $row['patient_detID'] and $row['AppointID'] are properly defined in PHP
+    if (isset($_GET['patientid'])) {
+        $patientID = json_encode($row['patient_detID']);
+        echo "const patientID = $patientID;";
+    } else {
+        $appointId = json_encode($row['AppointID']);
+        echo "const appointId = $appointId;";
+    }
+    ?>
+
+    const backButton = document.querySelector('#back');
+    backButton.addEventListener('click', () => {
+        if (typeof patientID !== 'undefined') {
+            window.location.href = `./patient-details.php?patientid=${patientID}`;
+        } else if (typeof appointId !== 'undefined') {
+            window.location.href = `./patient-details.php?appointID=${appointId}`;
+        }
+    });
+</script>
+
 
     <script>
         

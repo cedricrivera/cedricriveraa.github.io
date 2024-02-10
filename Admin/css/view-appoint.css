@@ -77,6 +77,7 @@ main{
     position: relative;
     width: 88%;
     height: 88%;
+    overflow-y: auto;
 }
 
 #btn-back{
@@ -123,19 +124,19 @@ form{
 }
 
 .input input, textarea, select{
-    padding: 0px 8px;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid var(--light-second);
-    font-weight: 500;
-    font-size: 14px;
-    background-color: var(--light-main);
-    color: black;
-    height: 2.2rem;
+  padding: 0px 8px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--light-second);
+  font-weight: 600;
+  font-size: 14px;
+  height: 2.2rem;
+  opacity: 0.5;
 }
 
 #not-d{
     background-color: var(--text-color);
+    opacity: 1;
 }
 
 .input label{

@@ -74,5 +74,23 @@
     <?php
  }
  ?>
+
+<?php
+ if(isset($_GET['AlreadyInserted'])){
+    ?>
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Already Inserted',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        </script>
+    <?php
+ }
+?>
+
+
                     
                     
