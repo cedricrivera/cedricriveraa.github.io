@@ -33,7 +33,7 @@
                 </div>
                 <div class="input">
                     <label>Email</label>
-                    <input type="email" name="email" id="" value="<?php echo $row['email'] ?>">
+                    <input type="email" name="email" id="" value="<?php echo $row['email'] ?>" readonly>
                 </div>
                 <div class="input">
                     <label for="address">Address</label>

@@ -12,13 +12,13 @@ closeModal.addEventListener('click', () => {
 });
 
 // Confirm deletions
+
 const deleteButtons = document.querySelectorAll('#btn-delete');
-const editButtons = document.querySelectorAll('#btn-edit'); 
+const editButtons = document.querySelectorAll('#btn-edit');
 
 deleteButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
         const deleteId = btn.getAttribute('data-deleteid');
-
         Swal.fire({
             title: 'Are you sure you want to delete?',
             icon: 'question',
@@ -32,7 +32,6 @@ deleteButtons.forEach((btn) => {
         });
     });
 });
-
 
 editButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
