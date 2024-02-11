@@ -48,7 +48,7 @@
                     <td><?php echo $appointment['Contact_Number']?></td>
                     <td>
                         <i class="fa-solid fa-pen-to-square" style="color: #26ab66;" id="btn-edit"></i>
-                        <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-delete" data-deleteid="<?php echo $row['patient_detID'] ?>"></i>
+                        <i class="fa-solid fa-trash" style="color: #eb3824;" id="btn-delete" data-appid="<?php echo $row['AppointID'] ?>"></i>
                     </td>
                 </tr>
             <?php 

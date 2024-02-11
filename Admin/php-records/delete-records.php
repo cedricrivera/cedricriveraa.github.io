@@ -22,5 +22,20 @@ if (isset($_GET['deleteid'])) {
         $conn->rollBack();
         die("Error: " . $e->getMessage());
     }
+} elseif(isset($_GET['appid'])){
+
+    include '../connection/connection.php';
+    $appid = $_GET['appid'];
+
+    $sql = "DELETE FROM patient_records WHERE AppointID = $appid";
+    $res = $conn->prepare($sql);
+    $res->execute();
+
+    if($res){
+        echo "<script>window.location.href='../patient-records.php?delete=Delete successfully'</script>";
+    }
+    else{
+      echo "Error: " . $conn->errorInfo()[2];
+    }
 }
 ?>

@@ -18,18 +18,33 @@ const editButtons = document.querySelectorAll('#btn-edit');
 
 deleteButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-        const deleteId = btn.getAttribute('data-deleteid');
-        Swal.fire({
-            title: 'Are you sure you want to delete?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Yes',
-            cancelButtonText: 'No',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = `php-records/delete-records.php?deleteid=${deleteId}`;
-            }
-        });
+        if (btn.getAttribute('data-deleteid')) {
+            const deleteId = btn.getAttribute('data-deleteid');
+            Swal.fire({
+                title: 'Are you sure you want to delete?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `php-records/delete-records.php?deleteid=${deleteId}`;
+                }
+            });
+        } else if (btn.getAttribute('data-appid')) {
+            const deleteId = btn.getAttribute('data-appid');
+            Swal.fire({
+                title: 'Are you sure you want to delete?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `php-records/delete-records.php?appid=${deleteId}`;
+                }
+            });
+        }
     });
 });
 

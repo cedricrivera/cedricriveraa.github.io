@@ -70,11 +70,11 @@ include "Admin/connection/connection.php";
                     <div class="input">
                         <label for="">Animal</label>
                         <select name="animal" id="animal" onchange="other()" required>
-                            <option value="">--SELECT Animal Bit FIRST--</option>
+                            <option value="">--SELECT ANIMAL--</option>
                             <option value="Pet Dog">Pet Dog</option>
                             <option value="Pet Cat">Pet Cat</option>
                             <option value="Stray Dog">Stray Dog</option>
-                            <option value="Stray Car">Stray Car</option>
+                            <option value="Stray Cat">Stray Cat</option>
                             <option value="Others">Others</option>
                         </select>
                     </div>
@@ -87,7 +87,7 @@ include "Admin/connection/connection.php";
                     <div class="input">
                         <label for="">Reason</label>
                         <select name="reason" id="" required>
-                            <option value="">--SELECT REASON FIRST--</option>
+                            <option value="">--SELECT REASON--</option>
                             <option value="Animal Bite">Animal Bite</option>
                             <option value="Leak">Leak</option>
                             <option value="Scratch">Scratch</option>
@@ -117,7 +117,6 @@ include "Admin/connection/connection.php";
                     <tr>
                         <th>Appointment ID</th>
                         <th>Reason</th>
-
                         <th>Symptoms</th>
                         <th>Incident Date</th>
                         <th>Remarks</th>
