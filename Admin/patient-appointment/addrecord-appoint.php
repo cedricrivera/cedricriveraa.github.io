@@ -14,9 +14,9 @@ if(isset($_GET['addid'])){
         echo "<script>window.location.href='../appointment.php?AlreadyInserted=Already Inserted'</script>";
     } 
     else {
-        $sql = "INSERT INTO patient_records (AppointID) VALUES (:id)";
+
+        $sql = "INSERT INTO patient_records (AppointID, Date_Added) VALUES ($id, GETDATE())";
         $res = $conn->prepare($sql);
-        $res->bindParam(':id', $id, PDO::PARAM_INT);
         $res->execute();
 
         if($res->rowCount() > 0){
