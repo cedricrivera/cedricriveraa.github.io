@@ -120,7 +120,7 @@
                                     <th>Firstname</th>
                                     <th>Middle_Name</th>
                                     <th>Lastname</th>
-                                    <th>Gender</th>
+                                    <th>Sex</th>
                                     <th>Adrress</th>
                                     <th>Age</th>
                                     <th>Contact</th>
