@@ -65,7 +65,7 @@
                             </div>
                             
                             <div>
-                                <label for="gender">Gender:</label>
+                                <label for="gender">Sex:</label>
                                 <select name="gender" id="gender">
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -120,7 +120,7 @@
                                     <th>Firstname</th>
                                     <th>Middle_Name</th>
                                     <th>Lastname</th>
-                                    <th>Gender</th>
+                                    <th>Sex</th>
                                     <th>Adrress</th>
                                     <th>Age</th>
                                     <th>Contact</th>
